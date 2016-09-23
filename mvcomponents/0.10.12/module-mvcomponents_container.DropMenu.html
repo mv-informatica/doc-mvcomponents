@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: $http</title>
+	<title>Documentation Class: DropMenu</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,19 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: $http</h1>
+	<h1 class="page-title">Class: DropMenu</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-mvcomponents_http.html">mvcomponents/http</a>.</span>
+            <span class="ancestors"><a href="module-mvcomponents_container.html">mvcomponents/container</a>.</span>
         
-        $http
+        DropMenu
         </h2>
+        
+            <div class="class-description"><p><img src="../../doc_assets/container_dropmenu_example_1.png">
+Menu contextual interativo que apresenta as opções acima ou abaixo do botão principal do menu.</p></div>
         
     
 </header>
@@ -93,16 +96,12 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="$http"><span class="type-signature"></span>new $http()</h4>
+    <h4 class="name" id="DropMenu"><span class="type-signature"></span>new DropMenu()</h4>
     
     
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <p>Executa um ajax request</p>
-    </div>
     
 
     
@@ -165,30 +164,20 @@
     
 
     
-        <h5>Examples</h5>
+        <h5>Example</h5>
         
-    <pre class="sunlight-highlight-javascript">$http
-     .get(&quot;friends/actives&quot;)
-     .then((res:IFriend[])=&gt;console.log(res));</pre>
+    <pre class="sunlight-highlight-javascript">let panel = new Panel(&quot;DropMenu&quot;);
+let menu = new DropMenu(&quot;Bart Simpson&quot;);
 
-    <pre class="sunlight-highlight-javascript">$http
-     .get(&quot;friends/actives&quot;)
-     .params({order:&quot;name&quot;})
-     .then((res:IFriend[])=&gt;console.log(res));</pre>
+let btnPerfil = new LinkButton(&quot;Perfil&quot;).setIcon(&quot;glyphicon glyphicon-user&quot;);
+menu.append(btnPerfil);
+let btnMensagens = new LinkButton(&quot;Mensagens&quot;).setIcon(&quot;glyphicon glyphicon-envelope&quot;);
+menu.append(btnMensagens);
 
-    <pre class="sunlight-highlight-javascript">$http
-     .post(&quot;friends&quot;)
-     .body(newFriend)
-     .then((res:IFriend[])=&gt;console.log(res));</pre>
-
-    <pre class="sunlight-highlight-javascript">$http
-     .put(&quot;friends&quot;)
-     .body(newFriend)
-     .then((res:IFriend[])=&gt;console.log(res));</pre>
-
-    <pre class="sunlight-highlight-javascript">$http
-     .get(&quot;friends/actives&quot;)
-     .then((res:IFriend[])=&gt;console.log(res),(error:any) =&gt; console.log(error));</pre>
+let btnSair = new LinkButton(&quot;Sair&quot;).setIcon(&quot;glyphicon glyphicon-off&quot;);
+menu.addSeparator();
+menu.append(btnSair);
+panel.append(new Form().append(menu));</pre>
 
 
     
@@ -209,6 +198,388 @@
 
     
 
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="addSeparator"><span class="type-signature"></span>addSeparator()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Adiciona um separador visual entre os botões do dropmenu</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">this</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setColor"><span class="type-signature"></span>setColor(color)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Informa o tipo do botão</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>color</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">EBasicColorStatus</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Button</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setOrientation"><span class="type-signature"></span>setOrientation(orientantion)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Permite configurar a orientação do menu para que apareça acima ou abaixo do dropmenu</p>
+<ul>
+<li>&quot;DOWN&quot;: posiciona abaixo</li>
+<li>&quot;UP&quot;: posiciona acima</li>
+</ul>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>orientantion</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>&quot;DOWN&quot;|&quot;UP&quot; orientação do menu</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
     
 
     

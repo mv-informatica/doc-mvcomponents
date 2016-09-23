@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: $http</title>
+	<title>Documentation Class: Icon</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,16 +72,19 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: $http</h1>
+	<h1 class="page-title">Class: Icon</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-mvcomponents_http.html">mvcomponents/http</a>.</span>
+            <span class="ancestors"><a href="module-mvcomponents_button.html">mvcomponents/button</a>.</span>
         
-        $http
+        Icon
         </h2>
+        
+            <div class="class-description"><p>Componente que simula icones</p>
+<p><img src="../../doc_assets/badge_example_1.png" /></p></div>
         
     
 </header>
@@ -93,16 +96,12 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="$http"><span class="type-signature"></span>new $http()</h4>
+    <h4 class="name" id="Icon"><span class="type-signature"></span>new Icon()</h4>
     
     
 </dt>
 <dd>
 
-    
-    <div class="description">
-        <p>Executa um ajax request</p>
-    </div>
     
 
     
@@ -165,33 +164,6 @@
     
 
     
-        <h5>Examples</h5>
-        
-    <pre class="sunlight-highlight-javascript">$http
-     .get(&quot;friends/actives&quot;)
-     .then((res:IFriend[])=&gt;console.log(res));</pre>
-
-    <pre class="sunlight-highlight-javascript">$http
-     .get(&quot;friends/actives&quot;)
-     .params({order:&quot;name&quot;})
-     .then((res:IFriend[])=&gt;console.log(res));</pre>
-
-    <pre class="sunlight-highlight-javascript">$http
-     .post(&quot;friends&quot;)
-     .body(newFriend)
-     .then((res:IFriend[])=&gt;console.log(res));</pre>
-
-    <pre class="sunlight-highlight-javascript">$http
-     .put(&quot;friends&quot;)
-     .body(newFriend)
-     .then((res:IFriend[])=&gt;console.log(res));</pre>
-
-    <pre class="sunlight-highlight-javascript">$http
-     .get(&quot;friends/actives&quot;)
-     .then((res:IFriend[])=&gt;console.log(res),(error:any) =&gt; console.log(error));</pre>
-
-
-    
 </dd>
 
     
@@ -209,6 +181,446 @@
 
     
 
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="setColor"><span class="type-signature"></span>setColor(color)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Informa a cor do icone</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>color</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Icon</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setIcon"><span class="type-signature"></span>setIcon(iconStyle)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>iconStyle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Icon</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="setTooltip"><span class="type-signature"></span>setTooltip(tooltip)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tooltip</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Icon</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
     
 
     
