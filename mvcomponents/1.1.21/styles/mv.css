@@ -1,0 +1,50 @@
+.mv-banner {
+    margin-top: 62px;
+    position: relative;
+    height: 220px;
+}
+
+.mv-banner-logo {
+    position: absolute;
+    background: url('../img/mv_components_01.gif') no-repeat;
+    background-size: auto 100%;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100%;
+}
+
+.mv-banner-background {
+    padding-left: 500px;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.mv-banner-background:before {
+    display: block;
+    background: url('../img/mv_components_02.png') repeat;
+    background-size: auto 100%;
+    content: '';
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+/** OVERRIDES */
+
+.navbar-default {
+    background-color: #2D4F6E;
+}
+
+#toc::-webkit-scrollbar {
+    display: none;
+}
+
+.input-group .btn {
+    line-height: 1.15em;
+}
+
+.dropdown-menu {
+    overflow-x: hidden;
+}
