@@ -1,0 +1,15 @@
+<template name="tileListShowCase" args="$data $extra">
+	<div class="list-group">
+		<script>
+			var $params = this.getParams();
+		</script>
+		<h4>{$params.param1?$params.param1:''}</h4>
+		<a each="$row in $data" href="#" class="list-group-item tilecell" data-indx="{$item}">
+			<span class="{$row.icon}" style="font-size:25px;float:left;margin:5px 15px 0px 0px" aria-hidden="true"></span>
+			<span>
+				<h4 class="list-group-item-heading">{$row.id}-{$row.name}</h4>
+				<p class="list-group-item-text">description:{$row.desc}</p>				
+			</span>
+		</a>
+	</div>
+</template>

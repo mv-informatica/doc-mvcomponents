@@ -1,0 +1,5 @@
+<template name="testHeaderTemplate" args="$this">
+    <span click.trigger="$this.toogleCheck()" class="glyphicon glyphicon-{($this.checked?'check':'unchecked')}"></span>
+    {$this.title}
+    <span click.trigger="$this.testeGid()" class="iconeinput glyphicon glyphicon-user"></span>
+</template>

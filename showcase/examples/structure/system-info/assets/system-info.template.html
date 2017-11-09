@@ -1,0 +1,9 @@
+<template name="systemInfo" args="$this">
+    <script>
+        setTimeout(function(){
+            $this.refreshRender();
+        },$this.refreshTime);
+    </script>
+     <label class="col-xs-12">{($this.companyName?$this.companyName+" | ":".")}{($this.userName?$this.userName:"")}</label>
+     <label class="col-xs-12">{$this.getTimeDisplay()} | {$this.version}{($this.language?" | "+$this.language:"")}</label>
+</template>

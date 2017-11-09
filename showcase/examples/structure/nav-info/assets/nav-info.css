@@ -1,0 +1,27 @@
+.tab-panel-app{
+    margin-top: 10px
+}
+.banner-nav-info {
+    position:fixed;
+    top: 0;
+    left:0;    
+    z-index:2150;
+    background-color:#f0f0f0;
+}
+.banner-nav-info.is-loading{    
+    background-image:url("./ajax-loader.gif");
+    background-repeat:no-repeat;
+    background-position:center center;
+    right: 0px;
+    bottom: 0px;
+}
+
+.banner-nav-info .user-choose{
+    border:0;
+    background-color:transparent;
+    color:#ffffff
+}
+
+.banner-nav-info .form-control{
+    background-color: #4d7498;
+}

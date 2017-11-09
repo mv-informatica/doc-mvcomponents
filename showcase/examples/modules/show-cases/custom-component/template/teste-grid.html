@@ -1,0 +1,7 @@
+<template name="testeTemplate" args="$row">
+    <script>
+        var $this = this;
+    </script>
+    <input type="text" value="{$row.idade}" />
+    <span click.trigger="$this.testeGid()" class="iconeinput glyphicon glyphicon-user"></span>
+</template>

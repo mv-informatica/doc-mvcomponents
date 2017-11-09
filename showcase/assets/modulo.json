@@ -1,0 +1,43 @@
+[
+	{
+		"id":1
+		,"modulo":"app.net.teste.Teste"
+		,"descricao":"Teste Basico"
+		,"tipo":1
+		,"icone":"globe"
+		,"bgCor":"#ff5e75"
+		,"acoes":[
+			{"id":1,"descricao":"teste basico 1-1","ordem":1,"acao":"alert"}
+			,{"id":2,"descricao":"teste basico 1-2","ordem":1,"acao":"alert"}
+		]
+        ,"cred":{"id":1,"desc":"teste de cred"}
+	}
+	,{
+		"id":2
+		,"modulo":"app.net.teste2.Teste2"
+		,"descricao":"Teste Submodulo"
+		,"tipo":2
+		,"icone":"plus"
+		,"bgCor":"#b066ff"
+		,"acoes":[
+			{"id":1,"descricao":"teste basico 2-1","ordem":1,"acao":"alert"}
+			,{"id":2,"descricao":"teste basico 2-2","ordem":1,"acao":"alert"}
+			,{"id":3,"descricao":"teste basico 2-3","ordem":3,"acao":"alert3"}
+		]
+        ,"cred":{"id":2,"desc":"teste de cred 2"}
+	}
+	,{
+		"id":3
+		,"modulo":"app.net.teste.TodosComponentes"
+		,"descricao":"Todos os Componentes"
+		,"tipo":2
+		,"icone":"th-list"
+		,"bgCor":"#5ed2ff"
+		,"acoes":[
+			{"id":1,"descricao":"teste basico 2-1","ordem":1,"acao":"alert"}
+			,{"id":2,"descricao":"teste basico 2-2","ordem":1,"acao":"alert"}
+			,{"id":3,"descricao":"teste basico 2-3","ordem":3,"acao":"alert3"}
+		]
+        ,"cred":{"id":3,"desc":"teste de cred 3"}
+	}
+]

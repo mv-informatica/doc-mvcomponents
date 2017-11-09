@@ -1,0 +1,20 @@
+{
+    "lbtitle":"pt-br-seja bem vindo {{nome}}"
+    ,"lbcod":"pt-br-codigo."
+    ,"lbname":"pt-br-nome"
+    ,"lbgenre":"pt-br-sexo"
+    ,"lbobs":"pt-br-obs"
+    ,"lbexit":"pt-br-pegar json"
+    ,"lbreset":"pt-br-reiniciar"
+    ,"lbundifineid":"pt-br-indefinido"
+    ,"group":{
+    	"test1":"pt-br-obs do grupo"
+    }
+    ,"moduloa":{
+        "titulo":"test en-us"
+    }
+    ,"modulob":{
+        "titulo":"teste en-us 2"
+        ,"teste2":"second value"
+    }
+}

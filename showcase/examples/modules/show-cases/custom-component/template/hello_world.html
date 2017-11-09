@@ -1,0 +1,27 @@
+<template name="HelloWorld" args="$this">
+    <div class="container-test"></div>
+    <h1 mouseover.trigger="$this.tmptxt='mouse over me!';$this.refresh()"
+        click.trigger="{$this.addMessage($this.tmptxt);$this.tmptxt=''}">
+            Message: {$this.message} {$this.tmptxt}
+    </h1>
+    <h4 each="todo in $this.todos">
+        {$this.microRender(todo)}
+    </h4>
+        <button click.trigger="$this.generateRecords()">Gerar Inputs</button>
+        <input each="item in $this.inputs" value="{$item+':'+item}">
+    
+    <ul>
+       <li each="msg in $this.messages">
+           {msg}
+      </li>
+    </ul>
+    <div id="asdf1" draggable="true" ondragstart="{$event.dataTransfer.setData('text', $event.target.id);}" style="cursor:move;width:64px;height:64px;border:1px solid green;">
+        <h4>DRAG TEST</h4>
+    </div>
+    <div id="asdf2" drop.trigger="var data = $event.dataTransfer.getData('text');$this.addTodo(data);" dragover.trigger="$event"  style="height:50px;border:1px solid red">
+        <h4>DROP TEST</h4>
+    </div>
+    
+    <input type="text" value="{$this.mytext?$this.mytext:'nothing changed'}">
+    <button click.trigger="$this.mytext=new String('default text2');alert($this.mytext);$this.refresh()">test change</button>
+</template>

@@ -1,0 +1,8 @@
+<template name="testHeaderTemplate" args="$column">
+    <script>
+        var $this__ = this;
+    </script>
+    <span click.trigger="$this__.toogleCheck();$column.checked = !$column.checked" class="glyphicon glyphicon-{($column.checked?'check':'unchecked')}"></span>
+    {$column.title}
+    <span click.trigger="$this__.testeGid()" class="iconeinput glyphicon glyphicon-user"></span>
+</template>

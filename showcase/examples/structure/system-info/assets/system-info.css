@@ -1,0 +1,9 @@
+.system-info{
+    padding-top:8px;
+}
+.system-info label{
+    color:#ffffff;
+    font-weight:normal;
+    text-align:right;
+    font-size: 12px;
+}
