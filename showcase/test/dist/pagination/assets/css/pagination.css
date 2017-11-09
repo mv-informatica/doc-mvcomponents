@@ -1,0 +1,9 @@
+.MVPagination .disabled {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+.MVPaginationInfo{
+
+}

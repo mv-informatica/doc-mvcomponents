@@ -1,0 +1,66 @@
+.VerticalSplitter .box-splitter-divisor-content{
+    width:10px;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    height:50%;
+        
+}
+.VerticalSplitter .box-splitter-divisor-content.is-right{
+    right:0px;  
+}
+
+.VerticalSplitter .aux-is-hidden .box-splitter-divisor-content.is-left{
+    display:none;
+}
+
+.VerticalSplitter .box-splitter-divisor-content.is-left{
+    left:0px; 
+}
+
+.VerticalSplitter .splitter-content:last-child .box-splitter-divisor-content,.VerticalSplitter .splitter-content:first-child .box-splitter-divisor-content.is-left{
+    display:none;
+}
+
+.VerticalSplitter .splitter-content:last-child .splitter-divisor-content{
+    display:none;
+}
+
+.VerticalSplitter .splitter-content.is-hidden{
+    width:10px;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    display: none;
+}
+
+
+.VerticalSplitter .splitter-content.is-max .box-splitter-divisor-content.is-right .splitter-divisor-content.is-right{
+    display: none;
+}
+
+.VerticalSplitter .splitter-content.is-min .box-splitter-divisor-content.is-right .splitter-divisor-content.is-left{
+    display: none;
+}
+
+.VerticalSplitter .splitter-divisor-content{
+    height:20px;
+    width:10px;
+    position:absolute;
+    right:0px;
+    background-repeat:no-repeat;
+    cursor:default;
+    background-position:center center;
+}
+
+.VerticalSplitter .splitter-divisor-content.is-left{
+   background-image: url("../img/metro-icon-left.png");   
+   bottom:20px;
+}
+
+.VerticalSplitter .splitter-divisor-content.is-right{
+   bottom:0px;
+   background-image: url("../img/metro-icon-right.png");
+}
+

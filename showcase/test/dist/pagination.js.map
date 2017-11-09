@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/pagination.ts"],"names":[],"mappings":";;;;;;IAIA,uBAAwC","file":"pagination.js","sourcesContent":["/**\n * @module mvcomponents/pagination\n */\nexport * from \"./pagination/interface/i-pagination\";\nexport * from \"./pagination/pagination\";"]}

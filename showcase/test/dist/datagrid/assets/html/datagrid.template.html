@@ -1,0 +1,49 @@
+<template name="dataGrid" args="$dataGrid">
+    <div class="grid-content">
+        <table class="table {$dataGrid.getStyle()} DataGrid {$dataGrid.getInfiniteScrollClass()}">
+            <thead>
+                <tr>
+                    <th each="column in $dataGrid.columns" style="{width: column.width + '%'}" class="{(column._size_?column._size_:'')+' '+($item==0?'is-first-cell':$item==$dataGrid.columns.length-1?'is-last-cell':'')}">
+                        <if condition="column.headerRender">
+                            <script>{column.headerRender(column)}</script>
+                        <else>
+                            {column.title}
+                        </if>                    
+                        <span class="mv-datagrid-sort" if="column.sortable">
+                            <div class="{'mv-datagrid-sort-asc ' + (column.sortingDirection === 0?'active':'')}" >
+                                <span class="glyphicon glyphicon-triangle-top" click.trigger="$dataGrid.addSort($item, true)"></span>
+                            </div>
+                            <div class="{'mv-datagrid-sort-desc ' + (column.sortingDirection === 1?'active':'')}">
+                                <span class="glyphicon glyphicon-triangle-bottom" click.trigger="$dataGrid.addSort($item, false)"></span>
+                            </div>
+                        </span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="{height:($dataGrid.height?$dataGrid.height+'px':'')}">
+                <tr data-item-index="{$item}" each="data in $dataGrid.data" class="{ 'DataGridRow ' + ($dataGrid.selectedData.indexOf($item) > -1 ? 'active': '')}" id="{'uid_'+$dataGrid._uid+'_'+$item}">
+                    <script>
+                    var uid_tr = 'uid_'+$dataGrid._uid+'_'+$item;
+                    </script>
+                    <td each="column in $dataGrid.columns" class="{(column._size_?column._size_:'')+' '+($item==0?'is-first-cell':$item==$dataGrid.columns.length-1?'is-last-cell':'')}" id="{uid_tr+'_td_'+$item}">
+                        <if condition="column.template">
+                            <script>{column.template(data,uid_tr+'_td_'+$item,uid_tr)}</script>    
+                        <elseif condition="column.render"> 
+                            {column.render(data,uid_tr+'_td_'+$item,uid_tr)}
+                        <else>
+                            {data[column.name]}
+                        </if>
+                    </td>
+                <tr>
+            </tbody>
+            <tfoot>
+                <if condition="$dataGrid.data.length == 0">
+                    <tr style="border:0px">
+                        <td class="mv-datagrid-empty-text" style="border:0px" colspan="{$dataGrid.columns.length}">{$dataGrid.emptyText}</td>
+                    </tr>
+                </if>
+            </tfoot>
+        </table>  
+    </div>
+    <div if="$dataGrid.blocked" class="DataGridBlockContainer"></div>
+</template>

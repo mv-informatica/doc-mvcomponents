@@ -1,0 +1,110 @@
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/assertions.js:219:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/assertions.js:219:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:17:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:17:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:17:25: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:18:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:18:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:18:25: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:19:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:19:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:22:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:153:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/attributes.js:153:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/context.js:17:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/context.js:17:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/context.js:17:31: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/context.js:72:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/context.js:72:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:17:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:17:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:22:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:23:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:23:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:23:25: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:24:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:24:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:24:25: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:25:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:25:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:25:25: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:26:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:26:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:37:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:38:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:38:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:38:31: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:389:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/core.js:389:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/node_data.js:17:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/node_data.js:17:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/node_data.js:17:27: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/node_data.js:119:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/node_data.js:119:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:17:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:17:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:17:33: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:18:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:18:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:21:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:22:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:22:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:22:27: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:154:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/nodes.js:154:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/notifications.js:35:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/notifications.js:35:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/symbols.js:25:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/symbols.js:25:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/util.js:51:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/util.js:51:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:17:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:17:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:18:15: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:18:18: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:19:16: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:19:19: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:20:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:20:11: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:23:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:24:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:24:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:24:33: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:25:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:25:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:25:25: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:26:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:26:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:26:25: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:27:1: Unexpected reserved word import
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:27:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:34:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:288:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/src/virtual_elements.js:288:8: Semi-colon expected
+
+MultipleErrors: /home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:17:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:17:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:18:14: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:18:17: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:23:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:24:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:24:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:33:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:34:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:34:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:34:25: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:35:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:35:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:39:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:40:1: Unexpected reserved word export
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:40:8: Semi-colon expected
+/home/alex/.jspm/packages/npm/incremental-dom@0.4.1/index.js:40:31: Semi-colon expected

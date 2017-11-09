@@ -1,0 +1,7 @@
+.popover.bottom{
+	left:0px;
+}
+.popover-content{
+    max-width: none;
+    min-width:250px;
+}

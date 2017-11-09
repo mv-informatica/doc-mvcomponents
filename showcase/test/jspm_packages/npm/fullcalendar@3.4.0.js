@@ -1,0 +1,1 @@
+module.exports = require("npm:fullcalendar@3.4.0/dist/fullcalendar.js");

@@ -1,0 +1,1 @@
+module.exports = require("npm:cookies-js@1.2.3/dist/cookies.js");

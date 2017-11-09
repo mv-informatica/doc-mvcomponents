@@ -1,0 +1,16 @@
+{
+  "name": "mv-hosp",
+  "version": "2.2.0",
+  "description": "",
+  "main": "./css/mv-hosp.css",
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "http://teseu.mvrec.local:8082/repository/npm-releases/"
+  },
+  "jspm": {
+    "registry": "npm",
+    "jspmPackage": false,
+    "format": "amd"
+  }
+}

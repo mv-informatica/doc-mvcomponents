@@ -1,0 +1,1 @@
+module.exports = require("github:mattfarina/farbtastic@2.0.0-alpha.1/src/farbtastic.js");

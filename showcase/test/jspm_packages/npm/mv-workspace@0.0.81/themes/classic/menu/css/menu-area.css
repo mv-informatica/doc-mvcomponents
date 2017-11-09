@@ -1,0 +1,86 @@
+.workspace .menu-area{
+    background-color:#f0f0f0;
+    position:fixed;
+    right:0px;
+    bottom:25px;
+    padding: 0px;
+}
+
+.workspace .menu-area > .menu-area-modules{
+    background-color:#f9f9f9;
+    /*padding-top:5px;*/
+    height:100%;
+    overflow:auto;
+    padding: 0px 0px 55px 0px;
+}
+
+
+
+.workspace .menu-area > .menu-area-modules::-webkit-scrollbar{
+    width: 6px;
+    /*border-radius:50%;*/
+}
+
+
+.workspace .menu-area > .menu-area-modules::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px #DDDDDD;
+     border-radius: 10px;
+    
+}
+
+.workspace .menu-area > .menu-area-modules::-webkit-scrollbar-thumb{
+  background-color: #DDDDDD;
+  outline: 1px solid slategrey;
+   border-radius: 10px;
+}
+
+.workspace .menu-area > div .module-menu{
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+.workspace .menu-area > div .module-menu-detail{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+
+.workspace .menu-area > div .module-menu.is-selected{
+     background-color:#d8e6f4;
+}
+.workspace .menu-area > div .module-menu:hover{
+    background-color:#ffffff;
+}
+
+.workspace .menu-area > div span.icon-menu{
+    background-color:#4d7498;
+    float: left;
+    padding: 6px;
+}
+
+.workspace .menu-area > div span.icon-menu{
+    background-color:#4d7498;
+    color: #ffffff;
+    font-size:22px; 
+}
+
+.workspace .menu-area > div a.label-menu-module{
+    float: left;
+    margin-top: 8px;
+    margin-left: 5px;
+    text-decoration:none;
+}
+
+
+.workspace .menu-scroll-btn{
+    background-color:#4d7498;
+    height:1px;
+    padding-top:1px;
+    margin-top:4px;
+}
+
+.workspace .menu-scroll-btn span{
+    text-align:center;
+    color:#ffffff;
+}
+

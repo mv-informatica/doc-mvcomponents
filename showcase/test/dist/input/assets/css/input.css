@@ -1,0 +1,17 @@
+.form-group label{
+	font-weight:normal !important;
+}
+
+.form-group > .control-label{
+	margin-bottom: 0px;
+}
+
+.form-group.is-required > .control-label > span.is-required-text{
+	color: red;
+	margin-left:5px;
+}
+
+.form-group > .input-group.no-addon > .form-control{
+	border-radius: 4px;
+}
+

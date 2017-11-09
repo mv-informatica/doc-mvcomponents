@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/separator.ts"],"names":[],"mappings":";;;IAGQ,gCAAA,SAAS,CAAA","file":"separator.js","sourcesContent":["/**\n * @module mvcomponents/separator\n */\nexport {Separator} from \"./separator/separator\";"]}

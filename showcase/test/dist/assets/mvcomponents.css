@@ -1,0 +1,32 @@
+body,html{
+	height:100%;	
+}
+body{
+  	margin: 0;
+  	padding:0px;
+  	font-weight:normal;
+}
+.nav.nav-tabs .close-handler {
+    float: right;
+    cursor: pointer;
+    margin-left: 9px;
+}
+
+.is-disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
+table{
+	background-color:#fff;
+}
+
+.is-italic{
+  font-weight:normal;
+  font-style:italic;
+  color:#adadad;
+}
+
+.is-placeholder{
+  font-weight:normal;
+  color:#adadad;
+}

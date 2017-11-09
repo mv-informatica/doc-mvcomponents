@@ -1,0 +1,65 @@
+.workspace .header-area{
+    background-color:#f0f0f0;
+    height:40px;
+    position:fixed;
+    z-index:80;
+    left:0px;
+    right:0px;
+    top:0px;
+    border-bottom: 2px solid #ddd;
+}
+.workspace .header-area > .logo_bar > div{
+  border-right: 1px solid #ddd;
+}
+
+.workspace .header-area .logo-img{
+    background-image: url("../img/lg98x49.png");
+    background-repeat: no-repeat;
+    background-position:5px 10px;
+    border-right: 1px solid #cccccc;
+    width:120px;
+}
+
+.workspace .header-area,.workspace .header-area > .btns_actions{
+    padding: 0px;
+}
+.workspace .header-area > .btns_actions > div{
+	float:right;
+	background-repeat:no-repeat;
+	background-position: center center;
+    border-left: 1px solid #ddd;
+	height: 32px;
+    width:36px;
+}
+.workspace .header-area select{
+    margin-top: 7px;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow:none; 
+    border:none;
+    margin-top:0px;
+    height:40px;
+    border-right: 1px solid #cccccc;
+}
+.workspace .header-area select > option{
+    background-color: #D8E6F4;
+}
+.workspace .header-area select > option:hover{
+    background-color: #B0CFE9;
+}
+
+
+
+.workspace .header-area > .actions-bar{
+    height: 100%;
+}
+
+.workspace .header-area > .actions-bar .btns_actions{
+    color:#4d7498;
+    font-size: 22px;
+    width:45px;
+    padding-top:8px;
+    height: 100%;
+    text-align: center;
+    border-left: 1px solid #ddd;
+}

@@ -1,0 +1,16 @@
+.accordion-box > .accordion-container{
+	margin-bottom:5px;
+}
+.accordion-box > .accordion-container > .accordion-header > label{
+	font-weight: normal;
+	font-size:14px;
+	cursor:pointer;
+}
+
+.accordion-box > .accordion-container > .accordion-header > a{
+	text-decoration: none;
+}
+
+.accordion-box > .accordion-container > .accordion-header > a.icon-component{
+	font-size:20px;
+}

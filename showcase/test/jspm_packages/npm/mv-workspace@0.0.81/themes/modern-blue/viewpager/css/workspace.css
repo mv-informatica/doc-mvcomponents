@@ -1,0 +1,14 @@
+body {
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    color: #43413d;
+    background-color: #f9f9f9;
+    padding:0px;
+    overflow:hidden;
+}
+.workspace {
+    /*margin-top: 50px;*/
+    padding: 0px;
+    margin: 0px;
+    overflow:hidden;
+    max-height:100%;
+}

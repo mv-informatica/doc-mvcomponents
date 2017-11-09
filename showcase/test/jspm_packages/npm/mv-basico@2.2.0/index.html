@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mv-basico</title>
+    <link rel="stylesheet" href="css/mv-basico.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>html, body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-size: inherit;
+  will-change: background-color;
+  transition: background-color .1s ease-in;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', 'Tahoma', sans-serif;
+  font-size: 16px;
+  color: #666666;
+}
+
+body.is-scrolled .tc-content__upper-handler {
+  transform: none;
+  opacity: 1;
+}
+
+.tc {
+}
+
+.tc-cloak {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(102, 102, 102, 0.4);
+  will-change: opacity;
+  transform: opacity .2s ease-in;
+  opacity: 0;
+  z-index: -1;
+}
+
+.tc .is-open .tc-cloak {
+  z-index: 8;
+  opacity: 1;
+}
+
+.tc-header {
+}
+
+.tc-header__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 0;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.tc-header__content {
+  -ms-user-select: none;
+      user-select: none;
+  position: relative;
+  height: 48px;
+  background: #4d7498;
+  color: rgba(255, 255, 255, 0.94118);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+  padding: 4px 16px;
+  line-height: 40px;
+  z-index: 10;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.tc-header__content h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.tc-header__menu-handler {
+  cursor: pointer;
+  margin-right: 16px;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.tc-header__menu-handler span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.94118);
+}
+
+.tc-header__menu-handler span:before, .tc-header__menu-handler span:after {
+  content: ' ';
+  background-color: rgba(255, 255, 255, 0.94118);
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform .15s ease-in, top .15s ease-in;
+}
+
+.tc-header__menu-handler span:before {
+  top: 10px;
+}
+
+.tc-header__menu-handler span:after {
+  top: -10px;
+}
+
+.tc-header.is-open .tc-header__menu {
+  transform: none;
+}
+
+.tc-header.is-open .tc-header__menu-handler span {
+}
+
+.tc-header.is-open .tc-header__menu-handler span {
+  background: none;
+}
+
+.tc-header.is-open .tc-header__menu-handler span:before {
+  top: 0;
+  transform: rotateZ(45deg);
+}
+
+.tc-header.is-open .tc-header__menu-handler span:after {
+  top: 0;
+  transform: rotateZ(-45deg);
+}
+
+.tc-header__menu {
+  position: relative;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.94118);
+  z-index: 9;
+  transition: transform .2s ease-in;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+  transform: translateY(-100%);
+  list-style: none;
+  margin: 0;
+}
+
+.tc-header__menu-item {
+  margin: 4px;
+}
+
+.tc-header a {
+  padding: 8px;
+  text-transform: uppercase;
+  display: block;
+  color: #4d7498;
+  border-radius: 2px;
+  font-size: .8em;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  transition: background-color .1s ease-in, 
+        color .1s ease-in;
+}
+
+.tc-header a:focus, .tc-header a:hover, .tc-header a.is-selected {
+  background-color: #4d7498;
+  color: rgba(255, 255, 255, 0.94118);
+}
+
+.tc-content {
+  width: 100%;
+  max-width: 1024px;
+  margin: 48px auto 0 auto;
+  padding: 16px;
+}
+
+.tc-content__upper-handler {
+}
+
+.tc-content__upper-handler {
+  transform: scale(0, 0);
+  opacity: 0;
+  transition: transform .15s ease-in, opacity .15s ease-in;
+  z-index: 8;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
+
+.tc-content__upper-handler button {
+  position: relative;
+  line-height: 28px;
+  padding: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #4d7498;
+  outline: none;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+  transition: box-shadow .2s ease-in;
+}
+
+.tc-content__upper-handler button:before {
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transition: opacity .2s ease-in;
+}
+
+.tc-content__upper-handler button svg {
+  fill: rgba(255, 255, 255, 0.94118);
+}
+
+.tc-content__upper-handler button:focus, .tc-content__upper-handler button:hover {
+}
+
+.tc-content__upper-handler button:focus:before, .tc-content__upper-handler button:hover:before {
+  opacity: 1;
+}
+
+.tc-content__upper-handler button:active {
+  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, .2), 0px 7px 10px 1px rgba(0, 0, 0, .14), 0px 2px 16px 1px rgba(0, 0, 0, .12);
+}
+
+.tc-list {
+  margin: 32px 0;
+}
+
+.tc-list:before {
+  display: block;
+  content: ' ';
+  margin-top: -64px;
+  height: 64px;
+  visibility: hidden;
+}
+
+.tc-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.tc-list li {
+  width: 33%;
+  padding: 4px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.tc-list h2 {
+  margin: 8px;
+  font-size: 1.2em;
+  color: #4d7498;
+  text-transform: uppercase;
+}
+
+.tc-glyph {
+  cursor: pointer;
+  max-width: 128px;
+  width: 100%;
+  height: 100%;
+  background: none;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 16px 8px;
+  border-radius: 2px;
+  color: #666666;
+  font-size: .75em;
+  line-height: 1.5em;
+}
+
+.tc-glyph:disabled {
+  color: rgba(102, 102, 102, 0.26);
+}
+
+.tc-glyph:not(:disabled) {
+}
+
+.tc-glyph:not(:disabled):hover, .tc-glyph:not(:disabled):focus {
+  background-color: rgba(153, 153, 153, 0.12157);
+}
+
+.tc-glyph:not(:disabled):active {
+  background-color: rgba(153, 153, 153, 0.24706);
+}
+
+.tc-glyph i {
+  margin-bottom: 8px;
+}
+
+.tc-glyph.is-selected {
+  color: #4d7498;
+}
+
+.tc-detail {
+}
+
+.tc-detail.is-open .tc-cloak {
+  z-index: 11;
+}
+
+.tc-detail__wrapper {
+  z-index: 12;
+  box-shadow: 0 6px 6px -3px rgba(0, 0, 0, .2),0 10px 14px 1px rgba(0, 0, 0, .14),0 4px 18px 3px rgba(0, 0, 0, .12);
+  max-width: 1024px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translateY(100%);
+  will-change: transform;
+  transition: transform .2s ease-in;
+  background: rgba(255, 255, 255, 0.94118);
+  border-radius: 2px 2px 0 0;
+  overflow: hidden;
+}
+
+.tc-detail__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  background-color: #4d7498;
+  color: rgba(255, 255, 255, 0.94118);
+}
+
+.tc-detail__title {
+  padding: 8px;
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.tc-detail__title .tc-icon {
+  font-size: 28px;
+  margin-right: 8px;
+}
+
+.tc-detail__close-handler button {
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  vertical-align: middle;
+  margin: 0;
+  background: none;
+  border: 0;
+  outline: none;
+  color: inherit;
+  border-radius: 50%;
+}
+
+.tc-detail__close-handler button:hover, .tc-detail__close-handler button:focus {
+  background: rgba(153, 153, 153, 0.12157);
+}
+
+.tc-detail__close-handler button:active {
+  background: rgba(153, 153, 153, 0.24706);
+}
+
+.tc-detail__content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding: 8px;
+  font-size: .8em;
+}
+
+.tc-detail__content h3 {
+  font-size: 1.1em;
+}
+
+.tc-detail__content h3, .tc-detail__content pre {
+  margin: 0.5em 0;
+}
+
+.tc-detail__content section {
+  -ms-flex: 1 1 50%;
+      flex: 1 1 50%;
+}
+
+.tc-detail.is-open .tc-detail__wrapper {
+  transform: none;
+}
+
+@media screen and (min-width:600px) {
+  .tc {
+  }
+  .tc-list {
+}
+  .tc-list li {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .tc {
+  }
+  .tc-header {
+}
+  .tc-header .tc-cloak {
+    display: none;
+  }
+  .tc-header__menu {
+    height: 48px;
+    transform: none;
+    box-shadow: none;
+    background: #ededed;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .tc-header__menu-item {
+    margin: 0 8px;
+  }
+  .tc-header__menu-item a {
+    padding: 4px 8px;
+    border-radius: 16px;
+    border: #4d7498 1px solid;
+  }
+  .tc-header__menu-handler {
+    display: none;
+  }
+  .tc-content {
+    margin-top: 96px;
+  }
+  .tc-list {
+}
+  .tc-list:before {
+    margin-top: -112px;
+    height: 112px;
+  }
+  .tc-list li {
+    width: 14.28571%;
+  }
+  .tc-detail {
+}
+  .tc-detail__title {
+    padding: 8px 32px;
+  }
+  .tc-detail__close-handler {
+    margin: 0 16px;
+  }
+  .tc-detail__content {
+    font-size: 1em;
+    padding: 16px 32px 24px 32px;
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+  .tc-detail__content section {
+    padding: 0 8px;
+  }
+}
+
+@media screen and (min-width:1280px) {
+  .tc {
+  }
+  .tc-list {
+}
+  .tc-list li {
+    width: 12.5%;
+  }
+}</style>
+  </head>
+  <body class="tc">
+    <header class="tc-header">
+      <div class="tc-cloak"></div>
+      <section class="tc-header__wrapper">
+        <section class="tc-header__content">
+          <button class="tc-header__menu-handler"><span></span></button>
+          <h1>mv-basico</h1>
+        </section>
+        <ul class="tc-header__menu">
+          <li class="tc-header__menu-item"><a href="#ação">ação</a></li>
+          <li class="tc-header__menu-item"><a href="#agenda">agenda</a></li>
+          <li class="tc-header__menu-item"><a href="#alerta">alerta</a></li>
+          <li class="tc-header__menu-item"><a href="#documento">documento</a></li>
+          <li class="tc-header__menu-item"><a href="#editor">editor</a></li>
+          <li class="tc-header__menu-item"><a href="#gestao">gestao</a></li>
+          <li class="tc-header__menu-item"><a href="#miscelânea">miscelânea</a></li>
+          <li class="tc-header__menu-item"><a href="#novos2.2">novos 2.2</a></li>
+          <li class="tc-header__menu-item"><a href="#pessoas">pessoas</a></li>
+          <li class="tc-header__menu-item"><a href="#setas">setas</a></li>
+          <li class="tc-header__menu-item"><a href="#sistemas">sistemas</a></li>
+        </ul>
+      </section>
+    </header>
+    <main class="tc-content">
+      <section class="tc-list" id="ação">
+        <h2>ação</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="abrir" data-class="mv-basico"><i class="mv-basico dp36">abrir</i>abrir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="adicionar" data-class="mv-basico"><i class="mv-basico dp36">adicionar</i>adicionar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="anexar" data-class="mv-basico"><i class="mv-basico dp36">anexar</i>anexar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="apagar" data-class="mv-basico"><i class="mv-basico dp36">apagar</i>apagar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="arquivar" data-class="mv-basico"><i class="mv-basico dp36">arquivar</i>arquivar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="arquivo_gerar" data-class="mv-basico"><i class="mv-basico dp36">arquivo_gerar</i>arquivo<wbr/>_<wbr/>gerar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="assinar" data-class="mv-basico"><i class="mv-basico dp36">assinar</i>assinar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="associar" data-class="mv-basico"><i class="mv-basico dp36">associar</i>associar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atualizar" data-class="mv-basico"><i class="mv-basico dp36">atualizar</i>atualizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="autorizar" data-class="mv-basico"><i class="mv-basico dp36">autorizar</i>autorizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="bloquear" data-class="mv-basico"><i class="mv-basico dp36">bloquear</i>bloquear</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cancelar" data-class="mv-basico"><i class="mv-basico dp36">cancelar</i>cancelar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="colar" data-class="mv-basico"><i class="mv-basico dp36">colar</i>colar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="comparar" data-class="mv-basico"><i class="mv-basico dp36">comparar</i>comparar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="configuracoes" data-class="mv-basico"><i class="mv-basico dp36">configuracoes</i>configuracoes</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="configurar_xml" data-class="mv-basico"><i class="mv-basico dp36">configurar_xml</i>configurar<wbr/>_<wbr/>xml</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="confirmar" data-class="mv-basico"><i class="mv-basico dp36">confirmar</i>confirmar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="consolidar" data-class="mv-basico"><i class="mv-basico dp36">consolidar</i>consolidar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="copiar" data-class="mv-basico"><i class="mv-basico dp36">copiar</i>copiar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="copiar_selecao" data-class="mv-basico"><i class="mv-basico dp36">copiar_selecao</i>copiar<wbr/>_<wbr/>selecao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="copiar_suspender" data-class="mv-basico"><i class="mv-basico dp36">copiar_suspender</i>copiar<wbr/>_<wbr/>suspender</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cortar" data-class="mv-basico"><i class="mv-basico dp36">cortar</i>cortar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="denunciar" data-class="mv-basico"><i class="mv-basico dp36">denunciar</i>denunciar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desarquivar" data-class="mv-basico"><i class="mv-basico dp36">desarquivar</i>desarquivar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desassociar" data-class="mv-basico"><i class="mv-basico dp36">desassociar</i>desassociar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desbloquear" data-class="mv-basico"><i class="mv-basico dp36">desbloquear</i>desbloquear</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desfazer" data-class="mv-basico"><i class="mv-basico dp36">desfazer</i>desfazer</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desmarcar" data-class="mv-basico"><i class="mv-basico dp36">desmarcar</i>desmarcar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desmarcar_todos" data-class="mv-basico"><i class="mv-basico dp36">desmarcar_todos</i>desmarcar<wbr/>_<wbr/>todos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="download" data-class="mv-basico"><i class="mv-basico dp36">download</i>download</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="editar" data-class="mv-basico"><i class="mv-basico dp36">editar</i>editar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="editar_lote" data-class="mv-basico"><i class="mv-basico dp36">editar_lote</i>editar<wbr/>_<wbr/>lote</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="excluir" data-class="mv-basico"><i class="mv-basico dp36">excluir</i>excluir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="excluir_todos" data-class="mv-basico"><i class="mv-basico dp36">excluir_todos</i>excluir<wbr/>_<wbr/>todos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exportar" data-class="mv-basico"><i class="mv-basico dp36">exportar</i>exportar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exportar_csv" data-class="mv-basico"><i class="mv-basico dp36">exportar_csv</i>exportar<wbr/>_<wbr/>csv</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exportar_excel" data-class="mv-basico"><i class="mv-basico dp36">exportar_excel</i>exportar<wbr/>_<wbr/>excel</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="fechar" data-class="mv-basico"><i class="mv-basico dp36">fechar</i>fechar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="finalizar_todos" data-class="mv-basico"><i class="mv-basico dp36">finalizar_todos</i>finalizar<wbr/>_<wbr/>todos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="fixar" data-class="mv-basico"><i class="mv-basico dp36">fixar</i>fixar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="foto" data-class="mv-basico"><i class="mv-basico dp36">foto</i>foto</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="gerar_importacao" data-class="mv-basico"><i class="mv-basico dp36">gerar_importacao</i>gerar<wbr/>_<wbr/>importacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="importar" data-class="mv-basico"><i class="mv-basico dp36">importar</i>importar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="imprimir" data-class="mv-basico"><i class="mv-basico dp36">imprimir</i>imprimir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="imprimir_fechar" data-class="mv-basico"><i class="mv-basico dp36">imprimir_fechar</i>imprimir<wbr/>_<wbr/>fechar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="iniciar" data-class="mv-basico"><i class="mv-basico dp36">iniciar</i>iniciar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="janela_maximizar" data-class="mv-basico"><i class="mv-basico dp36">janela_maximizar</i>janela<wbr/>_<wbr/>maximizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="janela_minimizar" data-class="mv-basico"><i class="mv-basico dp36">janela_minimizar</i>janela<wbr/>_<wbr/>minimizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="janela_restaurar" data-class="mv-basico"><i class="mv-basico dp36">janela_restaurar</i>janela<wbr/>_<wbr/>restaurar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="lancar" data-class="mv-basico"><i class="mv-basico dp36">lancar</i>lancar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="liberar_item" data-class="mv-basico"><i class="mv-basico dp36">liberar_item</i>liberar<wbr/>_<wbr/>item</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="ligar_desligar" data-class="mv-basico"><i class="mv-basico dp36">ligar_desligar</i>ligar<wbr/>_<wbr/>desligar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="link" data-class="mv-basico"><i class="mv-basico dp36">link</i>link</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="marcar" data-class="mv-basico"><i class="mv-basico dp36">marcar</i>marcar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="negar" data-class="mv-basico"><i class="mv-basico dp36">negar</i>negar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="novo" data-class="mv-basico"><i class="mv-basico dp36">novo</i>novo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pausar" data-class="mv-basico"><i class="mv-basico dp36">pausar</i>pausar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pesquisar" data-class="mv-basico"><i class="mv-basico dp36">pesquisar</i>pesquisar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="preferencias" data-class="mv-basico"><i class="mv-basico dp36">preferencias</i>preferencias</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="publicar" data-class="mv-basico"><i class="mv-basico dp36">publicar</i>publicar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="quebrar_link" data-class="mv-basico"><i class="mv-basico dp36">quebrar_link</i>quebrar<wbr/>_<wbr/>link</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="reabrir" data-class="mv-basico"><i class="mv-basico dp36">reabrir</i>reabrir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="refazer" data-class="mv-basico"><i class="mv-basico dp36">refazer</i>refazer</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="remover" data-class="mv-basico"><i class="mv-basico dp36">remover</i>remover</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="restaurar" data-class="mv-basico"><i class="mv-basico dp36">restaurar</i>restaurar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="retornar_situacao" data-class="mv-basico"><i class="mv-basico dp36">retornar_situacao</i>retornar<wbr/>_<wbr/>situacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sair" data-class="mv-basico"><i class="mv-basico dp36">sair</i>sair</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="salvar" data-class="mv-basico"><i class="mv-basico dp36">salvar</i>salvar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="salvar_avaliar" data-class="mv-basico"><i class="mv-basico dp36">salvar_avaliar</i>salvar<wbr/>_<wbr/>avaliar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="salvar_avancar" data-class="mv-basico"><i class="mv-basico dp36">salvar_avancar</i>salvar<wbr/>_<wbr/>avancar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="salvar_como" data-class="mv-basico"><i class="mv-basico dp36">salvar_como</i>salvar<wbr/>_<wbr/>como</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="salvar_padrao" data-class="mv-basico"><i class="mv-basico dp36">salvar_padrao</i>salvar<wbr/>_<wbr/>padrao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="selecionar_todos" data-class="mv-basico"><i class="mv-basico dp36">selecionar_todos</i>selecionar<wbr/>_<wbr/>todos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sincronizar" data-class="mv-basico"><i class="mv-basico dp36">sincronizar</i>sincronizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sincronizar_alerta" data-class="mv-basico"><i class="mv-basico dp36">sincronizar_alerta</i>sincronizar<wbr/>_<wbr/>alerta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tela_cheia" data-class="mv-basico"><i class="mv-basico dp36">tela_cheia</i>tela<wbr/>_<wbr/>cheia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="terminar" data-class="mv-basico"><i class="mv-basico dp36">terminar</i>terminar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tiss" data-class="mv-basico"><i class="mv-basico dp36">tiss</i>tiss</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="traduzir" data-class="mv-basico"><i class="mv-basico dp36">traduzir</i>traduzir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="trocar" data-class="mv-basico"><i class="mv-basico dp36">trocar</i>trocar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="upload" data-class="mv-basico"><i class="mv-basico dp36">upload</i>upload</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="validar" data-class="mv-basico"><i class="mv-basico dp36">validar</i>validar</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="agenda">
+        <h2>agenda</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="adicionar_horario" data-class="mv-basico"><i class="mv-basico dp36">adicionar_horario</i>adicionar<wbr/>_<wbr/>horario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda" data-class="mv-basico"><i class="mv-basico dp36">agenda</i>agenda</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda_abrir" data-class="mv-basico"><i class="mv-basico dp36">agenda_abrir</i>agenda<wbr/>_<wbr/>abrir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda_buscar" data-class="mv-basico"><i class="mv-basico dp36">agenda_buscar</i>agenda<wbr/>_<wbr/>buscar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda_cancelar" data-class="mv-basico"><i class="mv-basico dp36">agenda_cancelar</i>agenda<wbr/>_<wbr/>cancelar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda_confirmar" data-class="mv-basico"><i class="mv-basico dp36">agenda_confirmar</i>agenda<wbr/>_<wbr/>confirmar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda_imprimir" data-class="mv-basico"><i class="mv-basico dp36">agenda_imprimir</i>agenda<wbr/>_<wbr/>imprimir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda_liberar" data-class="mv-basico"><i class="mv-basico dp36">agenda_liberar</i>agenda<wbr/>_<wbr/>liberar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda_prosseguir" data-class="mv-basico"><i class="mv-basico dp36">agenda_prosseguir</i>agenda<wbr/>_<wbr/>prosseguir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agenda_rejeitar" data-class="mv-basico"><i class="mv-basico dp36">agenda_rejeitar</i>agenda<wbr/>_<wbr/>rejeitar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="calendario" data-class="mv-basico"><i class="mv-basico dp36">calendario</i>calendario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="data_hora" data-class="mv-basico"><i class="mv-basico dp36">data_hora</i>data<wbr/>_<wbr/>hora</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="relogio" data-class="mv-basico"><i class="mv-basico dp36">relogio</i>relogio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="vigencia_fechar" data-class="mv-basico"><i class="mv-basico dp36">vigencia_fechar</i>vigencia<wbr/>_<wbr/>fechar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="vigencia_manter" data-class="mv-basico"><i class="mv-basico dp36">vigencia_manter</i>vigencia<wbr/>_<wbr/>manter</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="alerta">
+        <h2>alerta</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="ajuda" data-class="mv-basico"><i class="mv-basico dp36">ajuda</i>ajuda</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alerta" data-class="mv-basico"><i class="mv-basico dp36">alerta</i>alerta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alerta_usuario" data-class="mv-basico"><i class="mv-basico dp36">alerta_usuario</i>alerta<wbr/>_<wbr/>usuario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aviso" data-class="mv-basico"><i class="mv-basico dp36">aviso</i>aviso</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aviso_visualizar" data-class="mv-basico"><i class="mv-basico dp36">aviso_visualizar</i>aviso<wbr/>_<wbr/>visualizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="erro" data-class="mv-basico"><i class="mv-basico dp36">erro</i>erro</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="nivel_atencao" data-class="mv-basico"><i class="mv-basico dp36">nivel_atencao</i>nivel<wbr/>_<wbr/>atencao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="notificacao" data-class="mv-basico"><i class="mv-basico dp36">notificacao</i>notificacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="notificacao_email" data-class="mv-basico"><i class="mv-basico dp36">notificacao_email</i>notificacao<wbr/>_<wbr/>email</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="documento">
+        <h2>documento</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="atividades" data-class="mv-basico"><i class="mv-basico dp36">atividades</i>atividades</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="autorizar_cota" data-class="mv-basico"><i class="mv-basico dp36">autorizar_cota</i>autorizar<wbr/>_<wbr/>cota</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="buscar_cadastro_geral" data-class="mv-basico"><i class="mv-basico dp36">buscar_cadastro_geral</i>buscar<wbr/>_<wbr/>cadastro<wbr/>_<wbr/>geral</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cadastro" data-class="mv-basico"><i class="mv-basico dp36">cadastro</i>cadastro</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="certificado_digital" data-class="mv-basico"><i class="mv-basico dp36">certificado_digital</i>certificado<wbr/>_<wbr/>digital</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="certificado_digital_pendente" data-class="mv-basico"><i class="mv-basico dp36">certificado_digital_pendente</i>certificado<wbr/>_<wbr/>digital<wbr/>_<wbr/>pendente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dados_cronologicos" data-class="mv-basico"><i class="mv-basico dp36">dados_cronologicos</i>dados<wbr/>_<wbr/>cronologicos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dados_demograficos" data-class="mv-basico"><i class="mv-basico dp36">dados_demograficos</i>dados<wbr/>_<wbr/>demograficos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dados_solicitacao" data-class="mv-basico"><i class="mv-basico dp36">dados_solicitacao</i>dados<wbr/>_<wbr/>solicitacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="documento" data-class="mv-basico"><i class="mv-basico dp36">documento</i>documento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="documento_configurar" data-class="mv-basico"><i class="mv-basico dp36">documento_configurar</i>documento<wbr/>_<wbr/>configurar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="documento_eletronico" data-class="mv-basico"><i class="mv-basico dp36">documento_eletronico</i>documento<wbr/>_<wbr/>eletronico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="documento_eletronico_copiado" data-class="mv-basico"><i class="mv-basico dp36">documento_eletronico_copiado</i>documento<wbr/>_<wbr/>eletronico<wbr/>_<wbr/>copiado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="documento_eletronico_fechado" data-class="mv-basico"><i class="mv-basico dp36">documento_eletronico_fechado</i>documento<wbr/>_<wbr/>eletronico<wbr/>_<wbr/>fechado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="documento_favorito" data-class="mv-basico"><i class="mv-basico dp36">documento_favorito</i>documento<wbr/>_<wbr/>favorito</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="documento_grupo" data-class="mv-basico"><i class="mv-basico dp36">documento_grupo</i>documento<wbr/>_<wbr/>grupo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="documento_nova_versao" data-class="mv-basico"><i class="mv-basico dp36">documento_nova_versao</i>documento<wbr/>_<wbr/>nova<wbr/>_<wbr/>versao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="galeria" data-class="mv-basico"><i class="mv-basico dp36">galeria</i>galeria</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="imagem" data-class="mv-basico"><i class="mv-basico dp36">imagem</i>imagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="mapa" data-class="mv-basico"><i class="mv-basico dp36">mapa</i>mapa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="mensagem" data-class="mv-basico"><i class="mv-basico dp36">mensagem</i>mensagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="mostar_pastas" data-class="mv-basico"><i class="mv-basico dp36">mostar_pastas</i>mostar<wbr/>_<wbr/>pastas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pdf" data-class="mv-basico"><i class="mv-basico dp36">pdf</i>pdf</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pendencia" data-class="mv-basico"><i class="mv-basico dp36">pendencia</i>pendencia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pendencia_nenhuma" data-class="mv-basico"><i class="mv-basico dp36">pendencia_nenhuma</i>pendencia<wbr/>_<wbr/>nenhuma</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="protocolo" data-class="mv-basico"><i class="mv-basico dp36">protocolo</i>protocolo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="resumo" data-class="mv-basico"><i class="mv-basico dp36">resumo</i>resumo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="resumo_online" data-class="mv-basico"><i class="mv-basico dp36">resumo_online</i>resumo<wbr/>_<wbr/>online</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="retorno_solicitacao" data-class="mv-basico"><i class="mv-basico dp36">retorno_solicitacao</i>retorno<wbr/>_<wbr/>solicitacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="saidas" data-class="mv-basico"><i class="mv-basico dp36">saidas</i>saidas</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="editor">
+        <h2>editor</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="accordion" data-class="mv-basico"><i class="mv-basico dp36">accordion</i>accordion</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="agrupar" data-class="mv-basico"><i class="mv-basico dp36">agrupar</i>agrupar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alinhar_base" data-class="mv-basico"><i class="mv-basico dp36">alinhar_base</i>alinhar<wbr/>_<wbr/>base</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alinhar_direita" data-class="mv-basico"><i class="mv-basico dp36">alinhar_direita</i>alinhar<wbr/>_<wbr/>direita</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alinhar_esquerda" data-class="mv-basico"><i class="mv-basico dp36">alinhar_esquerda</i>alinhar<wbr/>_<wbr/>esquerda</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alinhar_horizontal" data-class="mv-basico"><i class="mv-basico dp36">alinhar_horizontal</i>alinhar<wbr/>_<wbr/>horizontal</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alinhar_topo" data-class="mv-basico"><i class="mv-basico dp36">alinhar_topo</i>alinhar<wbr/>_<wbr/>topo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alinhar_vertical" data-class="mv-basico"><i class="mv-basico dp36">alinhar_vertical</i>alinhar<wbr/>_<wbr/>vertical</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atributo" data-class="mv-basico"><i class="mv-basico dp36">atributo</i>atributo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atributo_fx" data-class="mv-basico"><i class="mv-basico dp36">atributo_fx</i>atributo<wbr/>_<wbr/>fx</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atributo_hierarquico" data-class="mv-basico"><i class="mv-basico dp36">atributo_hierarquico</i>atributo<wbr/>_<wbr/>hierarquico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="avancar" data-class="mv-basico"><i class="mv-basico dp36">avancar</i>avancar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_baixo" data-class="mv-basico"><i class="mv-basico dp36">borda_baixo</i>borda<wbr/>_<wbr/>baixo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_cima" data-class="mv-basico"><i class="mv-basico dp36">borda_cima</i>borda<wbr/>_<wbr/>cima</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_direita" data-class="mv-basico"><i class="mv-basico dp36">borda_direita</i>borda<wbr/>_<wbr/>direita</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_esquerda" data-class="mv-basico"><i class="mv-basico dp36">borda_esquerda</i>borda<wbr/>_<wbr/>esquerda</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_externa" data-class="mv-basico"><i class="mv-basico dp36">borda_externa</i>borda<wbr/>_<wbr/>externa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_horizontal" data-class="mv-basico"><i class="mv-basico dp36">borda_horizontal</i>borda<wbr/>_<wbr/>horizontal</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_interna" data-class="mv-basico"><i class="mv-basico dp36">borda_interna</i>borda<wbr/>_<wbr/>interna</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_nenhuma" data-class="mv-basico"><i class="mv-basico dp36">borda_nenhuma</i>borda<wbr/>_<wbr/>nenhuma</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_todas" data-class="mv-basico"><i class="mv-basico dp36">borda_todas</i>borda<wbr/>_<wbr/>todas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="borda_vertical" data-class="mv-basico"><i class="mv-basico dp36">borda_vertical</i>borda<wbr/>_<wbr/>vertical</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cabecalho" data-class="mv-basico"><i class="mv-basico dp36">cabecalho</i>cabecalho</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="calculo" data-class="mv-basico"><i class="mv-basico dp36">calculo</i>calculo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="circulo" data-class="mv-basico"><i class="mv-basico dp36">circulo</i>circulo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="classificacao" data-class="mv-basico"><i class="mv-basico dp36">classificacao</i>classificacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="comentario" data-class="mv-basico"><i class="mv-basico dp36">comentario</i>comentario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cor_borda" data-class="mv-basico"><i class="mv-basico dp36">cor_borda</i>cor<wbr/>_<wbr/>borda</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cor_escolha" data-class="mv-basico"><i class="mv-basico dp36">cor_escolha</i>cor<wbr/>_<wbr/>escolha</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cor_fundo" data-class="mv-basico"><i class="mv-basico dp36">cor_fundo</i>cor<wbr/>_<wbr/>fundo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cor_texto" data-class="mv-basico"><i class="mv-basico dp36">cor_texto</i>cor<wbr/>_<wbr/>texto</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="data_formato" data-class="mv-basico"><i class="mv-basico dp36">data_formato</i>data<wbr/>_<wbr/>formato</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desagrupar" data-class="mv-basico"><i class="mv-basico dp36">desagrupar</i>desagrupar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dicionario" data-class="mv-basico"><i class="mv-basico dp36">dicionario</i>dicionario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="distribuir_base" data-class="mv-basico"><i class="mv-basico dp36">distribuir_base</i>distribuir<wbr/>_<wbr/>base</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="distribuir_direita" data-class="mv-basico"><i class="mv-basico dp36">distribuir_direita</i>distribuir<wbr/>_<wbr/>direita</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="distribuir_esquerda" data-class="mv-basico"><i class="mv-basico dp36">distribuir_esquerda</i>distribuir<wbr/>_<wbr/>esquerda</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="distribuir_horizontal" data-class="mv-basico"><i class="mv-basico dp36">distribuir_horizontal</i>distribuir<wbr/>_<wbr/>horizontal</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="distribuir_topo" data-class="mv-basico"><i class="mv-basico dp36">distribuir_topo</i>distribuir<wbr/>_<wbr/>topo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="distribuir_vertical" data-class="mv-basico"><i class="mv-basico dp36">distribuir_vertical</i>distribuir<wbr/>_<wbr/>vertical</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="enviar_tras" data-class="mv-basico"><i class="mv-basico dp36">enviar_tras</i>enviar<wbr/>_<wbr/>tras</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="espelho_documento" data-class="mv-basico"><i class="mv-basico dp36">espelho_documento</i>espelho<wbr/>_<wbr/>documento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="espessura" data-class="mv-basico"><i class="mv-basico dp36">espessura</i>espessura</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="favorito" data-class="mv-basico"><i class="mv-basico dp36">favorito</i>favorito</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="favorito_adicionar" data-class="mv-basico"><i class="mv-basico dp36">favorito_adicionar</i>favorito<wbr/>_<wbr/>adicionar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="formato_decimal" data-class="mv-basico"><i class="mv-basico dp36">formato_decimal</i>formato<wbr/>_<wbr/>decimal</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="formato_indefinido" data-class="mv-basico"><i class="mv-basico dp36">formato_indefinido</i>formato<wbr/>_<wbr/>indefinido</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="formato_numerico" data-class="mv-basico"><i class="mv-basico dp36">formato_numerico</i>formato<wbr/>_<wbr/>numerico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="formula" data-class="mv-basico"><i class="mv-basico dp36">formula</i>formula</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="grafico" data-class="mv-basico"><i class="mv-basico dp36">grafico</i>grafico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="grid_off" data-class="mv-basico"><i class="mv-basico dp36">grid_off</i>grid<wbr/>_<wbr/>off</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="grid_on" data-class="mv-basico"><i class="mv-basico dp36">grid_on</i>grid<wbr/>_<wbr/>on</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="grupo" data-class="mv-basico"><i class="mv-basico dp36">grupo</i>grupo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="horizontal" data-class="mv-basico"><i class="mv-basico dp36">horizontal</i>horizontal</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="italico" data-class="mv-basico"><i class="mv-basico dp36">italico</i>italico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="layout_novo" data-class="mv-basico"><i class="mv-basico dp36">layout_novo</i>layout<wbr/>_<wbr/>novo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="limpar_tabela" data-class="mv-basico"><i class="mv-basico dp36">limpar_tabela</i>limpar<wbr/>_<wbr/>tabela</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="linha_horizontal" data-class="mv-basico"><i class="mv-basico dp36">linha_horizontal</i>linha<wbr/>_<wbr/>horizontal</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="linha_inclinada" data-class="mv-basico"><i class="mv-basico dp36">linha_inclinada</i>linha<wbr/>_<wbr/>inclinada</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="linha_vertical" data-class="mv-basico"><i class="mv-basico dp36">linha_vertical</i>linha<wbr/>_<wbr/>vertical</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="lista" data-class="mv-basico"><i class="mv-basico dp36">lista</i>lista</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="lista_num" data-class="mv-basico"><i class="mv-basico dp36">lista_num</i>lista<wbr/>_<wbr/>num</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="maior_que" data-class="mv-basico"><i class="mv-basico dp36">maior_que</i>maior<wbr/>_<wbr/>que</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="maior_que_igual" data-class="mv-basico"><i class="mv-basico dp36">maior_que_igual</i>maior<wbr/>_<wbr/>que<wbr/>_<wbr/>igual</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="menor_que" data-class="mv-basico"><i class="mv-basico dp36">menor_que</i>menor<wbr/>_<wbr/>que</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="menor_que_igual" data-class="mv-basico"><i class="mv-basico dp36">menor_que_igual</i>menor<wbr/>_<wbr/>que<wbr/>_<wbr/>igual</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="negrito" data-class="mv-basico"><i class="mv-basico dp36">negrito</i>negrito</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="nota" data-class="mv-basico"><i class="mv-basico dp36">nota</i>nota</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="nova_pasta" data-class="mv-basico"><i class="mv-basico dp36">nova_pasta</i>nova<wbr/>_<wbr/>pasta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="ordenar_alfabetica" data-class="mv-basico"><i class="mv-basico dp36">ordenar_alfabetica</i>ordenar<wbr/>_<wbr/>alfabetica</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="ordenar_alfabetica_inversa" data-class="mv-basico"><i class="mv-basico dp36">ordenar_alfabetica_inversa</i>ordenar<wbr/>_<wbr/>alfabetica<wbr/>_<wbr/>inversa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="ordenar_campos" data-class="mv-basico"><i class="mv-basico dp36">ordenar_campos</i>ordenar<wbr/>_<wbr/>campos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="organograma" data-class="mv-basico"><i class="mv-basico dp36">organograma</i>organograma</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pan" data-class="mv-basico"><i class="mv-basico dp36">pan</i>pan</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pasta_aberta" data-class="mv-basico"><i class="mv-basico dp36">pasta_aberta</i>pasta<wbr/>_<wbr/>aberta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="quebra_pagina" data-class="mv-basico"><i class="mv-basico dp36">quebra_pagina</i>quebra<wbr/>_<wbr/>pagina</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="recuar" data-class="mv-basico"><i class="mv-basico dp36">recuar</i>recuar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="retangulo" data-class="mv-basico"><i class="mv-basico dp36">retangulo</i>retangulo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="rodape" data-class="mv-basico"><i class="mv-basico dp36">rodape</i>rodape</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sinal_diferente" data-class="mv-basico"><i class="mv-basico dp36">sinal_diferente</i>sinal<wbr/>_<wbr/>diferente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sinal_dividir" data-class="mv-basico"><i class="mv-basico dp36">sinal_dividir</i>sinal<wbr/>_<wbr/>dividir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sinal_igual" data-class="mv-basico"><i class="mv-basico dp36">sinal_igual</i>sinal<wbr/>_<wbr/>igual</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sinal_menos" data-class="mv-basico"><i class="mv-basico dp36">sinal_menos</i>sinal<wbr/>_<wbr/>menos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sinal_porcento" data-class="mv-basico"><i class="mv-basico dp36">sinal_porcento</i>sinal<wbr/>_<wbr/>porcento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sublinhado" data-class="mv-basico"><i class="mv-basico dp36">sublinhado</i>sublinhado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tabela" data-class="mv-basico"><i class="mv-basico dp36">tabela</i>tabela</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tag" data-class="mv-basico"><i class="mv-basico dp36">tag</i>tag</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="texto_centralizado" data-class="mv-basico"><i class="mv-basico dp36">texto_centralizado</i>texto<wbr/>_<wbr/>centralizado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="texto_direita" data-class="mv-basico"><i class="mv-basico dp36">texto_direita</i>texto<wbr/>_<wbr/>direita</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="texto_esquerda" data-class="mv-basico"><i class="mv-basico dp36">texto_esquerda</i>texto<wbr/>_<wbr/>esquerda</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="texto_justificado" data-class="mv-basico"><i class="mv-basico dp36">texto_justificado</i>texto<wbr/>_<wbr/>justificado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="texto_padrao" data-class="mv-basico"><i class="mv-basico dp36">texto_padrao</i>texto<wbr/>_<wbr/>padrao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="trazer_frente" data-class="mv-basico"><i class="mv-basico dp36">trazer_frente</i>trazer<wbr/>_<wbr/>frente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="vertical" data-class="mv-basico"><i class="mv-basico dp36">vertical</i>vertical</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="visualizacao_tile" data-class="mv-basico"><i class="mv-basico dp36">visualizacao_tile</i>visualizacao<wbr/>_<wbr/>tile</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="zoom_in" data-class="mv-basico"><i class="mv-basico dp36">zoom_in</i>zoom<wbr/>_<wbr/>in</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="zoom_out" data-class="mv-basico"><i class="mv-basico dp36">zoom_out</i>zoom<wbr/>_<wbr/>out</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="gestao">
+        <h2>gestao</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="administracao" data-class="mv-basico"><i class="mv-basico dp36">administracao</i>administracao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alimento" data-class="mv-basico"><i class="mv-basico dp36">alimento</i>alimento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="auditar" data-class="mv-basico"><i class="mv-basico dp36">auditar</i>auditar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="auditar_relatorio" data-class="mv-basico"><i class="mv-basico dp36">auditar_relatorio</i>auditar<wbr/>_<wbr/>relatorio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="auditoria_aberta" data-class="mv-basico"><i class="mv-basico dp36">auditoria_aberta</i>auditoria<wbr/>_<wbr/>aberta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="auditoria_abrir" data-class="mv-basico"><i class="mv-basico dp36">auditoria_abrir</i>auditoria<wbr/>_<wbr/>abrir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="auditoria_cancelar" data-class="mv-basico"><i class="mv-basico dp36">auditoria_cancelar</i>auditoria<wbr/>_<wbr/>cancelar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="auditoria_concluir" data-class="mv-basico"><i class="mv-basico dp36">auditoria_concluir</i>auditoria<wbr/>_<wbr/>concluir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="auditoria_fechar" data-class="mv-basico"><i class="mv-basico dp36">auditoria_fechar</i>auditoria<wbr/>_<wbr/>fechar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="balanca" data-class="mv-basico"><i class="mv-basico dp36">balanca</i>balanca</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="banco" data-class="mv-basico"><i class="mv-basico dp36">banco</i>banco</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="caixa_registradora" data-class="mv-basico"><i class="mv-basico dp36">caixa_registradora</i>caixa<wbr/>_<wbr/>registradora</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cheque" data-class="mv-basico"><i class="mv-basico dp36">cheque</i>cheque</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="contas_pagar" data-class="mv-basico"><i class="mv-basico dp36">contas_pagar</i>contas<wbr/>_<wbr/>pagar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="contas_receber" data-class="mv-basico"><i class="mv-basico dp36">contas_receber</i>contas<wbr/>_<wbr/>receber</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="controladoria" data-class="mv-basico"><i class="mv-basico dp36">controladoria</i>controladoria</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dados_viagem" data-class="mv-basico"><i class="mv-basico dp36">dados_viagem</i>dados<wbr/>_<wbr/>viagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="em_juizo" data-class="mv-basico"><i class="mv-basico dp36">em_juizo</i>em<wbr/>_<wbr/>juizo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="estoque" data-class="mv-basico"><i class="mv-basico dp36">estoque</i>estoque</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="estrategia" data-class="mv-basico"><i class="mv-basico dp36">estrategia</i>estrategia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="faturamento" data-class="mv-basico"><i class="mv-basico dp36">faturamento</i>faturamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="faturamento_sus" data-class="mv-basico"><i class="mv-basico dp36">faturamento_sus</i>faturamento<wbr/>_<wbr/>sus</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="gerenciador_cotas" data-class="mv-basico"><i class="mv-basico dp36">gerenciador_cotas</i>gerenciador<wbr/>_<wbr/>cotas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="gerenciamento_unidade" data-class="mv-basico"><i class="mv-basico dp36">gerenciamento_unidade</i>gerenciamento<wbr/>_<wbr/>unidade</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="historico_analise" data-class="mv-basico"><i class="mv-basico dp36">historico_analise</i>historico<wbr/>_<wbr/>analise</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="historico_negativo_geral" data-class="mv-basico"><i class="mv-basico dp36">historico_negativo_geral</i>historico<wbr/>_<wbr/>negativo<wbr/>_<wbr/>geral</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="historico_usuario" data-class="mv-basico"><i class="mv-basico dp36">historico_usuario</i>historico<wbr/>_<wbr/>usuario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="logistica" data-class="mv-basico"><i class="mv-basico dp36">logistica</i>logistica</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="multiempresa" data-class="mv-basico"><i class="mv-basico dp36">multiempresa</i>multiempresa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="negocio" data-class="mv-basico"><i class="mv-basico dp36">negocio</i>negocio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="orcamento" data-class="mv-basico"><i class="mv-basico dp36">orcamento</i>orcamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pagamento" data-class="mv-basico"><i class="mv-basico dp36">pagamento</i>pagamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="passar_cartao" data-class="mv-basico"><i class="mv-basico dp36">passar_cartao</i>passar<wbr/>_<wbr/>cartao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="perfil_faturamento" data-class="mv-basico"><i class="mv-basico dp36">perfil_faturamento</i>perfil<wbr/>_<wbr/>faturamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="politicas" data-class="mv-basico"><i class="mv-basico dp36">politicas</i>politicas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="portaria" data-class="mv-basico"><i class="mv-basico dp36">portaria</i>portaria</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="predio" data-class="mv-basico"><i class="mv-basico dp36">predio</i>predio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="publico_cobertura" data-class="mv-basico"><i class="mv-basico dp36">publico_cobertura</i>publico<wbr/>_<wbr/>cobertura</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="publico_importar" data-class="mv-basico"><i class="mv-basico dp36">publico_importar</i>publico<wbr/>_<wbr/>importar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="qualidade" data-class="mv-basico"><i class="mv-basico dp36">qualidade</i>qualidade</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="recepcao" data-class="mv-basico"><i class="mv-basico dp36">recepcao</i>recepcao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="setor" data-class="mv-basico"><i class="mv-basico dp36">setor</i>setor</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="transporte" data-class="mv-basico"><i class="mv-basico dp36">transporte</i>transporte</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="viagem_despesas" data-class="mv-basico"><i class="mv-basico dp36">viagem_despesas</i>viagem<wbr/>_<wbr/>despesas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="viagem_historico" data-class="mv-basico"><i class="mv-basico dp36">viagem_historico</i>viagem<wbr/>_<wbr/>historico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="visualizar" data-class="mv-basico"><i class="mv-basico dp36">visualizar</i>visualizar</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="miscelânea">
+        <h2>miscelânea</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="animais" data-class="mv-basico"><i class="mv-basico dp36">animais</i>animais</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="bussola" data-class="mv-basico"><i class="mv-basico dp36">bussola</i>bussola</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="camisa" data-class="mv-basico"><i class="mv-basico dp36">camisa</i>camisa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="casa" data-class="mv-basico"><i class="mv-basico dp36">casa</i>casa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="chamada_lista" data-class="mv-basico"><i class="mv-basico dp36">chamada_lista</i>chamada<wbr/>_<wbr/>lista</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="chamada_realizada" data-class="mv-basico"><i class="mv-basico dp36">chamada_realizada</i>chamada<wbr/>_<wbr/>realizada</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="chave" data-class="mv-basico"><i class="mv-basico dp36">chave</i>chave</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="codigo_barras" data-class="mv-basico"><i class="mv-basico dp36">codigo_barras</i>codigo<wbr/>_<wbr/>barras</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="compras_web" data-class="mv-basico"><i class="mv-basico dp36">compras_web</i>compras<wbr/>_<wbr/>web</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="comunicacao_ativa" data-class="mv-basico"><i class="mv-basico dp36">comunicacao_ativa</i>comunicacao<wbr/>_<wbr/>ativa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="comunicacao_ativa_sigas" data-class="mv-basico"><i class="mv-basico dp36">comunicacao_ativa_sigas</i>comunicacao<wbr/>_<wbr/>ativa<wbr/>_<wbr/>sigas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="conectividade" data-class="mv-basico"><i class="mv-basico dp36">conectividade</i>conectividade</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cracha" data-class="mv-basico"><i class="mv-basico dp36">cracha</i>cracha</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="curva_crescimento" data-class="mv-basico"><i class="mv-basico dp36">curva_crescimento</i>curva<wbr/>_<wbr/>crescimento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="faq" data-class="mv-basico"><i class="mv-basico dp36">faq</i>faq</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="filiacao" data-class="mv-basico"><i class="mv-basico dp36">filiacao</i>filiacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="global" data-class="mv-basico"><i class="mv-basico dp36">global</i>global</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="interrogacao" data-class="mv-basico"><i class="mv-basico dp36">interrogacao</i>interrogacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="localizacao" data-class="mv-basico"><i class="mv-basico dp36">localizacao</i>localizacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="nuvem" data-class="mv-basico"><i class="mv-basico dp36">nuvem</i>nuvem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pedido_defeito" data-class="mv-basico"><i class="mv-basico dp36">pedido_defeito</i>pedido<wbr/>_<wbr/>defeito</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pedido_suporte" data-class="mv-basico"><i class="mv-basico dp36">pedido_suporte</i>pedido<wbr/>_<wbr/>suporte</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pedidos" data-class="mv-basico"><i class="mv-basico dp36">pedidos</i>pedidos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="rejeicao_motivo" data-class="mv-basico"><i class="mv-basico dp36">rejeicao_motivo</i>rejeicao<wbr/>_<wbr/>motivo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="rotas" data-class="mv-basico"><i class="mv-basico dp36">rotas</i>rotas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="telefone" data-class="mv-basico"><i class="mv-basico dp36">telefone</i>telefone</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="teste_requisicao" data-class="mv-basico"><i class="mv-basico dp36">teste_requisicao</i>teste<wbr/>_<wbr/>requisicao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="timeline" data-class="mv-basico"><i class="mv-basico dp36">timeline</i>timeline</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tipo" data-class="mv-basico"><i class="mv-basico dp36">tipo</i>tipo</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="novos2.2">
+        <h2>novos 2.2</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="confirmar_tudo" data-class="mv-basico"><i class="mv-basico dp36">confirmar_tudo</i>confirmar<wbr/>_<wbr/>tudo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cursor" data-class="mv-basico"><i class="mv-basico dp36">cursor</i>cursor</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="escala" data-class="mv-basico"><i class="mv-basico dp36">escala</i>escala</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="filtro" data-class="mv-basico"><i class="mv-basico dp36">filtro</i>filtro</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="filtro_alterar" data-class="mv-basico"><i class="mv-basico dp36">filtro_alterar</i>filtro<wbr/>_<wbr/>alterar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="filtro_dinamico" data-class="mv-basico"><i class="mv-basico dp36">filtro_dinamico</i>filtro<wbr/>_<wbr/>dinamico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="filtro_limpar" data-class="mv-basico"><i class="mv-basico dp36">filtro_limpar</i>filtro<wbr/>_<wbr/>limpar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="hashtag" data-class="mv-basico"><i class="mv-basico dp36">hashtag</i>hashtag</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="imprimir_escala" data-class="mv-basico"><i class="mv-basico dp36">imprimir_escala</i>imprimir<wbr/>_<wbr/>escala</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="reservado" data-class="mv-basico"><i class="mv-basico dp36">reservado</i>reservado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="solicitar" data-class="mv-basico"><i class="mv-basico dp36">solicitar</i>solicitar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="usuario_atender" data-class="mv-basico"><i class="mv-basico dp36">usuario_atender</i>usuario<wbr/>_<wbr/>atender</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="usuario_finalizar" data-class="mv-basico"><i class="mv-basico dp36">usuario_finalizar</i>usuario<wbr/>_<wbr/>finalizar</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="pessoas">
+        <h2>pessoas</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="cidadao_cadastrar" data-class="mv-basico"><i class="mv-basico dp36">cidadao_cadastrar</i>cidadao<wbr/>_<wbr/>cadastrar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cidadao_remover" data-class="mv-basico"><i class="mv-basico dp36">cidadao_remover</i>cidadao<wbr/>_<wbr/>remover</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cidadao_visualizar" data-class="mv-basico"><i class="mv-basico dp36">cidadao_visualizar</i>cidadao<wbr/>_<wbr/>visualizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="equipe" data-class="mv-basico"><i class="mv-basico dp36">equipe</i>equipe</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="gestante" data-class="mv-basico"><i class="mv-basico dp36">gestante</i>gestante</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="identidade" data-class="mv-basico"><i class="mv-basico dp36">identidade</i>identidade</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="idoso" data-class="mv-basico"><i class="mv-basico dp36">idoso</i>idoso</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="mulher" data-class="mv-basico"><i class="mv-basico dp36">mulher</i>mulher</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="preferencial" data-class="mv-basico"><i class="mv-basico dp36">preferencial</i>preferencial</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="usuario" data-class="mv-basico"><i class="mv-basico dp36">usuario</i>usuario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="usuario_placeholder" data-class="mv-basico"><i class="mv-basico dp36">usuario_placeholder</i>usuario<wbr/>_<wbr/>placeholder</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="usuario_preferencias" data-class="mv-basico"><i class="mv-basico dp36">usuario_preferencias</i>usuario<wbr/>_<wbr/>preferencias</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="setas">
+        <h2>setas</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="descer" data-class="mv-basico"><i class="mv-basico dp36">descer</i>descer</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_baixo" data-class="mv-basico"><i class="mv-basico dp36">seta_baixo</i>seta<wbr/>_<wbr/>baixo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_baixo_bloco" data-class="mv-basico"><i class="mv-basico dp36">seta_baixo_bloco</i>seta<wbr/>_<wbr/>baixo<wbr/>_<wbr/>bloco</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_baixo_dupla" data-class="mv-basico"><i class="mv-basico dp36">seta_baixo_dupla</i>seta<wbr/>_<wbr/>baixo<wbr/>_<wbr/>dupla</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_baixo_simples" data-class="mv-basico"><i class="mv-basico dp36">seta_baixo_simples</i>seta<wbr/>_<wbr/>baixo<wbr/>_<wbr/>simples</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_cima" data-class="mv-basico"><i class="mv-basico dp36">seta_cima</i>seta<wbr/>_<wbr/>cima</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_cima_bloco" data-class="mv-basico"><i class="mv-basico dp36">seta_cima_bloco</i>seta<wbr/>_<wbr/>cima<wbr/>_<wbr/>bloco</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_cima_dupla" data-class="mv-basico"><i class="mv-basico dp36">seta_cima_dupla</i>seta<wbr/>_<wbr/>cima<wbr/>_<wbr/>dupla</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_cima_simples" data-class="mv-basico"><i class="mv-basico dp36">seta_cima_simples</i>seta<wbr/>_<wbr/>cima<wbr/>_<wbr/>simples</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_direita" data-class="mv-basico"><i class="mv-basico dp36">seta_direita</i>seta<wbr/>_<wbr/>direita</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_direita_bloco" data-class="mv-basico"><i class="mv-basico dp36">seta_direita_bloco</i>seta<wbr/>_<wbr/>direita<wbr/>_<wbr/>bloco</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_direita_bloco_ultimo" data-class="mv-basico"><i class="mv-basico dp36">seta_direita_bloco_ultimo</i>seta<wbr/>_<wbr/>direita<wbr/>_<wbr/>bloco<wbr/>_<wbr/>ultimo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_direita_cheia" data-class="mv-basico"><i class="mv-basico dp36">seta_direita_cheia</i>seta<wbr/>_<wbr/>direita<wbr/>_<wbr/>cheia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_direita_dupla" data-class="mv-basico"><i class="mv-basico dp36">seta_direita_dupla</i>seta<wbr/>_<wbr/>direita<wbr/>_<wbr/>dupla</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_direita_simples" data-class="mv-basico"><i class="mv-basico dp36">seta_direita_simples</i>seta<wbr/>_<wbr/>direita<wbr/>_<wbr/>simples</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_esquerda" data-class="mv-basico"><i class="mv-basico dp36">seta_esquerda</i>seta<wbr/>_<wbr/>esquerda</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_esquerda_bloco" data-class="mv-basico"><i class="mv-basico dp36">seta_esquerda_bloco</i>seta<wbr/>_<wbr/>esquerda<wbr/>_<wbr/>bloco</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_esquerda_bloco_primeiro" data-class="mv-basico"><i class="mv-basico dp36">seta_esquerda_bloco_primeiro</i>seta<wbr/>_<wbr/>esquerda<wbr/>_<wbr/>bloco<wbr/>_<wbr/>primeiro</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_esquerda_cheia" data-class="mv-basico"><i class="mv-basico dp36">seta_esquerda_cheia</i>seta<wbr/>_<wbr/>esquerda<wbr/>_<wbr/>cheia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_esquerda_dupla" data-class="mv-basico"><i class="mv-basico dp36">seta_esquerda_dupla</i>seta<wbr/>_<wbr/>esquerda<wbr/>_<wbr/>dupla</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_esquerda_simples" data-class="mv-basico"><i class="mv-basico dp36">seta_esquerda_simples</i>seta<wbr/>_<wbr/>esquerda<wbr/>_<wbr/>simples</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_primeiro" data-class="mv-basico"><i class="mv-basico dp36">seta_primeiro</i>seta<wbr/>_<wbr/>primeiro</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_subitem" data-class="mv-basico"><i class="mv-basico dp36">seta_subitem</i>seta<wbr/>_<wbr/>subitem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="seta_ultimo" data-class="mv-basico"><i class="mv-basico dp36">seta_ultimo</i>seta<wbr/>_<wbr/>ultimo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="subir" data-class="mv-basico"><i class="mv-basico dp36">subir</i>subir</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="sistemas">
+        <h2>sistemas</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="acao" data-class="mv-basico"><i class="mv-basico dp36">acao</i>acao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="acao_massa" data-class="mv-basico"><i class="mv-basico dp36">acao_massa</i>acao<wbr/>_<wbr/>massa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="acesso_externo" data-class="mv-basico"><i class="mv-basico dp36">acesso_externo</i>acesso<wbr/>_<wbr/>externo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="ambiente" data-class="mv-basico"><i class="mv-basico dp36">ambiente</i>ambiente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="assistente" data-class="mv-basico"><i class="mv-basico dp36">assistente</i>assistente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atalho" data-class="mv-basico"><i class="mv-basico dp36">atalho</i>atalho</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atalho_login" data-class="mv-basico"><i class="mv-basico dp36">atalho_login</i>atalho<wbr/>_<wbr/>login</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="backup" data-class="mv-basico"><i class="mv-basico dp36">backup</i>backup</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="banco_dados" data-class="mv-basico"><i class="mv-basico dp36">banco_dados</i>banco<wbr/>_<wbr/>dados</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="bicicleta" data-class="mv-basico"><i class="mv-basico dp36">bicicleta</i>bicicleta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="bsc" data-class="mv-basico"><i class="mv-basico dp36">bsc</i>bsc</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="bug" data-class="mv-basico"><i class="mv-basico dp36">bug</i>bug</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="buscar_janela" data-class="mv-basico"><i class="mv-basico dp36">buscar_janela</i>buscar<wbr/>_<wbr/>janela</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="celular" data-class="mv-basico"><i class="mv-basico dp36">celular</i>celular</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="consulta" data-class="mv-basico"><i class="mv-basico dp36">consulta</i>consulta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="datacenter" data-class="mv-basico"><i class="mv-basico dp36">datacenter</i>datacenter</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desempenho_bom" data-class="mv-basico"><i class="mv-basico dp36">desempenho_bom</i>desempenho<wbr/>_<wbr/>bom</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desempenho_medio" data-class="mv-basico"><i class="mv-basico dp36">desempenho_medio</i>desempenho<wbr/>_<wbr/>medio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desempenho_ruim" data-class="mv-basico"><i class="mv-basico dp36">desempenho_ruim</i>desempenho<wbr/>_<wbr/>ruim</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="detalhes" data-class="mv-basico"><i class="mv-basico dp36">detalhes</i>detalhes</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dimensoes_menu" data-class="mv-basico"><i class="mv-basico dp36">dimensoes_menu</i>dimensoes<wbr/>_<wbr/>menu</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="editor" data-class="mv-basico"><i class="mv-basico dp36">editor</i>editor</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="executar_portlet" data-class="mv-basico"><i class="mv-basico dp36">executar_portlet</i>executar<wbr/>_<wbr/>portlet</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="garbage_collector" data-class="mv-basico"><i class="mv-basico dp36">garbage_collector</i>garbage<wbr/>_<wbr/>collector</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="ges_chile" data-class="mv-basico"><i class="mv-basico dp36">ges_chile</i>ges<wbr/>_<wbr/>chile</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="heap_dump" data-class="mv-basico"><i class="mv-basico dp36">heap_dump</i>heap<wbr/>_<wbr/>dump</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="historico" data-class="mv-basico"><i class="mv-basico dp36">historico</i>historico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="historico_acesso" data-class="mv-basico"><i class="mv-basico dp36">historico_acesso</i>historico<wbr/>_<wbr/>acesso</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="impressao_digital" data-class="mv-basico"><i class="mv-basico dp36">impressao_digital</i>impressao<wbr/>_<wbr/>digital</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="iniciar_servicos" data-class="mv-basico"><i class="mv-basico dp36">iniciar_servicos</i>iniciar<wbr/>_<wbr/>servicos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="instalar_app" data-class="mv-basico"><i class="mv-basico dp36">instalar_app</i>instalar<wbr/>_<wbr/>app</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="instalar_banco" data-class="mv-basico"><i class="mv-basico dp36">instalar_banco</i>instalar<wbr/>_<wbr/>banco</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="interface" data-class="mv-basico"><i class="mv-basico dp36">interface</i>interface</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="job_schedule" data-class="mv-basico"><i class="mv-basico dp36">job_schedule</i>job<wbr/>_<wbr/>schedule</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="kpi" data-class="mv-basico"><i class="mv-basico dp36">kpi</i>kpi</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="legado" data-class="mv-basico"><i class="mv-basico dp36">legado</i>legado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="lista_agente" data-class="mv-basico"><i class="mv-basico dp36">lista_agente</i>lista<wbr/>_<wbr/>agente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="manutencao_sistema" data-class="mv-basico"><i class="mv-basico dp36">manutencao_sistema</i>manutencao<wbr/>_<wbr/>sistema</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="matar_sessao" data-class="mv-basico"><i class="mv-basico dp36">matar_sessao</i>matar<wbr/>_<wbr/>sessao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="menu" data-class="mv-basico"><i class="mv-basico dp36">menu</i>menu</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="menu_secundario" data-class="mv-basico"><i class="mv-basico dp36">menu_secundario</i>menu<wbr/>_<wbr/>secundario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="metadados" data-class="mv-basico"><i class="mv-basico dp36">metadados</i>metadados</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="metrica" data-class="mv-basico"><i class="mv-basico dp36">metrica</i>metrica</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="metrica_fx" data-class="mv-basico"><i class="mv-basico dp36">metrica_fx</i>metrica<wbr/>_<wbr/>fx</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="monitor" data-class="mv-basico"><i class="mv-basico dp36">monitor</i>monitor</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="monitor_entrada" data-class="mv-basico"><i class="mv-basico dp36">monitor_entrada</i>monitor<wbr/>_<wbr/>entrada</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="monitor_ligar" data-class="mv-basico"><i class="mv-basico dp36">monitor_ligar</i>monitor<wbr/>_<wbr/>ligar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="monitor_log" data-class="mv-basico"><i class="mv-basico dp36">monitor_log</i>monitor<wbr/>_<wbr/>log</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="monitor_saida" data-class="mv-basico"><i class="mv-basico dp36">monitor_saida</i>monitor<wbr/>_<wbr/>saida</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="monitor_tabela" data-class="mv-basico"><i class="mv-basico dp36">monitor_tabela</i>monitor<wbr/>_<wbr/>tabela</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="monitor_web" data-class="mv-basico"><i class="mv-basico dp36">monitor_web</i>monitor<wbr/>_<wbr/>web</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="nova_janela" data-class="mv-basico"><i class="mv-basico dp36">nova_janela</i>nova<wbr/>_<wbr/>janela</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pacote" data-class="mv-basico"><i class="mv-basico dp36">pacote</i>pacote</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pacote_download" data-class="mv-basico"><i class="mv-basico dp36">pacote_download</i>pacote<wbr/>_<wbr/>download</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pacote_liberar" data-class="mv-basico"><i class="mv-basico dp36">pacote_liberar</i>pacote<wbr/>_<wbr/>liberar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="parametrizacao" data-class="mv-basico"><i class="mv-basico dp36">parametrizacao</i>parametrizacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="parar_servicos" data-class="mv-basico"><i class="mv-basico dp36">parar_servicos</i>parar<wbr/>_<wbr/>servicos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pep_cidadao" data-class="mv-basico"><i class="mv-basico dp36">pep_cidadao</i>pep<wbr/>_<wbr/>cidadao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="portal_atualizacao" data-class="mv-basico"><i class="mv-basico dp36">portal_atualizacao</i>portal<wbr/>_<wbr/>atualizacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="processado" data-class="mv-basico"><i class="mv-basico dp36">processado</i>processado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="processo_integracao" data-class="mv-basico"><i class="mv-basico dp36">processo_integracao</i>processo<wbr/>_<wbr/>integracao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="processo_reintegrar" data-class="mv-basico"><i class="mv-basico dp36">processo_reintegrar</i>processo<wbr/>_<wbr/>reintegrar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="processo_status" data-class="mv-basico"><i class="mv-basico dp36">processo_status</i>processo<wbr/>_<wbr/>status</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="report" data-class="mv-basico"><i class="mv-basico dp36">report</i>report</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="reticencias" data-class="mv-basico"><i class="mv-basico dp36">reticencias</i>reticencias</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="script" data-class="mv-basico"><i class="mv-basico dp36">script</i>script</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="script_validar" data-class="mv-basico"><i class="mv-basico dp36">script_validar</i>script<wbr/>_<wbr/>validar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="senha_alterar" data-class="mv-basico"><i class="mv-basico dp36">senha_alterar</i>senha<wbr/>_<wbr/>alterar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="servidor" data-class="mv-basico"><i class="mv-basico dp36">servidor</i>servidor</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="servidor_lista" data-class="mv-basico"><i class="mv-basico dp36">servidor_lista</i>servidor<wbr/>_<wbr/>lista</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="simulador" data-class="mv-basico"><i class="mv-basico dp36">simulador</i>simulador</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sobrescrever" data-class="mv-basico"><i class="mv-basico dp36">sobrescrever</i>sobrescrever</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="stacktrace" data-class="mv-basico"><i class="mv-basico dp36">stacktrace</i>stacktrace</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="status" data-class="mv-basico"><i class="mv-basico dp36">status</i>status</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="status_barra" data-class="mv-basico"><i class="mv-basico dp36">status_barra</i>status<wbr/>_<wbr/>barra</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="suporte" data-class="mv-basico"><i class="mv-basico dp36">suporte</i>suporte</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tabela_trocar" data-class="mv-basico"><i class="mv-basico dp36">tabela_trocar</i>tabela<wbr/>_<wbr/>trocar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tablet" data-class="mv-basico"><i class="mv-basico dp36">tablet</i>tablet</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="teclado" data-class="mv-basico"><i class="mv-basico dp36">teclado</i>teclado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="thread" data-class="mv-basico"><i class="mv-basico dp36">thread</i>thread</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="thread_matar" data-class="mv-basico"><i class="mv-basico dp36">thread_matar</i>thread<wbr/>_<wbr/>matar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="totem" data-class="mv-basico"><i class="mv-basico dp36">totem</i>totem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="trace" data-class="mv-basico"><i class="mv-basico dp36">trace</i>trace</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="trace_off" data-class="mv-basico"><i class="mv-basico dp36">trace_off</i>trace<wbr/>_<wbr/>off</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="trigger" data-class="mv-basico"><i class="mv-basico dp36">trigger</i>trigger</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="versao" data-class="mv-basico"><i class="mv-basico dp36">versao</i>versao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="versao_voltar" data-class="mv-basico"><i class="mv-basico dp36">versao_voltar</i>versao<wbr/>_<wbr/>voltar</button>
+          </li>
+        </ul>
+      </section>
+      <div class="tc-content__upper-handler">
+        <button><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<path d="M12,8l-6,6l1.4,1.4l4.6-4.6l4.6,4.6L18,14L12,8z"/>
+</svg>
+
+        </button>
+      </div>
+    </main>
+    <footer class="tc-detail">
+      <div class="tc-cloak"></div>
+      <div class="tc-detail__wrapper">
+        <header class="tc-detail__header">
+          <div class="tc-detail__title"></div>
+          <div class="tc-detail__close-handler"> 
+            <button>&times;</button>
+          </div>
+        </header>
+        <section class="tc-detail__content">
+          <section>
+            <h3>mv-basico.css</h3>
+            <pre><code class="tc-detail__example"></code></pre>
+          </section>
+          <section>
+            <h3>mv-basico.old.css</h3>
+            <pre><code class="tc-detail__example-old"></code></pre>
+          </section>
+        </section>
+      </div>
+    </footer>
+    <script src="index.js" async></script>
+  </body>
+</html>

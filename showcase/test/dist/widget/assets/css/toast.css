@@ -1,0 +1,24 @@
+#toast-container > div{
+    opacity: 1 !important;
+}
+
+#toast-container .toast,#toast-container .toast-close-button{
+    color:#43413d;
+}
+
+body #toast-container > .toast-warning {
+    background-color: #fff9b2;
+    background-image:url("../img/alerta.png") !important;
+}
+body #toast-container > .toast-info {
+    background-color: #d7ebf1;
+    background-image:url("../img/detalhes.png") !important;
+}
+body #toast-container > .toast-success {
+    background-color: #dff0d8;
+    background-image:url("../img/confirmar.png") !important;
+}
+body #toast-container > .toast-error {
+    background-color: #f1d9d0;
+    background-image:url("../img/erro.png") !important;
+}

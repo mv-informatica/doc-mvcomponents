@@ -1,0 +1,37 @@
+<template name="treeGrid" args="$treegrid">
+    <table class="tree-grid table table-bordered">
+        <thead>
+            <tr>
+                <th each="column in $treegrid.columns">
+                    {column.title}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr each="data in $treegrid.data" data-tt-index="{$item}" data-tt-indent="{data._$increment_row_parent}" style="{display:(($treegrid.parentHidden === -1) || $treegrid.parentHidden > parseInt((data[$treegrid.parentColumn])?data[$treegrid.parentColumn]:'0')?'table-row':'none')}" class="{'is-expanded '+($treegrid.indexSelected === $item?'active':'')}" data-tt-id="{data[$treegrid.primaryColumn]}" data-tt-parent-id="{data[$treegrid.parentColumn]}">
+                <td each="column in $treegrid.columns">
+                    <if condition="$item === 0"> 
+                        <span class="tree-grid-indent" each="key in data._$increment_row_parent_array"></span>
+                        <span class="tree-grid-indent skiped" skip="data._$row_parent_has_children"></span>
+                        <span class="{'tree-grid-indent tree-grid-indent-icon '+$treegrid.expandedIcon}" if="data._$row_parent_has_children"  data-tt-id="{data[$treegrid.primaryColumn]}" data-tt-parent-id="{data[$treegrid.parentColumn]}"></span>
+                        <if condition="column.template">                            
+                            <script>{column.template(data)}</script>    
+                        <elseif condition="column.render"> 
+                            <span>{column.render(data)}</span>
+                        <else>
+                          <span>{data[column.name]}</span>
+                        </if>    
+                    <else>
+                        <if condition="column.template">                            
+                            <script>{column.template(data)}</script>    
+                        <elseif condition="column.render"> 
+                            <span>{column.render(data)}</span>
+                        <else>
+                          <span>{data[column.name]}</span>
+                        </if>
+                    </if>
+                </td>
+            <tr>
+        </tbody>
+    </table>
+</template>

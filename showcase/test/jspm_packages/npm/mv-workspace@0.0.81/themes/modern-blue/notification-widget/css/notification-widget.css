@@ -1,0 +1,21 @@
+.mv-notification-wrapper {
+    display: inline-block;
+}
+.mv-navbar-items .mv-notification-wrapper {
+    padding: 15px;
+}
+.mv-notifications a{
+    color: #fff;    
+}
+.mv-notifications i{
+    margin-right: -3px;
+}
+.mv-notifications span{
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    border-radius: 50% 50%;
+    border: 1px solid #fff;
+    background-color: red;
+    margin-top: 12px;
+}

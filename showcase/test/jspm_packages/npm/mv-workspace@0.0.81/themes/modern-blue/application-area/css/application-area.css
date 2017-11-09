@@ -1,0 +1,17 @@
+.workspace .application-area{
+	overflow:auto;
+}
+.workspace .application-area.is-expanded {
+    width: calc(100% - 50px);
+}
+.workspace .application-area.is-collapsed {
+    width: calc(100% - 220px);
+}
+.workspace .application-area.is-full-width {
+    width:100%;
+}
+
+.workspace .application-area .application-area-content{
+    padding-top: 10px;
+    height: 100%;
+}

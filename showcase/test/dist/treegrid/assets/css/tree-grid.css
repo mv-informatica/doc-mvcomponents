@@ -1,0 +1,60 @@
+
+table.tree-grid .is-header-checkable > .is-box-checkbox,
+table.tree-grid .is-group-checkable > .is-box-checkbox,
+table.tree-grid .is-item-checkable > .is-box-checkbox{
+	text-align:center;
+}
+table.tree-grid > thead > tr > th{
+    font-weight: normal !important;
+}
+table.tree-grid.table-striped > tbody > tr > td{
+    border-bottom-color:#f5f5f5;
+    border-top-color: transparent;
+}
+table.tree-grid > tbody > tr{
+    background-color: #fafafa;
+}
+
+table.tree-grid > thead{
+    background-color:#ebebeb;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.TreeGrid{
+    background-color: #fff !important;
+    border: 1px solid #d8dde0 !important;
+    padding: 0px;
+}
+.TreeGrid table{
+    border: none !important;
+    position: relative;
+}
+
+.TreeGrid thead{
+    width:  100%;
+    display:block;
+}
+
+.TreeGrid tbody{
+    display:block;
+    overflow:auto;
+    overflow-x: hidden !important;
+    background-color:#fff;
+}
+
+.TreeGrid thead tr{
+    width: 100%;
+}
+.TreeGrid thead tr,
+.TreeGrid tbody tr{
+    display:table;
+    table-layout:fixed;
+}
+
+.TreeGrid .is-first-cell,
+.TreeGrid .is-last-cell{
+    border-left: none !important;
+    border-right: none !important;
+}

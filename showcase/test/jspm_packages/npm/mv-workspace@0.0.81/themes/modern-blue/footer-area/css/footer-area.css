@@ -1,0 +1,10 @@
+.workspace .footer-area {
+    height:25px;    
+    background-color: #f9f9f9;
+    border-top: 2px solid #ddd;
+}
+
+.workspace .footer-area.is-hidden {
+	height:0px;
+	display:none;
+}

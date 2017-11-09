@@ -1,0 +1,30 @@
+<template name="pagination" args="pagination">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <label class="MVPaginationInfo pull-left control-label">
+                {pagination.getPaginationInfo()}
+            </label>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <nav if="pagination.visiblePageNumbers.length > 0" class="MVPagination pull-right">
+                <ul class="pagination pagination-sm" style="margin:0px">
+                    <li class="{pagination.getNavigationButtonClass('prev')}">
+                        <a href="#" aria-label="Previous" onclick="{$event.preventDefault();pagination.previousVisiblePageNumbers()}">
+                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                    </li>
+                    <li each="pageNumber in pagination.visiblePageNumbers" class="{(pagination.paginationResult.number == (pageNumber-1) ? 'active': '')}">
+                        <a href="#" onclick="{$event.preventDefault();pagination.requestPage(pageNumber - 1)}">
+                            {pageNumber}
+                        </a>
+                    </li>
+                    <li class="{pagination.getNavigationButtonClass('next')}">
+                        <a href="#" aria-label="Next" onclick="{$event.preventDefault();pagination.nextVisiblePageNumbers()}">
+                            <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</template>

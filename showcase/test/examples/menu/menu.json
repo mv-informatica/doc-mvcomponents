@@ -1,0 +1,297 @@
+[
+
+	{
+		"id":1
+		,"label": "MVComponents"
+		,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"path": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"icon":"mv-basico-interface"
+		,"order":4
+		,"itens":[
+			{
+				"id":11
+				,"label": "Bem vindo"
+				,"module": "examples/modules/pages/welcome-page"
+				,"path": "examples/modules/pages/welcome-page"
+				,"order":4
+				,"idMenu":1      
+			}
+			,{
+				"id":12
+				,"label": "Tutoriais"
+				,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"path": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"order":4
+				,"idMenu":1
+				,"hidden":true      
+			}  
+			,{
+				"id":13
+				,"label": "Especificações"
+				,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"path": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"order":4
+				,"idMenu":1 
+				,"hidden":true     
+			}     
+			,{
+				"id":14
+				,"label": "Projeto Starter-js"
+				,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"path": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"order":4
+				,"idMenu":1 
+				,"hidden":true     
+			}     
+			,{
+				"id":15
+				,"label": "Projeto mv-workspace"
+				,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"path": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"order":4
+				,"idMenu":1
+				,"hidden":true      
+			}                             
+		]
+	},    
+	{
+		"id":2
+		,"label": "Novidades (v 2.0)"
+		,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"path": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"icon":"mv-basico-desempenho_bom"
+		,"order":4
+		,"hidden":true
+	},
+	{
+		"id":3
+		,"label": "Release notes"
+		,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"path": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"icon":"mv-basico-resumo"
+		,"order":4
+		,"hidden":true
+	},
+	{
+		"id":4
+		,"label": "Componentes"
+		,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"path": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"icon":"mv-basico-layout_novo"
+		,"order":4
+		,"itens":[            
+				{
+					"id":41
+					,"label": "Botões"
+					,"module": "examples/modules/show-cases/buttons/index"
+					,"path": "examples/modules/show-cases/buttons/index"
+					,"icon":""
+					,"order":2
+					,"idMenu":1  
+				}
+				,{
+					"id":42
+					,"label": "Campos de formulário"
+					,"module": "examples/modules/show-cases/inputs/index"
+					,"path": "examples/modules/show-cases/inputs/index"
+					,"icon":""
+					,"order":2
+					,"idMenu":1  
+				}
+				,{
+					"id":43
+					,"label": "Barra de progresso"
+					,"module": "examples/modules/show-cases/progressbar/index"
+					,"path": "examples/modules/show-cases/progressbar/index"
+					,"icon":""
+					,"order":2
+					,"idMenu":1  
+				}
+				,{
+					"id":44
+					,"label": "Popover"
+					,"module": "examples/modules/show-cases/popover/index"
+					,"path": "examples/modules/show-cases/popover/index"
+					,"icon":""
+					,"order":2
+					,"idMenu":1  
+				}
+				,{
+					"id":6
+					,"label": "Notificação"
+					,"module": "examples/modules/show-cases/notification/index"
+					,"path": "examples/modules/show-cases/notification/index"
+					,"icon":""
+					,"order":4
+					,"idMenu":1
+				}								   
+				,{
+					"id":2
+					,"label": "Autocomplete"
+					,"module": "examples/modules/show-cases/select/index"
+					,"path": "examples/modules/show-cases/select/index"
+					,"icon":""
+					,"order":2
+					,"idMenu":1
+				} 
+				,{
+					"id":3
+					,"label": "Validações"
+					,"module": "examples/modules/show-cases/validation/index"
+					,"path": "examples/modules/show-cases/validation/index"
+					,"icon":""
+					,"order":2
+					,"idMenu":1
+				}
+				,{
+					"id":4
+					,"label": "Box"
+					,"module": "examples/modules/show-cases/box/index"
+					,"path": "examples/modules/show-cases/box/index"
+					,"icon":""
+					,"order":4
+					,"idMenu":1
+				}
+				,{
+					"id":5
+					,"label": "Fieldset"
+					,"module": "examples/modules/show-cases/fieldset/index"
+					,"path": "examples/modules/show-cases/fieldset/index"
+					,"icon":""
+					,"order":4
+					,"idMenu":1
+				}
+				,{
+					"id":6
+					,"label": "Accordion"
+					,"module": "examples/modules/show-cases/accordion/index"
+					,"path": "examples/modules/show-cases/accordion/index"
+					,"icon":""
+					,"order":4
+					,"idMenu":1
+				}	
+				,{
+					"id":6
+					,"label": "Internacionalização"
+					,"module": "examples/modules/show-cases/i18n/index"
+					,"path": "examples/modules/show-cases/i18n/index"
+					,"order":4
+					,"idMenu":1
+					,"hidden":false
+				}	
+				,{
+					"id":6
+					,"label": "Tab Panel"
+					,"module": "examples/modules/show-cases/tab-panel/index"
+					,"path": "examples/modules/show-cases/tab-panel/index"
+					,"icon":""
+					,"order":4
+					,"idMenu":1
+				}
+				,{
+					"id":7
+					,"label": "Dialog"
+					,"module": "examples/modules/show-cases/dialog/index"
+					,"path": "examples/modules/show-cases/dialog/index"
+					,"icon":""
+					,"order":4
+					,"idMenu":1
+				}	
+				,{
+					"id":10
+					,"label": "ViewStack"
+					,"module": "examples/modules/show-cases/view-stack/index"
+					,"path": "examples/modules/show-cases/view-stack/index"
+					,"icon":""
+					,"order":4
+					,"idMenu":1
+				}
+				,{
+					"id":8
+					,"label": "Vertical Splitter"
+					,"module": "examples/modules/show-cases/splitter/index"
+					,"path": "examples/modules/show-cases/splitter/index"
+					,"icon":""
+					,"order":4
+					,"idMenu":1
+				}
+				,{
+					"id":5
+					,"label": "Lists"
+					,"module": "examples/modules/show-cases/fieldset/fieldset-showcase"
+					,"path": "examples/modules/show-cases/fieldset/fieldset-showcase"
+					,"order":4
+					,"idMenu":1
+					,"hidden":false
+					,"itens":[
+						{
+							"id":6
+							,"label": "Tilelist"
+							,"module": "examples/modules/show-cases/tilelist/tile-list-showcase"
+							,"path": "examples/modules/show-cases/tilelist/tile-list-showcase"
+							,"icon":""
+							,"order":4
+							,"idMenu":1
+						},
+						{
+							"id":6
+							,"label": "Treegrid"
+							,"module": "examples/modules/show-cases/treegrid/treegrid-showcase"
+							,"path": "examples/modules/show-cases/treegrid/treegrid-showcase"
+							,"icon":""
+							,"order":4
+							,"idMenu":1
+						},
+						{
+							"id":6
+							,"label": "DataGrid"
+							,"module": "examples/modules/show-cases/datagrid/datagrid-showcase"
+							,"path": "examples/modules/show-cases/datagrid/datagrid-showcase"
+							,"icon":""
+							,"order":4
+							,"idMenu":1
+						}
+					]
+				},
+				{
+					"id":5
+					,"label": "Full Calendar"
+					,"module": "examples/modules/show-cases/fullcalendar/fullcalendar-showcase"
+					,"path": "examples/modules/show-cases/fullcalendar/fullcalendar-showcase"
+					,"order":4
+					,"idMenu":1
+					,"hidden":true
+				},
+				{
+					"id":6
+					,"label": "Requests"
+					,"module": "examples/modules/show-cases/http/http-showcase"
+					,"path": "examples/modules/show-cases/http/http-showcase"
+					,"order":4
+					,"idMenu":1
+					,"hidden":true
+				},
+				{
+					"id":5
+					,"label": "Core"
+					,"module": "examples/modules/show-cases/fieldset/fieldset-showcase"
+					,"path": "examples/modules/show-cases/fieldset/fieldset-showcase"
+					,"order":4
+					,"idMenu":1
+					,"hidden":true
+					,"itens":[
+						{
+							"id":6
+							,"label": "Event Emitter"
+							,"module": "examples/modules/show-cases/event-emitter/event-emitter-showcase"
+							,"path": "examples/modules/show-cases/event-emitter/event-emitter-showcase"
+							,"icon":""
+							,"order":4
+							,"idMenu":1
+						}
+					]
+				}
+
+		]
+	}
+]

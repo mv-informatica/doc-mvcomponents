@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/i18n.ts"],"names":[],"mappings":";;;;;;IAGA,iBAA4B","file":"i18n.js","sourcesContent":["/**\n * @module mvcomponents/i18n\n */\nexport * from \"./i18n/i18n\";"]}

@@ -1,0 +1,18 @@
+.badge.badge-base {
+    background-color: rgb(34, 34, 34);
+}
+.badge.badge-primary {
+    background-color: rgb(77, 116, 152);
+}
+.badge.badge-success {
+    background-color: rgb(66, 121, 111);
+}
+.badge.badge-info {
+    background-color: rgb(113, 163, 208);
+}
+.badge.badge-warning {
+    background-color: rgb(201, 146, 61);
+}
+.badge.badge-danger {
+    background-color: rgb(218, 102, 102);
+}

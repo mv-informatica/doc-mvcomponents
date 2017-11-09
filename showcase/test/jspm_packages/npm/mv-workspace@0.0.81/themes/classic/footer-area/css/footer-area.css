@@ -1,0 +1,9 @@
+.workspace .footer-area{
+    position:fixed; 
+    bottom:0px;
+    height:25px;
+    right:0px;
+    background-color: #f9f9f9;
+    border-top: 2px solid #ddd;
+    z-index:20;
+}

@@ -1,0 +1,82 @@
+.btn {
+    outline: none !important;
+}
+.btn.ButtonComponent {
+    float: left;
+    padding: 0 8px;
+    line-height: 24px;
+}
+.btn.ButtonComponent.btn-icon {
+    border-radius: 50% 50%;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    padding: 0;
+}
+.ButtonComponent.btn_v_top{
+    margin-top: 0;
+}
+.ButtonComponent.btn_v_bottom{
+    margin-top: 16px;
+}
+.btn-group-vertical > .btn.active, 
+.btn-group-vertical > .btn:active, 
+.btn-group-vertical > .btn:focus, 
+.btn-group-vertical > .btn:hover, 
+.btn-group > .btn.active, 
+.btn-group > .btn:active, 
+.btn-group > .btn:focus, 
+.btn-group > .btn:hover {
+    z-index:15;
+}
+.ButtonComponent > .iconeinput {
+    font-size: 20px;
+    line-height: 24px;
+}
+.ButtonComponent:not(.btn-icon) > .iconeinput  {
+    float: left;
+}
+.ButtonComponent > .iconeinput + .btnLabel {
+    margin-left: 8px;
+} 
+.input-group-addon,
+.btn-default > .iconeinput{
+    color:#4f8c81;
+}
+.ButtonComponent .iconeinput.glyphicon {
+    font-size: 16px;
+}
+.ButtonGroup .ButtonComponent:not(:last-child){
+    margin-right: 8px;
+}
+
+.ButtonComponent.no-label{
+    padding: 0 3px;
+}
+/*
+.RadioButton input[type='radio'] {
+    -webkit-appearance:none;
+    width:13px;
+    height:13px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+    
+}
+.RadioButton input[type='radio']:hover {
+    box-shadow:0 0 5px 0px orange inset;
+    border-radius:50%;
+}
+.RadioButton input[type='radio']:before {
+    content:'';
+    display:block;
+    width:60%;
+    height:60%;
+    margin: 20% auto;    
+    border-radius:50%;    
+}
+.RadioButton input[type='radio']:checked:before {
+    background:#4f8c81;
+}
+*/

@@ -1,0 +1,116 @@
+
+.PaginatedDataGrid > .DataGridContainer{
+    height:100%;
+}
+.PaginatedDataGrid {
+    overflow: visible !important;
+}
+
+.DataGridContainer > .grid-content{
+    overflow:auto;
+    background-color:#fff;
+    /*background-image: url('../img/fundo-grid.png');*/
+    border:1px solid #d8dde0;
+    height:100%;
+}
+
+.DataGridContainer > .grid-content > .DataGrid{
+    margin-bottom: 0px;
+}
+
+.DataGridContainer > .grid-content > .DataGrid .is-last-cell{
+    border-right:0px;
+}
+.DataGridContainer > .grid-content > .DataGrid .is-first-cell{
+    border-left:0px;
+}
+
+.DataGridOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.DataGridOverlay .alert {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    width: 20%;
+}
+table.DataGrid{
+    border:0px solid #d8dde0;
+    width: 100%;
+}
+table.DataGrid > thead > tr > th,table.tree-grid > thead > tr > th{
+ font-weight: normal;
+ border-bottom-style:solid;
+ border-bottom-width:1px;
+}
+
+table.DataGrid > thead > tr > th.is-header-checkable > .is-box-checkbox,table.DataGrid > tbody > tr > td.is-header-checkable > .is-box-checkbox{
+   text-align:center;
+   width:100%;  
+}
+
+table.DataGrid.table-striped > tbody > tr > td{
+    border-bottom-color:#f5f5f5;
+    border-top-color: transparent;
+}
+table.DataGrid > tbody > tr{
+    background-color: #fafafa;
+}
+
+table.DataGrid > thead{
+    background-color:#ebebeb;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+.DataGrid .DataGridRow {
+    cursor: pointer;
+}
+.DataGrid .mv-datagrid-empty-text {
+    text-align: center;
+}
+.DataGrid .mv-datagrid-sort {
+    height: 20px;
+    width: 10px;
+    float: right;
+}
+.DataGrid .mv-datagrid-sort [class^="mv-datagrid-sort"] {
+    font-size: 8px;
+    cursor: pointer;
+    color: #999;
+    margin-bottom: 1px;
+}
+.DataGrid .mv-datagrid-sort [class^="mv-datagrid-sort"] span{
+    position: inherit;
+}
+.DataGrid .mv-datagrid-sort [class^="mv-datagrid-sort"].active{
+    color: #555 !important;
+}
+.DataGridBlockContainer {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: block;
+}
+.DataGrid-InfiniteScroll tbody {
+    display:block;
+    overflow:auto;
+    background-color:#fff;
+}
+.DataGrid-InfiniteScroll thead, .DataGrid-InfiniteScroll tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;/* even columns width , fix width of table too*/
+}
+.DataGrid-InfiniteScroll thead {
+    width: 100%;/* scrollbar is average 1em/16px width, remove it from thead width */
+}
+/*.DataGrid-InfiniteScroll table {
+    
+}*/

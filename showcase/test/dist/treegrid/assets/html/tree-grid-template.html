@@ -1,0 +1,34 @@
+<template name="treeGrid" args="$treegrid">
+    <table class="{'tree-grid table table-bordered table-hover table-striped '+($treegrid.height?' DataGrid-InfiniteScroll':'')}">
+        <thead>
+            <tr>
+                <th each="column in $treegrid.columns" class="{(column._size_?column._size_:'')}">
+                    {column.title}
+                </th>
+            </tr>
+        </thead>
+        <tbody style="{height:($treegrid.height?$treegrid.height+'px':'')}">
+            <tr each="data in $treegrid.data" data-index="{$item}" class="{'treegrid-'+data[$treegrid.primaryColumn]+(data[$treegrid.parentColumn]?' treegrid-parent-'+data[$treegrid.parentColumn]:'')+($treegrid.indexSelected === $item?'active':'')}">
+                <td each="column in $treegrid.columns" class="{(column._size_?column._size_:'')}">
+                    <if condition="$item === 0">
+                        <if condition="column.template">                            
+                            <script>{column.template(data)}</script>    
+                        <elseif condition="column.render"> 
+                            {column.render(data)}
+                        <else>
+                          {(data[column.name]?data[column.name]:'')}
+                        </if>    
+                    <else>
+                        <if condition="column.template">                            
+                            <script>{column.template(data)}</script>    
+                        <elseif condition="column.render"> 
+                            {column.render(data)}
+                        <else>
+                          {(data[column.name]?data[column.name]:'')}
+                        </if>
+                    </if>
+                </td>
+            <tr>
+        </tbody>
+    </table>
+</template>

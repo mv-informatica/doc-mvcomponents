@@ -1,0 +1,1 @@
+module.exports = require("npm:jstree@3.3.3/dist/jstree.js");

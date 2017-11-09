@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mv-hosp</title>
+    <link rel="stylesheet" href="css/mv-hosp.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>html, body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  font-size: inherit;
+  will-change: background-color;
+  transition: background-color .1s ease-in;
+  cursor: pointer;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', 'Tahoma', sans-serif;
+  font-size: 16px;
+  color: #666666;
+}
+
+body.is-scrolled .tc-content__upper-handler {
+  transform: none;
+  opacity: 1;
+}
+
+.tc {
+}
+
+.tc-cloak {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(102, 102, 102, 0.4);
+  will-change: opacity;
+  transform: opacity .2s ease-in;
+  opacity: 0;
+  z-index: -1;
+}
+
+.tc .is-open .tc-cloak {
+  z-index: 8;
+  opacity: 1;
+}
+
+.tc-header {
+}
+
+.tc-header__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 0;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.tc-header__content {
+  -ms-user-select: none;
+      user-select: none;
+  position: relative;
+  height: 48px;
+  background: #4d7498;
+  color: rgba(255, 255, 255, 0.94118);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+  padding: 4px 16px;
+  line-height: 40px;
+  z-index: 10;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.tc-header__content h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.tc-header__menu-handler {
+  cursor: pointer;
+  margin-right: 16px;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  display: block;
+  border: none;
+  outline: none;
+  background: none;
+  -ms-user-select: none;
+      user-select: none;
+}
+
+.tc-header__menu-handler span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.94118);
+}
+
+.tc-header__menu-handler span:before, .tc-header__menu-handler span:after {
+  content: ' ';
+  background-color: rgba(255, 255, 255, 0.94118);
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform .15s ease-in, top .15s ease-in;
+}
+
+.tc-header__menu-handler span:before {
+  top: 10px;
+}
+
+.tc-header__menu-handler span:after {
+  top: -10px;
+}
+
+.tc-header.is-open .tc-header__menu {
+  transform: none;
+}
+
+.tc-header.is-open .tc-header__menu-handler span {
+}
+
+.tc-header.is-open .tc-header__menu-handler span {
+  background: none;
+}
+
+.tc-header.is-open .tc-header__menu-handler span:before {
+  top: 0;
+  transform: rotateZ(45deg);
+}
+
+.tc-header.is-open .tc-header__menu-handler span:after {
+  top: 0;
+  transform: rotateZ(-45deg);
+}
+
+.tc-header__menu {
+  position: relative;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.94118);
+  z-index: 9;
+  transition: transform .2s ease-in;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+  transform: translateY(-100%);
+  list-style: none;
+  margin: 0;
+}
+
+.tc-header__menu-item {
+  margin: 4px;
+}
+
+.tc-header a {
+  padding: 8px;
+  text-transform: uppercase;
+  display: block;
+  color: #4d7498;
+  border-radius: 2px;
+  font-size: .8em;
+  cursor: pointer;
+  text-decoration: none;
+  outline: none;
+  transition: background-color .1s ease-in, 
+        color .1s ease-in;
+}
+
+.tc-header a:focus, .tc-header a:hover, .tc-header a.is-selected {
+  background-color: #4d7498;
+  color: rgba(255, 255, 255, 0.94118);
+}
+
+.tc-content {
+  width: 100%;
+  max-width: 1024px;
+  margin: 48px auto 0 auto;
+  padding: 16px;
+}
+
+.tc-content__upper-handler {
+}
+
+.tc-content__upper-handler {
+  transform: scale(0, 0);
+  opacity: 0;
+  transition: transform .15s ease-in, opacity .15s ease-in;
+  z-index: 8;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
+
+.tc-content__upper-handler button {
+  position: relative;
+  line-height: 28px;
+  padding: 6px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #4d7498;
+  outline: none;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12);
+  transition: box-shadow .2s ease-in;
+}
+
+.tc-content__upper-handler button:before {
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0;
+  transition: opacity .2s ease-in;
+}
+
+.tc-content__upper-handler button svg {
+  fill: rgba(255, 255, 255, 0.94118);
+}
+
+.tc-content__upper-handler button:focus, .tc-content__upper-handler button:hover {
+}
+
+.tc-content__upper-handler button:focus:before, .tc-content__upper-handler button:hover:before {
+  opacity: 1;
+}
+
+.tc-content__upper-handler button:active {
+  box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, .2), 0px 7px 10px 1px rgba(0, 0, 0, .14), 0px 2px 16px 1px rgba(0, 0, 0, .12);
+}
+
+.tc-list {
+  margin: 32px 0;
+}
+
+.tc-list:before {
+  display: block;
+  content: ' ';
+  margin-top: -64px;
+  height: 64px;
+  visibility: hidden;
+}
+
+.tc-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.tc-list li {
+  width: 33%;
+  padding: 4px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.tc-list h2 {
+  margin: 8px;
+  font-size: 1.2em;
+  color: #4d7498;
+  text-transform: uppercase;
+}
+
+.tc-glyph {
+  cursor: pointer;
+  max-width: 128px;
+  width: 100%;
+  height: 100%;
+  background: none;
+  margin: 0 auto;
+  outline: none;
+  border: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 16px 8px;
+  border-radius: 2px;
+  color: #666666;
+  font-size: .75em;
+  line-height: 1.5em;
+}
+
+.tc-glyph:disabled {
+  color: rgba(102, 102, 102, 0.26);
+}
+
+.tc-glyph:not(:disabled) {
+}
+
+.tc-glyph:not(:disabled):hover, .tc-glyph:not(:disabled):focus {
+  background-color: rgba(153, 153, 153, 0.12157);
+}
+
+.tc-glyph:not(:disabled):active {
+  background-color: rgba(153, 153, 153, 0.24706);
+}
+
+.tc-glyph i {
+  margin-bottom: 8px;
+}
+
+.tc-glyph.is-selected {
+  color: #4d7498;
+}
+
+.tc-detail {
+}
+
+.tc-detail.is-open .tc-cloak {
+  z-index: 11;
+}
+
+.tc-detail__wrapper {
+  z-index: 12;
+  box-shadow: 0 6px 6px -3px rgba(0, 0, 0, .2),0 10px 14px 1px rgba(0, 0, 0, .14),0 4px 18px 3px rgba(0, 0, 0, .12);
+  max-width: 1024px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transform: translateY(100%);
+  will-change: transform;
+  transition: transform .2s ease-in;
+  background: rgba(255, 255, 255, 0.94118);
+  border-radius: 2px 2px 0 0;
+  overflow: hidden;
+}
+
+.tc-detail__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  background-color: #4d7498;
+  color: rgba(255, 255, 255, 0.94118);
+}
+
+.tc-detail__title {
+  padding: 8px;
+  -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.tc-detail__title .tc-icon {
+  font-size: 28px;
+  margin-right: 8px;
+}
+
+.tc-detail__close-handler button {
+  width: 40px;
+  height: 40px;
+  font-size: 22px;
+  vertical-align: middle;
+  margin: 0;
+  background: none;
+  border: 0;
+  outline: none;
+  color: inherit;
+  border-radius: 50%;
+}
+
+.tc-detail__close-handler button:hover, .tc-detail__close-handler button:focus {
+  background: rgba(153, 153, 153, 0.12157);
+}
+
+.tc-detail__close-handler button:active {
+  background: rgba(153, 153, 153, 0.24706);
+}
+
+.tc-detail__content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding: 8px;
+  font-size: .8em;
+}
+
+.tc-detail__content h3 {
+  font-size: 1.1em;
+}
+
+.tc-detail__content h3, .tc-detail__content pre {
+  margin: 0.5em 0;
+}
+
+.tc-detail__content section {
+  -ms-flex: 1 1 50%;
+      flex: 1 1 50%;
+}
+
+.tc-detail.is-open .tc-detail__wrapper {
+  transform: none;
+}
+
+@media screen and (min-width:600px) {
+  .tc {
+  }
+  .tc-list {
+}
+  .tc-list li {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .tc {
+  }
+  .tc-header {
+}
+  .tc-header .tc-cloak {
+    display: none;
+  }
+  .tc-header__menu {
+    height: 48px;
+    transform: none;
+    box-shadow: none;
+    background: #ededed;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+  }
+  .tc-header__menu-item {
+    margin: 0 8px;
+  }
+  .tc-header__menu-item a {
+    padding: 4px 8px;
+    border-radius: 16px;
+    border: #4d7498 1px solid;
+  }
+  .tc-header__menu-handler {
+    display: none;
+  }
+  .tc-content {
+    margin-top: 96px;
+  }
+  .tc-list {
+}
+  .tc-list:before {
+    margin-top: -112px;
+    height: 112px;
+  }
+  .tc-list li {
+    width: 14.28571%;
+  }
+  .tc-detail {
+}
+  .tc-detail__title {
+    padding: 8px 32px;
+  }
+  .tc-detail__close-handler {
+    margin: 0 16px;
+  }
+  .tc-detail__content {
+    font-size: 1em;
+    padding: 16px 32px 24px 32px;
+    -ms-flex-direction: row;
+        flex-direction: row;
+  }
+  .tc-detail__content section {
+    padding: 0 8px;
+  }
+}
+
+@media screen and (min-width:1280px) {
+  .tc {
+  }
+  .tc-list {
+}
+  .tc-list li {
+    width: 12.5%;
+  }
+}</style>
+  </head>
+  <body class="tc">
+    <header class="tc-header">
+      <div class="tc-cloak"></div>
+      <section class="tc-header__wrapper">
+        <section class="tc-header__content">
+          <button class="tc-header__menu-handler"><span></span></button>
+          <h1>mv-hosp</h1>
+        </section>
+        <ul class="tc-header__menu">
+          <li class="tc-header__menu-item"><a href="#ação">ação</a></li>
+          <li class="tc-header__menu-item"><a href="#atendimento">atendimento</a></li>
+          <li class="tc-header__menu-item"><a href="#checagem">checagem</a></li>
+          <li class="tc-header__menu-item"><a href="#coisas">coisas</a></li>
+          <li class="tc-header__menu-item"><a href="#documentos">documentos</a></li>
+          <li class="tc-header__menu-item"><a href="#miscelânea">miscelânea</a></li>
+          <li class="tc-header__menu-item"><a href="#novos2.2">novos 2.2</a></li>
+          <li class="tc-header__menu-item"><a href="#pacienteinfo">paciente info</a></li>
+          <li class="tc-header__menu-item"><a href="#pessoas">pessoas</a></li>
+          <li class="tc-header__menu-item"><a href="#procedimento">procedimento</a></li>
+          <li class="tc-header__menu-item"><a href="#status">status</a></li>
+        </ul>
+      </section>
+    </header>
+    <main class="tc-content">
+      <section class="tc-list" id="ação">
+        <h2>ação</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="aprazamento" data-class="mv-hosp"><i class="mv-hosp dp36">aprazamento</i>aprazamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aprazamento_abrir" data-class="mv-hosp"><i class="mv-hosp dp36">aprazamento_abrir</i>aprazamento<wbr/>_<wbr/>abrir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aprazamento_cancelar" data-class="mv-hosp"><i class="mv-hosp dp36">aprazamento_cancelar</i>aprazamento<wbr/>_<wbr/>cancelar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aprazamento_finalizar" data-class="mv-hosp"><i class="mv-hosp dp36">aprazamento_finalizar</i>aprazamento<wbr/>_<wbr/>finalizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aprazamento_finalizar_selec" data-class="mv-hosp"><i class="mv-hosp dp36">aprazamento_finalizar_selec</i>aprazamento<wbr/>_<wbr/>finalizar<wbr/>_<wbr/>selec</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aprazamento_refazer" data-class="mv-hosp"><i class="mv-hosp dp36">aprazamento_refazer</i>aprazamento<wbr/>_<wbr/>refazer</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aprazar" data-class="mv-hosp"><i class="mv-hosp dp36">aprazar</i>aprazar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="associar_cidadao" data-class="mv-hosp"><i class="mv-hosp dp36">associar_cidadao</i>associar<wbr/>_<wbr/>cidadao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atendimento_validar" data-class="mv-hosp"><i class="mv-hosp dp36">atendimento_validar</i>atendimento<wbr/>_<wbr/>validar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="avaliacao_farmaceutica" data-class="mv-hosp"><i class="mv-hosp dp36">avaliacao_farmaceutica</i>avaliacao<wbr/>_<wbr/>farmaceutica</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="confirmar_chegada" data-class="mv-hosp"><i class="mv-hosp dp36">confirmar_chegada</i>confirmar<wbr/>_<wbr/>chegada</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exibir_imagem" data-class="mv-hosp"><i class="mv-hosp dp36">exibir_imagem</i>exibir<wbr/>_<wbr/>imagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="familia_remover" data-class="mv-hosp"><i class="mv-hosp dp36">familia_remover</i>familia<wbr/>_<wbr/>remover</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="imprimir_prontuario" data-class="mv-hosp"><i class="mv-hosp dp36">imprimir_prontuario</i>imprimir<wbr/>_<wbr/>prontuario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="laudo_finalizar" data-class="mv-hosp"><i class="mv-hosp dp36">laudo_finalizar</i>laudo<wbr/>_<wbr/>finalizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="laudo_rejeitar" data-class="mv-hosp"><i class="mv-hosp dp36">laudo_rejeitar</i>laudo<wbr/>_<wbr/>rejeitar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_atualizar" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_atualizar</i>paciente<wbr/>_<wbr/>atualizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_buscar" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_buscar</i>paciente<wbr/>_<wbr/>buscar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_encaminhar" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_encaminhar</i>paciente<wbr/>_<wbr/>encaminhar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_remover" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_remover</i>paciente<wbr/>_<wbr/>remover</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_finalizar" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_finalizar</i>prescricao<wbr/>_<wbr/>finalizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_suspender" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_suspender</i>prescricao<wbr/>_<wbr/>suspender</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prestador_adicionar" data-class="mv-hosp"><i class="mv-hosp dp36">prestador_adicionar</i>prestador<wbr/>_<wbr/>adicionar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prestador_buscar" data-class="mv-hosp"><i class="mv-hosp dp36">prestador_buscar</i>prestador<wbr/>_<wbr/>buscar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prestador_favorito" data-class="mv-hosp"><i class="mv-hosp dp36">prestador_favorito</i>prestador<wbr/>_<wbr/>favorito</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="procedimento_adicionar" data-class="mv-hosp"><i class="mv-hosp dp36">procedimento_adicionar</i>procedimento<wbr/>_<wbr/>adicionar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="procedimento_eletivo" data-class="mv-hosp"><i class="mv-hosp dp36">procedimento_eletivo</i>procedimento<wbr/>_<wbr/>eletivo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="receita_reabrir" data-class="mv-hosp"><i class="mv-hosp dp36">receita_reabrir</i>receita<wbr/>_<wbr/>reabrir</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tratamento_analisar" data-class="mv-hosp"><i class="mv-hosp dp36">tratamento_analisar</i>tratamento<wbr/>_<wbr/>analisar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tratamento_finalidade" data-class="mv-hosp"><i class="mv-hosp dp36">tratamento_finalidade</i>tratamento<wbr/>_<wbr/>finalidade</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tratamento_seguimento" data-class="mv-hosp"><i class="mv-hosp dp36">tratamento_seguimento</i>tratamento<wbr/>_<wbr/>seguimento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="vincular_sintoma" data-class="mv-hosp"><i class="mv-hosp dp36">vincular_sintoma</i>vincular<wbr/>_<wbr/>sintoma</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="atendimento">
+        <h2>atendimento</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="abordagem_inicial" data-class="mv-hosp"><i class="mv-hosp dp36">abordagem_inicial</i>abordagem<wbr/>_<wbr/>inicial</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="acolhimento" data-class="mv-hosp"><i class="mv-hosp dp36">acolhimento</i>acolhimento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="acolhimento_visualizar" data-class="mv-hosp"><i class="mv-hosp dp36">acolhimento_visualizar</i>acolhimento<wbr/>_<wbr/>visualizar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="admissao_medica" data-class="mv-hosp"><i class="mv-hosp dp36">admissao_medica</i>admissao<wbr/>_<wbr/>medica</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="fila" data-class="mv-hosp"><i class="mv-hosp dp36">fila</i>fila</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="fila_adicionar" data-class="mv-hosp"><i class="mv-hosp dp36">fila_adicionar</i>fila<wbr/>_<wbr/>adicionar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="fila_configurar" data-class="mv-hosp"><i class="mv-hosp dp36">fila_configurar</i>fila<wbr/>_<wbr/>configurar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="fila_vacina" data-class="mv-hosp"><i class="mv-hosp dp36">fila_vacina</i>fila<wbr/>_<wbr/>vacina</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="checagem">
+        <h2>checagem</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="alergia" data-class="mv-hosp"><i class="mv-hosp dp36">alergia</i>alergia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="interacao_medicamentosa" data-class="mv-hosp"><i class="mv-hosp dp36">interacao_medicamentosa</i>interacao<wbr/>_<wbr/>medicamentosa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="subdosagem" data-class="mv-hosp"><i class="mv-hosp dp36">subdosagem</i>subdosagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="superdosagem" data-class="mv-hosp"><i class="mv-hosp dp36">superdosagem</i>superdosagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="velocidade_infusao" data-class="mv-hosp"><i class="mv-hosp dp36">velocidade_infusao</i>velocidade<wbr/>_<wbr/>infusao</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="coisas">
+        <h2>coisas</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="ambulancia" data-class="mv-hosp"><i class="mv-hosp dp36">ambulancia</i>ambulancia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="equipamentos" data-class="mv-hosp"><i class="mv-hosp dp36">equipamentos</i>equipamentos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="estetoscopio" data-class="mv-hosp"><i class="mv-hosp dp36">estetoscopio</i>estetoscopio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="kit_cirurgico" data-class="mv-hosp"><i class="mv-hosp dp36">kit_cirurgico</i>kit<wbr/>_<wbr/>cirurgico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="leito" data-class="mv-hosp"><i class="mv-hosp dp36">leito</i>leito</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="materiais" data-class="mv-hosp"><i class="mv-hosp dp36">materiais</i>materiais</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="microscopio" data-class="mv-hosp"><i class="mv-hosp dp36">microscopio</i>microscopio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pertences" data-class="mv-hosp"><i class="mv-hosp dp36">pertences</i>pertences</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="poltrona" data-class="mv-hosp"><i class="mv-hosp dp36">poltrona</i>poltrona</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="rejeitos" data-class="mv-hosp"><i class="mv-hosp dp36">rejeitos</i>rejeitos</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="documentos">
+        <h2>documentos</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="avaliacao" data-class="mv-hosp"><i class="mv-hosp dp36">avaliacao</i>avaliacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="bulario" data-class="mv-hosp"><i class="mv-hosp dp36">bulario</i>bulario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cid" data-class="mv-hosp"><i class="mv-hosp dp36">cid</i>cid</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="evolucao" data-class="mv-hosp"><i class="mv-hosp dp36">evolucao</i>evolucao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="evolucao_ambulatorial" data-class="mv-hosp"><i class="mv-hosp dp36">evolucao_ambulatorial</i>evolucao<wbr/>_<wbr/>ambulatorial</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="evolucao_enfermagem" data-class="mv-hosp"><i class="mv-hosp dp36">evolucao_enfermagem</i>evolucao<wbr/>_<wbr/>enfermagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="evolucao_fisioterapia" data-class="mv-hosp"><i class="mv-hosp dp36">evolucao_fisioterapia</i>evolucao<wbr/>_<wbr/>fisioterapia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="evolucao_outros" data-class="mv-hosp"><i class="mv-hosp dp36">evolucao_outros</i>evolucao<wbr/>_<wbr/>outros</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exame" data-class="mv-hosp"><i class="mv-hosp dp36">exame</i>exame</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="laudo" data-class="mv-hosp"><i class="mv-hosp dp36">laudo</i>laudo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="laudos_web" data-class="mv-hosp"><i class="mv-hosp dp36">laudos_web</i>laudos<wbr/>_<wbr/>web</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="parecer" data-class="mv-hosp"><i class="mv-hosp dp36">parecer</i>parecer</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_aberta" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_aberta</i>prescricao<wbr/>_<wbr/>aberta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_enfermagem" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_enfermagem</i>prescricao<wbr/>_<wbr/>enfermagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_fechada" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_fechada</i>prescricao<wbr/>_<wbr/>fechada</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_futura" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_futura</i>prescricao<wbr/>_<wbr/>futura</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_internado" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_internado</i>prescricao<wbr/>_<wbr/>internado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_lista" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_lista</i>prescricao<wbr/>_<wbr/>lista</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prescricao_padrao" data-class="mv-hosp"><i class="mv-hosp dp36">prescricao_padrao</i>prescricao<wbr/>_<wbr/>padrao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prontuario" data-class="mv-hosp"><i class="mv-hosp dp36">prontuario</i>prontuario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="protocolo_diagnostico" data-class="mv-hosp"><i class="mv-hosp dp36">protocolo_diagnostico</i>protocolo<wbr/>_<wbr/>diagnostico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="raio_x" data-class="mv-hosp"><i class="mv-hosp dp36">raio_x</i>raio<wbr/>_<wbr/>x</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="receita" data-class="mv-hosp"><i class="mv-hosp dp36">receita</i>receita</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="resposta_parecer" data-class="mv-hosp"><i class="mv-hosp dp36">resposta_parecer</i>resposta<wbr/>_<wbr/>parecer</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="resultados" data-class="mv-hosp"><i class="mv-hosp dp36">resultados</i>resultados</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="resumo_clinico" data-class="mv-hosp"><i class="mv-hosp dp36">resumo_clinico</i>resumo<wbr/>_<wbr/>clinico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tratamento" data-class="mv-hosp"><i class="mv-hosp dp36">tratamento</i>tratamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="visita_relatorio" data-class="mv-hosp"><i class="mv-hosp dp36">visita_relatorio</i>visita<wbr/>_<wbr/>relatorio</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="miscelânea">
+        <h2>miscelânea</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="acompanhamento" data-class="mv-hosp"><i class="mv-hosp dp36">acompanhamento</i>acompanhamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="acompanhamento_exportar" data-class="mv-hosp"><i class="mv-hosp dp36">acompanhamento_exportar</i>acompanhamento<wbr/>_<wbr/>exportar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="ambulatorial" data-class="mv-hosp"><i class="mv-hosp dp36">ambulatorial</i>ambulatorial</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="anotacao_enfermagem" data-class="mv-hosp"><i class="mv-hosp dp36">anotacao_enfermagem</i>anotacao<wbr/>_<wbr/>enfermagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atendido_medico" data-class="mv-hosp"><i class="mv-hosp dp36">atendido_medico</i>atendido<wbr/>_<wbr/>medico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atendimento_domiciliar" data-class="mv-hosp"><i class="mv-hosp dp36">atendimento_domiciliar</i>atendimento<wbr/>_<wbr/>domiciliar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atendimento_externo" data-class="mv-hosp"><i class="mv-hosp dp36">atendimento_externo</i>atendimento<wbr/>_<wbr/>externo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atendimento_prescricao" data-class="mv-hosp"><i class="mv-hosp dp36">atendimento_prescricao</i>atendimento<wbr/>_<wbr/>prescricao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atendimento_social" data-class="mv-hosp"><i class="mv-hosp dp36">atendimento_social</i>atendimento<wbr/>_<wbr/>social</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="balanco_hidrico" data-class="mv-hosp"><i class="mv-hosp dp36">balanco_hidrico</i>balanco<wbr/>_<wbr/>hidrico</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="bolsa_familia" data-class="mv-hosp"><i class="mv-hosp dp36">bolsa_familia</i>bolsa<wbr/>_<wbr/>familia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="casos_notificaveis" data-class="mv-hosp"><i class="mv-hosp dp36">casos_notificaveis</i>casos<wbr/>_<wbr/>notificaveis</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="casos_notificaveis_alerta" data-class="mv-hosp"><i class="mv-hosp dp36">casos_notificaveis_alerta</i>casos<wbr/>_<wbr/>notificaveis<wbr/>_<wbr/>alerta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="checagem" data-class="mv-hosp"><i class="mv-hosp dp36">checagem</i>checagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="clinica_assistencial" data-class="mv-hosp"><i class="mv-hosp dp36">clinica_assistencial</i>clinica<wbr/>_<wbr/>assistencial</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="comorbidade" data-class="mv-hosp"><i class="mv-hosp dp36">comorbidade</i>comorbidade</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="contingencia" data-class="mv-hosp"><i class="mv-hosp dp36">contingencia</i>contingencia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dengue" data-class="mv-hosp"><i class="mv-hosp dp36">dengue</i>dengue</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dengue_risco" data-class="mv-hosp"><i class="mv-hosp dp36">dengue_risco</i>dengue<wbr/>_<wbr/>risco</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="diagnostico_tratamento" data-class="mv-hosp"><i class="mv-hosp dp36">diagnostico_tratamento</i>diagnostico<wbr/>_<wbr/>tratamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="doencas_referidas" data-class="mv-hosp"><i class="mv-hosp dp36">doencas_referidas</i>doencas<wbr/>_<wbr/>referidas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="hospital" data-class="mv-hosp"><i class="mv-hosp dp36">hospital</i>hospital</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="internacao" data-class="mv-hosp"><i class="mv-hosp dp36">internacao</i>internacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="isolamento_prescricao" data-class="mv-hosp"><i class="mv-hosp dp36">isolamento_prescricao</i>isolamento<wbr/>_<wbr/>prescricao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="isolamento_sem_atendimento" data-class="mv-hosp"><i class="mv-hosp dp36">isolamento_sem_atendimento</i>isolamento<wbr/>_<wbr/>sem<wbr/>_<wbr/>atendimento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="link_cidadao" data-class="mv-hosp"><i class="mv-hosp dp36">link_cidadao</i>link<wbr/>_<wbr/>cidadao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="link_domicilio" data-class="mv-hosp"><i class="mv-hosp dp36">link_domicilio</i>link<wbr/>_<wbr/>domicilio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="link_familia" data-class="mv-hosp"><i class="mv-hosp dp36">link_familia</i>link<wbr/>_<wbr/>familia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="link_profissional" data-class="mv-hosp"><i class="mv-hosp dp36">link_profissional</i>link<wbr/>_<wbr/>profissional</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="microorganismos" data-class="mv-hosp"><i class="mv-hosp dp36">microorganismos</i>microorganismos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="nascido_vivo" data-class="mv-hosp"><i class="mv-hosp dp36">nascido_vivo</i>nascido<wbr/>_<wbr/>vivo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="obito" data-class="mv-hosp"><i class="mv-hosp dp36">obito</i>obito</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="opme" data-class="mv-hosp"><i class="mv-hosp dp36">opme</i>opme</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_encaixado" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_encaixado</i>paciente<wbr/>_<wbr/>encaixado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prestador_movimentacao" data-class="mv-hosp"><i class="mv-hosp dp36">prestador_movimentacao</i>prestador<wbr/>_<wbr/>movimentacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="produtividade_medica" data-class="mv-hosp"><i class="mv-hosp dp36">produtividade_medica</i>produtividade<wbr/>_<wbr/>medica</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="proibicao_convenio" data-class="mv-hosp"><i class="mv-hosp dp36">proibicao_convenio</i>proibicao<wbr/>_<wbr/>convenio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="psf" data-class="mv-hosp"><i class="mv-hosp dp36">psf</i>psf</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="psf_mobile" data-class="mv-hosp"><i class="mv-hosp dp36">psf_mobile</i>psf<wbr/>_<wbr/>mobile</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="regulacao_apac" data-class="mv-hosp"><i class="mv-hosp dp36">regulacao_apac</i>regulacao<wbr/>_<wbr/>apac</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="regulacao_apac_med" data-class="mv-hosp"><i class="mv-hosp dp36">regulacao_apac_med</i>regulacao<wbr/>_<wbr/>apac<wbr/>_<wbr/>med</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="regulacao_cmce" data-class="mv-hosp"><i class="mv-hosp dp36">regulacao_cmce</i>regulacao<wbr/>_<wbr/>cmce</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="regulacao_emergencia" data-class="mv-hosp"><i class="mv-hosp dp36">regulacao_emergencia</i>regulacao<wbr/>_<wbr/>emergencia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="regulacao_financeiro" data-class="mv-hosp"><i class="mv-hosp dp36">regulacao_financeiro</i>regulacao<wbr/>_<wbr/>financeiro</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="regulacao_leito" data-class="mv-hosp"><i class="mv-hosp dp36">regulacao_leito</i>regulacao<wbr/>_<wbr/>leito</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="regulacao_serp" data-class="mv-hosp"><i class="mv-hosp dp36">regulacao_serp</i>regulacao<wbr/>_<wbr/>serp</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="saneamento" data-class="mv-hosp"><i class="mv-hosp dp36">saneamento</i>saneamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="situacao_rua" data-class="mv-hosp"><i class="mv-hosp dp36">situacao_rua</i>situacao<wbr/>_<wbr/>rua</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tipo_material" data-class="mv-hosp"><i class="mv-hosp dp36">tipo_material</i>tipo<wbr/>_<wbr/>material</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tipos_moradia" data-class="mv-hosp"><i class="mv-hosp dp36">tipos_moradia</i>tipos<wbr/>_<wbr/>moradia</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="novos2.2">
+        <h2>novos 2.2</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="app_nao_frequente" data-class="mv-hosp"><i class="mv-hosp dp36">app_nao_frequente</i>app<wbr/>_<wbr/>nao<wbr/>_<wbr/>frequente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="controle_salas" data-class="mv-hosp"><i class="mv-hosp dp36">controle_salas</i>controle<wbr/>_<wbr/>salas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="desfazer_suspender" data-class="mv-hosp"><i class="mv-hosp dp36">desfazer_suspender</i>desfazer<wbr/>_<wbr/>suspender</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="duplicidade" data-class="mv-hosp"><i class="mv-hosp dp36">duplicidade</i>duplicidade</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="frequencia_nao_frequente" data-class="mv-hosp"><i class="mv-hosp dp36">frequencia_nao_frequente</i>frequencia<wbr/>_<wbr/>nao<wbr/>_<wbr/>frequente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="gerar_horario" data-class="mv-hosp"><i class="mv-hosp dp36">gerar_horario</i>gerar<wbr/>_<wbr/>horario</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="limite_indefinido" data-class="mv-hosp"><i class="mv-hosp dp36">limite_indefinido</i>limite<wbr/>_<wbr/>indefinido</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="lista_problemas" data-class="mv-hosp"><i class="mv-hosp dp36">lista_problemas</i>lista<wbr/>_<wbr/>problemas</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="n_padronizado" data-class="mv-hosp"><i class="mv-hosp dp36">n_padronizado</i>n<wbr/>_<wbr/>padronizado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="resumo_classificacao" data-class="mv-hosp"><i class="mv-hosp dp36">resumo_classificacao</i>resumo<wbr/>_<wbr/>classificacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="suspender" data-class="mv-hosp"><i class="mv-hosp dp36">suspender</i>suspender</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="pacienteinfo">
+        <h2>paciente info</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="altura" data-class="mv-hosp"><i class="mv-hosp dp36">altura</i>altura</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="caminhar" data-class="mv-hosp"><i class="mv-hosp dp36">caminhar</i>caminhar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="circunferencia_abd" data-class="mv-hosp"><i class="mv-hosp dp36">circunferencia_abd</i>circunferencia<wbr/>_<wbr/>abd</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="circunferencia_cran" data-class="mv-hosp"><i class="mv-hosp dp36">circunferencia_cran</i>circunferencia<wbr/>_<wbr/>cran</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="diabetes" data-class="mv-hosp"><i class="mv-hosp dp36">diabetes</i>diabetes</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dor" data-class="mv-hosp"><i class="mv-hosp dp36">dor</i>dor</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="estadio" data-class="mv-hosp"><i class="mv-hosp dp36">estadio</i>estadio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="estresse" data-class="mv-hosp"><i class="mv-hosp dp36">estresse</i>estresse</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="fadiga" data-class="mv-hosp"><i class="mv-hosp dp36">fadiga</i>fadiga</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="familia_membros" data-class="mv-hosp"><i class="mv-hosp dp36">familia_membros</i>familia<wbr/>_<wbr/>membros</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="fluxo_ar" data-class="mv-hosp"><i class="mv-hosp dp36">fluxo_ar</i>fluxo<wbr/>_<wbr/>ar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="frequencia_cardiaca" data-class="mv-hosp"><i class="mv-hosp dp36">frequencia_cardiaca</i>frequencia<wbr/>_<wbr/>cardiaca</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="hanseniase" data-class="mv-hosp"><i class="mv-hosp dp36">hanseniase</i>hanseniase</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="hipertensao" data-class="mv-hosp"><i class="mv-hosp dp36">hipertensao</i>hipertensao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="imc" data-class="mv-hosp"><i class="mv-hosp dp36">imc</i>imc</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="internado" data-class="mv-hosp"><i class="mv-hosp dp36">internado</i>internado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="oxigenio" data-class="mv-hosp"><i class="mv-hosp dp36">oxigenio</i>oxigenio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_dados" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_dados</i>paciente<wbr/>_<wbr/>dados</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_encaminhado_rejeitar" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_encaminhado_rejeitar</i>paciente<wbr/>_<wbr/>encaminhado<wbr/>_<wbr/>rejeitar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_movimentacao" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_movimentacao</i>paciente<wbr/>_<wbr/>movimentacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_receber" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_receber</i>paciente<wbr/>_<wbr/>receber</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente_recebido_rejeitar" data-class="mv-hosp"><i class="mv-hosp dp36">paciente_recebido_rejeitar</i>paciente<wbr/>_<wbr/>recebido<wbr/>_<wbr/>rejeitar</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="patologia" data-class="mv-hosp"><i class="mv-hosp dp36">patologia</i>patologia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="plano_saude" data-class="mv-hosp"><i class="mv-hosp dp36">plano_saude</i>plano<wbr/>_<wbr/>saude</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="pvc" data-class="mv-hosp"><i class="mv-hosp dp36">pvc</i>pvc</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="risco_cardio" data-class="mv-hosp"><i class="mv-hosp dp36">risco_cardio</i>risco<wbr/>_<wbr/>cardio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="situacao_incompativel" data-class="mv-hosp"><i class="mv-hosp dp36">situacao_incompativel</i>situacao<wbr/>_<wbr/>incompativel</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="tuberculose" data-class="mv-hosp"><i class="mv-hosp dp36">tuberculose</i>tuberculose</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="pessoas">
+        <h2>pessoas</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="acompanhante" data-class="mv-hosp"><i class="mv-hosp dp36">acompanhante</i>acompanhante</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="crianca" data-class="mv-hosp"><i class="mv-hosp dp36">crianca</i>crianca</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="enfermagem" data-class="mv-hosp"><i class="mv-hosp dp36">enfermagem</i>enfermagem</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="paciente" data-class="mv-hosp"><i class="mv-hosp dp36">paciente</i>paciente</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prestador" data-class="mv-hosp"><i class="mv-hosp dp36">prestador</i>prestador</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="procedimento">
+        <h2>procedimento</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="afericao" data-class="mv-hosp"><i class="mv-hosp dp36">afericao</i>afericao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="anestesia" data-class="mv-hosp"><i class="mv-hosp dp36">anestesia</i>anestesia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dispensa" data-class="mv-hosp"><i class="mv-hosp dp36">dispensa</i>dispensa</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="dose" data-class="mv-hosp"><i class="mv-hosp dp36">dose</i>dose</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="eletivo" data-class="mv-hosp"><i class="mv-hosp dp36">eletivo</i>eletivo</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="mamografia" data-class="mv-hosp"><i class="mv-hosp dp36">mamografia</i>mamografia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="medicamentos" data-class="mv-hosp"><i class="mv-hosp dp36">medicamentos</i>medicamentos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="radioterapia" data-class="mv-hosp"><i class="mv-hosp dp36">radioterapia</i>radioterapia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="remedio" data-class="mv-hosp"><i class="mv-hosp dp36">remedio</i>remedio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="sangue" data-class="mv-hosp"><i class="mv-hosp dp36">sangue</i>sangue</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="soroterapia" data-class="mv-hosp"><i class="mv-hosp dp36">soroterapia</i>soroterapia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="transplante" data-class="mv-hosp"><i class="mv-hosp dp36">transplante</i>transplante</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="vacina" data-class="mv-hosp"><i class="mv-hosp dp36">vacina</i>vacina</button>
+          </li>
+        </ul>
+      </section>
+      <section class="tc-list" id="status">
+        <h2>status</h2>
+        <ul>
+          <li>
+            <button class="tc-glyph" data-name="acompanhante_movimentacao" data-class="mv-hosp"><i class="mv-hosp dp36">acompanhante_movimentacao</i>acompanhante<wbr/>_<wbr/>movimentacao</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="alta_medica" data-class="mv-hosp"><i class="mv-hosp dp36">alta_medica</i>alta<wbr/>_<wbr/>medica</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="atendidos" data-class="mv-hosp"><i class="mv-hosp dp36">atendidos</i>atendidos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aviso_cirurgia_cancelado" data-class="mv-hosp"><i class="mv-hosp dp36">aviso_cirurgia_cancelado</i>aviso<wbr/>_<wbr/>cirurgia<wbr/>_<wbr/>cancelado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aviso_cirurgia_realizado" data-class="mv-hosp"><i class="mv-hosp dp36">aviso_cirurgia_realizado</i>aviso<wbr/>_<wbr/>cirurgia<wbr/>_<wbr/>realizado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="aviso_cirurgia_solicitado" data-class="mv-hosp"><i class="mv-hosp dp36">aviso_cirurgia_solicitado</i>aviso<wbr/>_<wbr/>cirurgia<wbr/>_<wbr/>solicitado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="cirurgia" data-class="mv-hosp"><i class="mv-hosp dp36">cirurgia</i>cirurgia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="estabelecimento_pendencia" data-class="mv-hosp"><i class="mv-hosp dp36">estabelecimento_pendencia</i>estabelecimento<wbr/>_<wbr/>pendencia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exame_bloqueio" data-class="mv-hosp"><i class="mv-hosp dp36">exame_bloqueio</i>exame<wbr/>_<wbr/>bloqueio</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exame_comp" data-class="mv-hosp"><i class="mv-hosp dp36">exame_comp</i>exame<wbr/>_<wbr/>comp</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exame_refazer" data-class="mv-hosp"><i class="mv-hosp dp36">exame_refazer</i>exame<wbr/>_<wbr/>refazer</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exame_revisado" data-class="mv-hosp"><i class="mv-hosp dp36">exame_revisado</i>exame<wbr/>_<wbr/>revisado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="exame_solicitado" data-class="mv-hosp"><i class="mv-hosp dp36">exame_solicitado</i>exame<wbr/>_<wbr/>solicitado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="familia_acompanhamento_parcial" data-class="mv-hosp"><i class="mv-hosp dp36">familia_acompanhamento_parcial</i>familia<wbr/>_<wbr/>acompanhamento<wbr/>_<wbr/>parcial</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="familia_acompanhamento_total" data-class="mv-hosp"><i class="mv-hosp dp36">familia_acompanhamento_total</i>familia<wbr/>_<wbr/>acompanhamento<wbr/>_<wbr/>total</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="familia_pendencia" data-class="mv-hosp"><i class="mv-hosp dp36">familia_pendencia</i>familia<wbr/>_<wbr/>pendencia</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="leito_alerta" data-class="mv-hosp"><i class="mv-hosp dp36">leito_alerta</i>leito<wbr/>_<wbr/>alerta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="leito_isolamento" data-class="mv-hosp"><i class="mv-hosp dp36">leito_isolamento</i>leito<wbr/>_<wbr/>isolamento</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="leito_ocupado" data-class="mv-hosp"><i class="mv-hosp dp36">leito_ocupado</i>leito<wbr/>_<wbr/>ocupado</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="leito_ok" data-class="mv-hosp"><i class="mv-hosp dp36">leito_ok</i>leito<wbr/>_<wbr/>ok</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="limpeza" data-class="mv-hosp"><i class="mv-hosp dp36">limpeza</i>limpeza</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="limpeza_concluida" data-class="mv-hosp"><i class="mv-hosp dp36">limpeza_concluida</i>limpeza<wbr/>_<wbr/>concluida</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="limpeza_espera" data-class="mv-hosp"><i class="mv-hosp dp36">limpeza_espera</i>limpeza<wbr/>_<wbr/>espera</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="nao_atendidos" data-class="mv-hosp"><i class="mv-hosp dp36">nao_atendidos</i>nao<wbr/>_<wbr/>atendidos</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="prontuario_alerta" data-class="mv-hosp"><i class="mv-hosp dp36">prontuario_alerta</i>prontuario<wbr/>_<wbr/>alerta</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="triagem_realizada" data-class="mv-hosp"><i class="mv-hosp dp36">triagem_realizada</i>triagem<wbr/>_<wbr/>realizada</button>
+          </li>
+          <li>
+            <button class="tc-glyph" data-name="visita_concluida" data-class="mv-hosp"><i class="mv-hosp dp36">visita_concluida</i>visita<wbr/>_<wbr/>concluida</button>
+          </li>
+        </ul>
+      </section>
+      <div class="tc-content__upper-handler">
+        <button><?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+<path d="M12,8l-6,6l1.4,1.4l4.6-4.6l4.6,4.6L18,14L12,8z"/>
+</svg>
+
+        </button>
+      </div>
+    </main>
+    <footer class="tc-detail">
+      <div class="tc-cloak"></div>
+      <div class="tc-detail__wrapper">
+        <header class="tc-detail__header">
+          <div class="tc-detail__title"></div>
+          <div class="tc-detail__close-handler"> 
+            <button>&times;</button>
+          </div>
+        </header>
+        <section class="tc-detail__content">
+          <section>
+            <h3>mv-hosp.css</h3>
+            <pre><code class="tc-detail__example"></code></pre>
+          </section>
+          <section>
+            <h3>mv-hosp.old.css</h3>
+            <pre><code class="tc-detail__example-old"></code></pre>
+          </section>
+        </section>
+      </div>
+    </footer>
+    <script src="index.js" async></script>
+  </body>
+</html>
