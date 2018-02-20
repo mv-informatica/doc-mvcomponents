@@ -3,24 +3,24 @@
 	{
 		"id":1
 		,"label": "MVComponents"
-		,"module": "test/examples/modules/show-cases/buttons/buttons-showcase"
-		,"path": "test/examples/modules/show-cases/buttons/buttons-showcase"
+		,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"path": "examples/modules/show-cases/buttons/buttons-showcase"
 		,"icon":"mv-basico-interface"
 		,"order":4
 		,"itens":[
 			{
 				"id":11
 				,"label": "Bem vindo"
-				,"module": "test/examples/modules/pages/welcome-page"
-				,"path": "test/examples/modules/pages/welcome-page"
+				,"module": "examples/modules/pages/welcome-page"
+				,"path": "examples/modules/pages/welcome-page"
 				,"order":4
 				,"idMenu":1      
 			}
 			,{
 				"id":12
 				,"label": "Tutoriais"
-				,"module": "test/examples/modules/show-cases/buttons/buttons-showcase"
-				,"path": "test/examples/modules/show-cases/buttons/buttons-showcase"
+				,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"path": "examples/modules/show-cases/buttons/buttons-showcase"
 				,"order":4
 				,"idMenu":1
 				,"hidden":true      
@@ -28,8 +28,8 @@
 			,{
 				"id":13
 				,"label": "Especificações"
-				,"module": "test/examples/modules/show-cases/buttons/buttons-showcase"
-				,"path": "test/examples/modules/show-cases/buttons/buttons-showcase"
+				,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"path": "examples/modules/show-cases/buttons/buttons-showcase"
 				,"order":4
 				,"idMenu":1 
 				,"hidden":true     
@@ -37,8 +37,8 @@
 			,{
 				"id":14
 				,"label": "Projeto Starter-js"
-				,"module": "test/examples/modules/show-cases/buttons/buttons-showcase"
-				,"path": "test/examples/modules/show-cases/buttons/buttons-showcase"
+				,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"path": "examples/modules/show-cases/buttons/buttons-showcase"
 				,"order":4
 				,"idMenu":1 
 				,"hidden":true     
@@ -46,8 +46,8 @@
 			,{
 				"id":15
 				,"label": "Projeto mv-workspace"
-				,"module": "test/examples/modules/show-cases/buttons/buttons-showcase"
-				,"path": "test/examples/modules/show-cases/buttons/buttons-showcase"
+				,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+				,"path": "examples/modules/show-cases/buttons/buttons-showcase"
 				,"order":4
 				,"idMenu":1
 				,"hidden":true      
@@ -57,8 +57,8 @@
 	{
 		"id":2
 		,"label": "Novidades (v 2.0)"
-		,"module": "test/examples/modules/show-cases/buttons/buttons-showcase"
-		,"path": "test/examples/modules/show-cases/buttons/buttons-showcase"
+		,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"path": "examples/modules/show-cases/buttons/buttons-showcase"
 		,"icon":"mv-basico-desempenho_bom"
 		,"order":4
 		,"hidden":true
@@ -66,8 +66,8 @@
 	{
 		"id":3
 		,"label": "Release notes"
-		,"module": "test/examples/modules/show-cases/buttons/buttons-showcase"
-		,"path": "test/examples/modules/show-cases/buttons/buttons-showcase"
+		,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"path": "examples/modules/show-cases/buttons/buttons-showcase"
 		,"icon":"mv-basico-resumo"
 		,"order":4
 		,"hidden":true
@@ -75,16 +75,16 @@
 	{
 		"id":4
 		,"label": "Componentes"
-		,"module": "test/examples/modules/show-cases/buttons/buttons-showcase"
-		,"path": "test/examples/modules/show-cases/buttons/buttons-showcase"
+		,"module": "examples/modules/show-cases/buttons/buttons-showcase"
+		,"path": "examples/modules/show-cases/buttons/buttons-showcase"
 		,"icon":"mv-basico-layout_novo"
 		,"order":4
 		,"itens":[            
 				{
 					"id":41
 					,"label": "Botões"
-					,"module": "test/examples/modules/show-cases/buttons/index"
-					,"path": "test/examples/modules/show-cases/buttons/index"
+					,"module": "examples/modules/show-cases/buttons/index"
+					,"path": "examples/modules/show-cases/buttons/index"
 					,"icon":""
 					,"order":2
 					,"idMenu":1  
@@ -92,8 +92,8 @@
 				,{
 					"id":42
 					,"label": "Campos de formulário"
-					,"module": "test/examples/modules/show-cases/inputs/index"
-					,"path": "test/examples/modules/show-cases/inputs/index"
+					,"module": "examples/modules/show-cases/inputs/index"
+					,"path": "examples/modules/show-cases/inputs/index"
 					,"icon":""
 					,"order":2
 					,"idMenu":1  
@@ -101,8 +101,8 @@
 				,{
 					"id":43
 					,"label": "Barra de progresso"
-					,"module": "test/examples/modules/show-cases/progressbar/index"
-					,"path": "test/examples/modules/show-cases/progressbar/index"
+					,"module": "examples/modules/show-cases/progressbar/index"
+					,"path": "examples/modules/show-cases/progressbar/index"
 					,"icon":""
 					,"order":2
 					,"idMenu":1  
@@ -110,8 +110,8 @@
 				,{
 					"id":44
 					,"label": "Paginação numérica"
-					,"module": "test/examples/modules/show-cases/number-pagination/index"
-					,"path": "test/examples/modules/show-cases/number-pagination/index"
+					,"module": "examples/modules/show-cases/number-pagination/index"
+					,"path": "examples/modules/show-cases/number-pagination/index"
 					,"icon":""
 					,"order":2
 					,"idMenu":1  
@@ -119,8 +119,8 @@
 				,{
 					"id":45
 					,"label": "Popover"
-					,"module": "test/examples/modules/show-cases/popover/index"
-					,"path": "test/examples/modules/show-cases/popover/index"
+					,"module": "examples/modules/show-cases/popover/index"
+					,"path": "examples/modules/show-cases/popover/index"
 					,"icon":""
 					,"order":2
 					,"idMenu":1  
@@ -128,8 +128,8 @@
 				,{
 					"id":46
 					,"label": "Notificação"
-					,"module": "test/examples/modules/show-cases/notification/index"
-					,"path": "test/examples/modules/show-cases/notification/index"
+					,"module": "examples/modules/show-cases/notification/index"
+					,"path": "examples/modules/show-cases/notification/index"
 					,"icon":""
 					,"order":4
 					,"idMenu":1
@@ -137,8 +137,8 @@
 				,{
 					"id":47
 					,"label": "Autocomplete"
-					,"module": "test/examples/modules/show-cases/select/index"
-					,"path": "test/examples/modules/show-cases/select/index"
+					,"module": "examples/modules/show-cases/select/index"
+					,"path": "examples/modules/show-cases/select/index"
 					,"icon":""
 					,"order":2
 					,"idMenu":1
@@ -146,8 +146,8 @@
 				,{
 					"id":3
 					,"label": "Validações"
-					,"module": "test/examples/modules/show-cases/validation/index"
-					,"path": "test/examples/modules/show-cases/validation/index"
+					,"module": "examples/modules/show-cases/validation/index"
+					,"path": "examples/modules/show-cases/validation/index"
 					,"icon":""
 					,"order":2
 					,"idMenu":1
@@ -155,8 +155,8 @@
 				,{
 					"id":4
 					,"label": "Box"
-					,"module": "test/examples/modules/show-cases/box/index"
-					,"path": "test/examples/modules/show-cases/box/index"
+					,"module": "examples/modules/show-cases/box/index"
+					,"path": "examples/modules/show-cases/box/index"
 					,"icon":""
 					,"order":4
 					,"idMenu":1
@@ -164,8 +164,8 @@
 				,{
 					"id":5
 					,"label": "Fieldset"
-					,"module": "test/examples/modules/show-cases/fieldset/index"
-					,"path": "test/examples/modules/show-cases/fieldset/index"
+					,"module": "examples/modules/show-cases/fieldset/index"
+					,"path": "examples/modules/show-cases/fieldset/index"
 					,"icon":""
 					,"order":4
 					,"idMenu":1
@@ -173,8 +173,8 @@
 				,{
 					"id":6
 					,"label": "Accordion"
-					,"module": "test/examples/modules/show-cases/accordion/index"
-					,"path": "test/examples/modules/show-cases/accordion/index"
+					,"module": "examples/modules/show-cases/accordion/index"
+					,"path": "examples/modules/show-cases/accordion/index"
 					,"icon":""
 					,"order":4
 					,"idMenu":1
@@ -182,8 +182,8 @@
 				,{
 					"id":6
 					,"label": "Internacionalização"
-					,"module": "test/examples/modules/show-cases/i18n/index"
-					,"path": "test/examples/modules/show-cases/i18n/index"
+					,"module": "examples/modules/show-cases/i18n/index"
+					,"path": "examples/modules/show-cases/i18n/index"
 					,"order":4
 					,"idMenu":1
 					,"hidden":false
@@ -191,8 +191,8 @@
 				,{
 					"id":6
 					,"label": "Tab Panel"
-					,"module": "test/examples/modules/show-cases/tab-panel/index"
-					,"path": "test/examples/modules/show-cases/tab-panel/index"
+					,"module": "examples/modules/show-cases/tab-panel/index"
+					,"path": "examples/modules/show-cases/tab-panel/index"
 					,"icon":""
 					,"order":4
 					,"idMenu":1
@@ -200,8 +200,8 @@
 				,{
 					"id":7
 					,"label": "Dialog"
-					,"module": "test/examples/modules/show-cases/dialog/index"
-					,"path": "test/examples/modules/show-cases/dialog/index"
+					,"module": "examples/modules/show-cases/dialog/index"
+					,"path": "examples/modules/show-cases/dialog/index"
 					,"icon":""
 					,"order":4
 					,"idMenu":1
@@ -209,8 +209,8 @@
 				,{
 					"id":10
 					,"label": "ViewStack"
-					,"module": "test/examples/modules/show-cases/view-stack/index"
-					,"path": "test/examples/modules/show-cases/view-stack/index"
+					,"module": "examples/modules/show-cases/view-stack/index"
+					,"path": "examples/modules/show-cases/view-stack/index"
 					,"icon":""
 					,"order":4
 					,"idMenu":1
@@ -218,8 +218,8 @@
 				,{
 					"id":8
 					,"label": "Vertical Splitter"
-					,"module": "test/examples/modules/show-cases/splitter/index"
-					,"path": "test/examples/modules/show-cases/splitter/index"
+					,"module": "examples/modules/show-cases/splitter/index"
+					,"path": "examples/modules/show-cases/splitter/index"
 					,"icon":""
 					,"order":4
 					,"idMenu":1
@@ -227,8 +227,8 @@
 				,{
 					"id":5
 					,"label": "Lists"
-					,"module": "test/examples/modules/show-cases/fieldset/fieldset-showcase"
-					,"path": "test/examples/modules/show-cases/fieldset/fieldset-showcase"
+					,"module": "examples/modules/show-cases/fieldset/fieldset-showcase"
+					,"path": "examples/modules/show-cases/fieldset/fieldset-showcase"
 					,"order":4
 					,"idMenu":1
 					,"hidden":false
@@ -236,8 +236,8 @@
 						{
 							"id":6
 							,"label": "Tilelist"
-							,"module": "test/examples/modules/show-cases/tilelist/tile-list-showcase"
-							,"path": "test/examples/modules/show-cases/tilelist/tile-list-showcase"
+							,"module": "examples/modules/show-cases/tilelist/tile-list-showcase"
+							,"path": "examples/modules/show-cases/tilelist/tile-list-showcase"
 							,"icon":""
 							,"order":4
 							,"idMenu":1
@@ -245,8 +245,8 @@
 						{
 							"id":6
 							,"label": "Treegrid"
-							,"module": "test/examples/modules/show-cases/treegrid/treegrid-showcase"
-							,"path": "test/examples/modules/show-cases/treegrid/treegrid-showcase"
+							,"module": "examples/modules/show-cases/treegrid/treegrid-showcase"
+							,"path": "examples/modules/show-cases/treegrid/treegrid-showcase"
 							,"icon":""
 							,"order":4
 							,"idMenu":1
@@ -254,8 +254,8 @@
 						{
 							"id":6
 							,"label": "DataGrid"
-							,"module": "test/examples/modules/show-cases/datagrid/datagrid-showcase"
-							,"path": "test/examples/modules/show-cases/datagrid/datagrid-showcase"
+							,"module": "examples/modules/show-cases/datagrid/datagrid-showcase"
+							,"path": "examples/modules/show-cases/datagrid/datagrid-showcase"
 							,"icon":""
 							,"order":4
 							,"idMenu":1
@@ -265,8 +265,8 @@
 				{
 					"id":5
 					,"label": "Treeview"
-					,"module": "test/examples/modules/show-cases/treeview/index"
-					,"path": "test/examples/modules/show-cases/treeview/index"
+					,"module": "examples/modules/show-cases/treeview/index"
+					,"path": "examples/modules/show-cases/treeview/index"
 					,"order":4
 					,"idMenu":1
 					,"hidden":false
@@ -274,8 +274,8 @@
 				{
 					"id":6
 					,"label": "Full Calendar"
-					,"module": "test/examples/modules/show-cases/fullcalendar/fullcalendar-showcase"
-					,"path": "test/examples/modules/show-cases/fullcalendar/fullcalendar-showcase"
+					,"module": "examples/modules/show-cases/fullcalendar/fullcalendar-showcase"
+					,"path": "examples/modules/show-cases/fullcalendar/fullcalendar-showcase"
 					,"order":4
 					,"idMenu":1
 					,"hidden":false
@@ -283,8 +283,8 @@
 				{
 					"id":7
 					,"label": "Requests"
-					,"module": "test/examples/modules/show-cases/http/http-showcase"
-					,"path": "test/examples/modules/show-cases/http/http-showcase"
+					,"module": "examples/modules/show-cases/http/http-showcase"
+					,"path": "examples/modules/show-cases/http/http-showcase"
 					,"order":4
 					,"idMenu":1
 					,"hidden":false
@@ -292,8 +292,8 @@
 				{
 					"id":8
 					,"label": "Core"
-					,"module": "test/examples/modules/show-cases/fieldset/fieldset-showcase"
-					,"path": "test/examples/modules/show-cases/fieldset/fieldset-showcase"
+					,"module": "examples/modules/show-cases/fieldset/fieldset-showcase"
+					,"path": "examples/modules/show-cases/fieldset/fieldset-showcase"
 					,"order":4
 					,"idMenu":1
 					,"hidden":true
@@ -301,8 +301,8 @@
 						{
 							"id":6
 							,"label": "Event Emitter"
-							,"module": "test/examples/modules/show-cases/event-emitter/event-emitter-showcase"
-							,"path": "test/examples/modules/show-cases/event-emitter/event-emitter-showcase"
+							,"module": "examples/modules/show-cases/event-emitter/event-emitter-showcase"
+							,"path": "examples/modules/show-cases/event-emitter/event-emitter-showcase"
 							,"icon":""
 							,"order":4
 							,"idMenu":1
@@ -312,8 +312,8 @@
 				{
 					"id":9
 					,"label": "Router"
-					,"module": "test/examples/modules/show-cases/router/index"
-					,"path": "test/examples/modules/show-cases/router/index"
+					,"module": "examples/modules/show-cases/router/index"
+					,"path": "examples/modules/show-cases/router/index"
 					,"order":4
 					,"idMenu":1
 					,"hidden":false
