@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/router.ts"],"names":[],"mappings":";;;IAIQ,0BAAA,MAAM,CAAA;IACN,mCAAA,UAAU,CAAA","file":"router.js","sourcesContent":["/**\r\n * @module mvcomponents/router\r\n */\r\n\r\nexport {router} from \"./router/router\";\r\nexport {RouterView} from \"./router/router-view\";\r\n"]}

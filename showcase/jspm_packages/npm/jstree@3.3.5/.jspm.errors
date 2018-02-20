@@ -1,0 +1,5 @@
+MultipleErrors: /home/alex/.jspm/packages/npm/jstree@3.3.5/src/intro.js:15:1: Unexpected token End of File
+/home/alex/.jspm/packages/npm/jstree@3.3.5/src/intro.js:15:1: Unexpected token End of File
+/home/alex/.jspm/packages/npm/jstree@3.3.5/src/intro.js:15:1: Unexpected token End of File
+
+MultipleErrors: /home/alex/.jspm/packages/npm/jstree@3.3.5/src/outro.js:1:1: Unexpected token }

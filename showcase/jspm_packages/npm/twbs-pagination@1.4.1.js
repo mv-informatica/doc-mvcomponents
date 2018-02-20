@@ -1,0 +1,1 @@
+module.exports = require("npm:twbs-pagination@1.4.1/jquery.twbsPagination");
