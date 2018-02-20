@@ -1,6 +1,6 @@
 import {Render,ICustomComponent} from "mvcomponents/core";
 
-@Render({templateUrl:"examples/modules/pages/welcome-page.template"})
+@Render({templateUrl:"test/examples/modules/pages/welcome-page.template"})
 export class WelcomePage implements ICustomComponent{
 	constructor(){
 /*

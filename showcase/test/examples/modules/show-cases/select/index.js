@@ -16,19 +16,19 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             tutorialVideo.videoUrl = "https://player.vimeo.com/video/218790816?color=158e84&title=0&byline=0&portrait=0";
             _this.append(tutorialVideo);
             _this.append(new default_module_window_1.DefaultModuleWindow("Autocomplete", "exemplo simples")
-                .loadExample("examples/modules/show-cases/select/select-simple-case", "SelectSimpleCase"));
+                .loadExample("test/examples/modules/show-cases/select/select-simple-case", "SelectSimpleCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Chave única", "Com uma lista de objetos com apenas uma chave")
-                .loadExample("examples/modules/show-cases/select/select-one-key-case", "SelectOneKeyCase"));
+                .loadExample("test/examples/modules/show-cases/select/select-one-key-case", "SelectOneKeyCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Desabilitado", "Autocomplete desabilitado")
-                .loadExample("examples/modules/show-cases/select/select-disabled-case", "SelectDisabledCase"));
+                .loadExample("test/examples/modules/show-cases/select/select-disabled-case", "SelectDisabledCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Valor customizado", "Valor customizado")
-                .loadExample("examples/modules/show-cases/select/select-custom-value-case", "SelectCustomValueCase"));
+                .loadExample("test/examples/modules/show-cases/select/select-custom-value-case", "SelectCustomValueCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Lista customizada", "Lista customizada")
-                .loadExample("examples/modules/show-cases/select/select-custom-list-case", "SelectCustomListCase"));
+                .loadExample("test/examples/modules/show-cases/select/select-custom-list-case", "SelectCustomListCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Lista multipla", "Lista multipla")
-                .loadExample("examples/modules/show-cases/select/select-multiple-case", "SelectMultipleCase"));
+                .loadExample("test/examples/modules/show-cases/select/select-multiple-case", "SelectMultipleCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Eventos", "Eventos da lista")
-                .loadExample("examples/modules/show-cases/select/select-events-case", "SelectEventsCase"));
+                .loadExample("test/examples/modules/show-cases/select/select-events-case", "SelectEventsCase"));
             return _this;
         }
         return Index;

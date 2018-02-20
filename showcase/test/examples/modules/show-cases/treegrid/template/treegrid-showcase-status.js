@@ -11,7 +11,7 @@ var __target
 
 exports.statusRender = (function () {
   return function statusRender ($item_status) {
-  elementOpen("span", "28ba26d0-1c7e-4c5f-952d-e5f6825663bb", hoisted1, "style", {color:($item_status.status===1?'blue':'red')}, "class", 'glyphicon glyphicon-thumbs-'+($item_status.status===1?'up':'down'))
+  elementOpen("span", "f8b2d31b-c13e-4c2f-a79b-77a3001ceedb", hoisted1, "style", {color:($item_status.status===1?'blue':'red')}, "class", 'glyphicon glyphicon-thumbs-'+($item_status.status===1?'up':'down'))
   elementClose("span")
 }
 })()

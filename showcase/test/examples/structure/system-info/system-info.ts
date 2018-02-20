@@ -12,7 +12,7 @@ export interface ISystemInfo{
 }
 
 @Render({
-    templateUrl:"examples/structure/system-info/assets/system-info.template"
+    templateUrl:"test/examples/structure/system-info/assets/system-info.template"
 })
 export class SystemInfo implements ICustomComponent,ISystemInfo{
     public companyName:string;

@@ -16,7 +16,7 @@ export class Index extends Box{
 
 		this.append(
 			new DefaultModuleWindow("Exemplo simples","Configurando e carregando arquivo de idioma.")
-				.loadExample("examples/modules/show-cases/i18n/i18n-showcase","I18nShowcase")
+				.loadExample("test/examples/modules/show-cases/i18n/i18n-showcase","I18nShowcase")
 		);
 	}
 }

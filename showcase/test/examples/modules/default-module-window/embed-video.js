@@ -25,7 +25,7 @@ define(["require", "exports", "tslib", "mvcomponents/core"], function (require, 
     }());
     EmbedVideo = tslib_1.__decorate([
         core_1.Render({
-            templateUrl: "examples/modules/default-module-window/embed-video.template"
+            templateUrl: "test/examples/modules/default-module-window/embed-video.template"
         })
     ], EmbedVideo);
     exports.EmbedVideo = EmbedVideo;

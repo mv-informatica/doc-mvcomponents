@@ -23,7 +23,7 @@ export class TileListShowcase extends Box{
 		myForm.append(new ButtonGroup().setSize(3).append(btnLoad.setVerticalAlign(EVerticalAlign.BOTTOM)));
 
 
-		let listView:TileList<any> = new TileList({urlTemplate:"examples/modules/show-cases/tilelist/template/tile-list-showcase.template"});
+		let listView:TileList<any> = new TileList({urlTemplate:"test/examples/modules/show-cases/tilelist/template/tile-list-showcase.template"});
 		myForm.append(listView);
 
 

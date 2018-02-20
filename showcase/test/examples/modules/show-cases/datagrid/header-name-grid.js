@@ -19,7 +19,7 @@ define(["require", "exports", "tslib", "mvcomponents/core"], function (require, 
     }());
     HeaderNameGrid = tslib_1.__decorate([
         core_1.Render({
-            templateUrl: "examples/modules/show-cases/datagrid/template/header-name-grid"
+            templateUrl: "test/examples/modules/show-cases/datagrid/template/header-name-grid"
         })
     ], HeaderNameGrid);
     exports.HeaderNameGrid = HeaderNameGrid;

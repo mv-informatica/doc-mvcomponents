@@ -8,7 +8,7 @@ define(["require", "exports", "tslib", "mvcomponents/core"], function (require, 
         return WelcomePage;
     }());
     WelcomePage = tslib_1.__decorate([
-        core_1.Render({ templateUrl: "examples/modules/pages/welcome-page.template" })
+        core_1.Render({ templateUrl: "test/examples/modules/pages/welcome-page.template" })
     ], WelcomePage);
     exports.WelcomePage = WelcomePage;
 });

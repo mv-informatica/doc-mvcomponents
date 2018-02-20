@@ -10,7 +10,7 @@ import "./area-manager/area-manager";
 //informando/registrando as áreas.
 workspaceDispatch.onRegisterArea.emit({
 	name:"showcase-area"
-	,path:"examples/structure/areas/showcase-area"
+	,path:"test/examples/structure/areas/showcase-area"
 });
 
 //carregando a área de login.

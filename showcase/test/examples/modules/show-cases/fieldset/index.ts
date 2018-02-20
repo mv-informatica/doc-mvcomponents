@@ -10,11 +10,11 @@ export class Index extends Box{
 		);
 		this.append(
 			new DefaultModuleWindow("Exemplo simples","organizando o layout do formulário.")
-				.loadExample("examples/modules/show-cases/fieldset/fieldset-showcase","FieldsetShowcase")
+				.loadExample("test/examples/modules/show-cases/fieldset/fieldset-showcase","FieldsetShowcase")
 		);
 		this.append(
 			new DefaultModuleWindow("Bloqueando o fieldset","bloqueando um fieldset com o método 'setEnable(false)'.")
-				.loadExample("examples/modules/show-cases/fieldset/disabled-showcase","DisabledShowcase")
+				.loadExample("test/examples/modules/show-cases/fieldset/disabled-showcase","DisabledShowcase")
 		);
 	}
 }

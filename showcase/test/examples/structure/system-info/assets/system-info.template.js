@@ -13,10 +13,10 @@ var __target
 exports.systemInfo = (function () {
   return function systemInfo ($this) {
   setTimeout(function(){             $this.refreshRender();         },$this.refreshTime);
-  elementOpen("label", "f97402e6-4861-477b-8e7e-e2314e580fc1", hoisted1)
+  elementOpen("label", "e8000acb-ddb1-4f5c-a020-24ff525287a6", hoisted1)
     text("" + (($this.companyName?$this.companyName+" | ":".")) + "" + (($this.userName?$this.userName:"")) + "")
   elementClose("label")
-  elementOpen("label", "a74bbda0-9d34-48c6-99d6-4d9d0fc05919", hoisted2)
+  elementOpen("label", "4d1ae876-ae21-4e64-a9e3-507db5dc4cb1", hoisted2)
     text("" + ($this.getTimeDisplay()) + " | " + ($this.version) + "" + (($this.language?" | "+$this.language:"")) + "")
   elementClose("label")
 }

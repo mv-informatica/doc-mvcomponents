@@ -44,7 +44,7 @@ define(["require", "exports", "tslib", "mvcomponents/container", "mvcomponents/w
             jquery(codBlock.element)
                 .find("pre:first")
                 .addClass("sunlight-highlight-actionscript");
-            jquery.get("" + path + ".ts").then(function (dta) {
+            jquery.get("/" + path + ".ts").then(function (dta) {
                 codBlock.setCodeText(dta);
                 window.setTimeout(function () {
                     Sunlight.highlightAll({ lineNumbers: false });

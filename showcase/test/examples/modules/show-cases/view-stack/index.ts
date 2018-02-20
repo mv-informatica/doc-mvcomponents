@@ -11,17 +11,17 @@ export class Index extends Box{
 		
 		this.append(
 			new DefaultModuleWindow("Exemplo simples","Criando viewstack e mudando o índice.")
-				.loadExample("examples/modules/show-cases/view-stack/view-stack-showcase","ViewStackShowcase")
+				.loadExample("test/examples/modules/show-cases/view-stack/view-stack-showcase","ViewStackShowcase")
 		);
 
 		this.append(
 			new DefaultModuleWindow("Usando 'state'","Criando viewstack e mudando o 'state'.")
-				.loadExample("examples/modules/show-cases/view-stack/state-showcase","StateShowcase")
+				.loadExample("test/examples/modules/show-cases/view-stack/state-showcase","StateShowcase")
 		);
 
 		this.append(
 			new DefaultModuleWindow("Eventos","Eventos do ViewStack.")
-				.loadExample("examples/modules/show-cases/view-stack/events-showcase","EventsShowcase")
+				.loadExample("test/examples/modules/show-cases/view-stack/events-showcase","EventsShowcase")
 		);
 
 	}

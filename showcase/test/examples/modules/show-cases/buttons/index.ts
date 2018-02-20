@@ -7,23 +7,23 @@ export class Index extends Box{
 
 		this.append(
 			new DefaultModuleWindow("Simples","Botão de ação simples")
-				.loadExample("examples/modules/show-cases/buttons/case-1","ButtonCase")
+				.loadExample("test/examples/modules/show-cases/buttons/case-1","ButtonCase")
 		);	
 		this.append(
 			new DefaultModuleWindow("Com ícones","Adicionando ícone ao botão")
-				.loadExample("examples/modules/show-cases/buttons/button-with-icon","ButtonWithIcon")
+				.loadExample("test/examples/modules/show-cases/buttons/button-with-icon","ButtonWithIcon")
 		);
 		this.append(
 			new DefaultModuleWindow("Cores","Aplicando cor ao botão")
-				.loadExample("examples/modules/show-cases/buttons/button-with-color","ButtonWithColor")
+				.loadExample("test/examples/modules/show-cases/buttons/button-with-color","ButtonWithColor")
 		);	
 		this.append(
 			new DefaultModuleWindow("Eventos","Adicionando evento ao botão")
-				.loadExample("examples/modules/show-cases/buttons/button-with-event","ButtonWithEvent")
+				.loadExample("test/examples/modules/show-cases/buttons/button-with-event","ButtonWithEvent")
 		);	
 		this.append(
 			new DefaultModuleWindow("IconButton","Butão icone")
-				.loadExample("examples/modules/show-cases/buttons/icon-button-case","IconButtonCase")
+				.loadExample("test/examples/modules/show-cases/buttons/icon-button-case","IconButtonCase")
 		);
 	}
 }

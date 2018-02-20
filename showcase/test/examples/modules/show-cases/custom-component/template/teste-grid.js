@@ -13,9 +13,9 @@ var __target
 exports.testeTemplate = (function () {
   return function testeTemplate ($row) {
   var $this = this;
-  elementOpen("input", "b5494dd0-bbec-4912-a40a-9eb52f16309a", hoisted1, "value", $row.idade)
+  elementOpen("input", "c49d8501-f660-41fe-a91a-3ed9b18ab79b", hoisted1, "value", $row.idade)
   elementClose("input")
-  elementOpen("span", "44444a0e-7623-4b7c-b3eb-f9644cab7d9f", hoisted2, "onclick", function ($event) {
+  elementOpen("span", "fe6d90a7-0176-4be0-8233-d2afb3d8ab67", hoisted2, "onclick", function ($event) {
     var $element = this;
   $event.preventDefault();$this.testeGid()})
   elementClose("span")

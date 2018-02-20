@@ -13,7 +13,7 @@ define(["require", "exports", "tslib", "mvcomponents/tilelist", "mvcomponents/co
             myForm.append(nsIndex);
             var btnLoad = new button_1.Button("refresh").setIcon("glyphicon glyphicon-circle-arrow-down");
             myForm.append(new container_1.ButtonGroup().setSize(3).append(btnLoad.setVerticalAlign(component_1.EVerticalAlign.BOTTOM)));
-            var listView = new tilelist_1.TileList({ urlTemplate: "examples/modules/show-cases/tilelist/template/tile-list-showcase.template" });
+            var listView = new tilelist_1.TileList({ urlTemplate: "test/examples/modules/show-cases/tilelist/template/tile-list-showcase.template" });
             myForm.append(listView);
             btnLoad.addEvent(component_1.EMouseEvent.CLICK, function () {
                 listView.setData([

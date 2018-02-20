@@ -25,37 +25,37 @@ export class Index extends Box{
 		this.append(
 			new DefaultModuleWindow("Validação de campo"
 					,"exemplo de validação individual de campo")
-				.loadExample("examples/modules/show-cases/validation/validation-simple-case","ValidationSimpleCase")
+				.loadExample("test/examples/modules/show-cases/validation/validation-simple-case","ValidationSimpleCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Validação de formulário com inscrição"
 					,"Se inscrevendo na validação de um formulário. Para que essa validação funcione corretamente é necessário que os campos possuam um nome estabelecido com o método 'setName'.")
-				.loadExample("examples/modules/show-cases/validation/validation-form-event-emitter-case","ValidationFormEventEmitterCase")
+				.loadExample("test/examples/modules/show-cases/validation/validation-form-event-emitter-case","ValidationFormEventEmitterCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Validação de formulário com promise"
 					,"Validando um formulário e recebendo o retorno em uma promise. Para que essa validação funcione corretamente é necessário que os campos possuam um nome estabelecido com o método 'setName'.")
-				.loadExample("examples/modules/show-cases/validation/validation-form-promise-case","ValidationFormPromiseCase")
+				.loadExample("test/examples/modules/show-cases/validation/validation-form-promise-case","ValidationFormPromiseCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Campo requerido"
 					,"Obigando o preenchimento de um campo de formulário")
-				.loadExample("examples/modules/show-cases/validation/validation-field-required-case","ValidationFieldRequiredCase")
+				.loadExample("test/examples/modules/show-cases/validation/validation-field-required-case","ValidationFieldRequiredCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Validações pré-definidas"
 					,"Utilizando uma validação pré-definida")
-				.loadExample("examples/modules/show-cases/validation/validation-field-predefined-case","ValidationFieldPredefinedCase")
+				.loadExample("test/examples/modules/show-cases/validation/validation-field-predefined-case","ValidationFieldPredefinedCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Validação customizada"
 					,"Criando uma validação de campo custumizada")
-				.loadExample("examples/modules/show-cases/validation/validation-custom-case","ValidationCustomCase")
+				.loadExample("test/examples/modules/show-cases/validation/validation-custom-case","ValidationCustomCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Removendo validação customizada"
 					,"Removendo uma validação de campo custumizada")
-				.loadExample("examples/modules/show-cases/validation/validation-remove-custom-case","ValidationRemoveCustomCase")
+				.loadExample("test/examples/modules/show-cases/validation/validation-remove-custom-case","ValidationRemoveCustomCase")
 		);
 	}
 }

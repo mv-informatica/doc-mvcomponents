@@ -10,26 +10,26 @@ export class Index extends Box{
 		);
 		this.append(
 			new DefaultModuleWindow("Exemplo simples","Organizando para agrupar outros containers.")
-				.loadExample("examples/modules/show-cases/accordion/accordion-showcase","AccordionShowcase")
+				.loadExample("test/examples/modules/show-cases/accordion/accordion-showcase","AccordionShowcase")
 		);
 		this.append(
 			new DefaultModuleWindow("Alterando icone","Bloqueando um fieldset com o método 'setEnable(false)'.")
-				.loadExample("examples/modules/show-cases/accordion/icon-showcase","IconShowcase")
+				.loadExample("test/examples/modules/show-cases/accordion/icon-showcase","IconShowcase")
 		);
 
 		this.append(
 			new DefaultModuleWindow("Alterando a posição do icone","Alterando a posição do icone do item do accordion'.")
-				.loadExample("examples/modules/show-cases/accordion/icon-position-showcase","IconPositionShowcase")
+				.loadExample("test/examples/modules/show-cases/accordion/icon-position-showcase","IconPositionShowcase")
 		);
 
 		this.append(
 			new DefaultModuleWindow("Desabilitando item","Bloqueando um item do accordion.")
-				.loadExample("examples/modules/show-cases/accordion/disabled-showcase","DisabledShowcase")
+				.loadExample("test/examples/modules/show-cases/accordion/disabled-showcase","DisabledShowcase")
 		);
 
 		this.append(
 			new DefaultModuleWindow("Eventos","Eventos do accordion.")
-				.loadExample("examples/modules/show-cases/accordion/events-showcase","EventsShowcase")
+				.loadExample("test/examples/modules/show-cases/accordion/events-showcase","EventsShowcase")
 		);
 
 

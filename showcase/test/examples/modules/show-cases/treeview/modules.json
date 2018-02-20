@@ -1,0 +1,205 @@
+[{
+        "id": 1,
+        "label": "Paginal Inicial",
+        "iconColor": "#387002",
+        "module": "com/mvsistemas/startweb/modules/pagina-inicial/pagina-inicial",
+        "path": "com/mvsistemas/startweb/modules/pagina-inicial/pagina-inicial",
+        "icon": "mv-basico-casa",
+        "order": 1
+    },
+    {
+        "id": 2,
+        "label": "Análise de Crítica",
+        "iconColor": "#387002",
+        "module": "#",
+        "path": "#",
+        "icon": "mv-basico-nivel_atencao",
+        "order": 8,
+        "itens": [{
+                "id": 3,
+                "label": "Painel de Criticidade",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/painel-criticas/painel-criticas-view-stack",
+                "path": "com/mvsistemas/startweb/modules/painel-criticas/painel-criticas-view-stack",
+                "icon": "mv-basico-interface",
+                "order": 2
+            },
+            {
+                "id": 4,
+                "label": "Críticas",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/criticas-tratamento/criticas-view-stack",
+                "path": "com/mvsistemas/startweb/modules/criticas-tratamento/criticas-view-stack",
+                "icon": "mv-basico-alerta",
+                "order": 6
+            },
+            {
+                "id": 70,
+                "label": "Cadastrar Usuario",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/cadastro-usuario/cadastro-usuario",
+                "path": "com/mvsistemas/startweb/modules/cadastro-usuario/cadastro-usuario",
+                "icon": "mv-basico-alerta",
+                "order": 6
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "label": "Conta Limpa",
+        "iconColor": "#387002",
+        "module": "com/mvsistemas/startweb/modules/conta-limpa/conta-limpa",
+        "path": "com/mvsistemas/startweb/modules/conta-limpa/conta-limpa",
+        "icon": "mv-basico-relogio",
+        "order": 2,
+        "itens": [{
+            "id": 6,
+            "label": "Auditoria de Conta",
+            "iconColor": "#387002",
+            "module": "com/mvsistemas/startweb/modules/conta-limpa/conta-limpa",
+            "path": "com/mvsistemas/startweb/modules/conta-limpa/conta-limpa",
+            "icon": "mv-hosp-checagem",
+            "order": 1
+        }]
+    },
+    {
+        "id": 7,
+        "label": "Análise por Gabarito",
+        "iconColor": "#387002",
+        "module": "#",
+        "path": "#",
+        "icon": "mv-hosp-resultados",
+        "order": 8,
+        "itens": [{
+                "id": 8,
+                "label": "Painel de Gabaritos",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/painel-gabarito/painel-gabarito-view-stack",
+                "path": "com/mvsistemas/startweb/modules/painel-gabarito/painel-gabarito-view-stack",
+                "icon": "mv-basico-interface",
+                "order": 2
+            },
+            {
+                "id": 9,
+                "label": "Gabaritos",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/gabarito-tratamento/gabarito-view-stack",
+                "path": "com/mvsistemas/startweb/modules/gabarito-tratamento/gabarito-view-stack",
+                "icon": "mv-basico-tipo",
+                "order": 7
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "label": "Posição do Faturamento",
+        "iconColor": "#387002",
+        "module": "#",
+        "path": "#",
+        "icon": "mv-basico-faturamento",
+        "order": 8,
+        "itens": [{
+                "id": 10,
+                "label": "Situação de Contas",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/painel-criticas/painel-criticas-view-stack",
+                "path": "com/mvsistemas/startweb/modules/painel-criticas/painel-criticas-view-stack",
+                "icon": "mv-basico-qualidade",
+                "order": 15,
+                "params": { "tela": "posicao" }
+            },
+            {
+                "id": 11,
+                "label": "Produção Diária",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/producao-diaria/producao-diaria",
+                "path": "com/mvsistemas/startweb/modules/producao-diaria/producao-diaria",
+                "icon": "mv-basico-agenda_liberar",
+                "order": 16
+            },
+            {
+                "id": 13,
+                "label": "Tempo de Entrega",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/painel-tempo-entrega/painel-tempo-entrega",
+                "path": "com/mvsistemas/startweb/modules/painel-tempo-entrega/painel-tempo-entrega",
+                "icon": "mv-basico-relogio",
+                "order": 22
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "label": "Análise de Tabelas",
+        "iconColor": "#387002",
+        "module": "com/mvsistemas/startweb/modules/em-construcao/em-construcao",
+        "path": "com/mvsistemas/startweb/modules/em-construcao/em-construcao",
+        "icon": "mv-basico-tabela",
+        "order": 9,
+        "itens": [{
+                "id": 15,
+                "label": "Contratos e Vigências",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/contratos/contratos-view-stack",
+                "path": "com/mvsistemas/startweb/modules/contratos/contratos-view-stack",
+                "icon": "mv-basico-documento",
+                "order": 9
+            },
+            {
+                "id": 16,
+                "label": "Comparativo",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/comparativo-tabelas/comparativo-tabelas",
+                "path": "com/mvsistemas/startweb/modules/comparativo-tabelas/comparativo-tabelas",
+                "icon": "mv-basico-monitor_tabela",
+                "order": 18
+            },
+            {
+                "id": 17,
+                "label": "Preços Desatualizados",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/precos-desatualizados/precos-desatualizados",
+                "path": "com/mvsistemas/startweb/modules/precos-desatualizados/precos-desatualizados",
+                "icon": "mv-basico-thread_matar",
+                "order": 20
+            },
+            {
+                "id": 18,
+                "label": "Evolução de Preços",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/evolucao-preco/evolucao-preco",
+                "path": "com/mvsistemas/startweb/modules/evolucao-preco/evolucao-preco",
+                "icon": "mv-basico-monitor",
+                "order": 21
+            }
+        ]
+    },
+    {
+        "id": 19,
+        "label": "Brasíndice e Simpro",
+        "iconColor": "#387002",
+        "module": "#",
+        "path": "#",
+        "icon": "mv-basico-instalar_app",
+        "order": 10,
+        "itens": [{
+                "id": 20,
+                "label": "Análise Brasíndice",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/analise-brasindice/analise-brasindice-view-stack",
+                "path": "com/mvsistemas/startweb/modules/analise-brasindice/analise-brasindice-view-stack",
+                "icon": "mv-basico-monitor",
+                "order": 1
+            },
+            {
+                "id": 21,
+                "label": "Análise Simpro",
+                "iconColor": "#387002",
+                "module": "com/mvsistemas/startweb/modules/analise-simpro/analise-simpro-view-stack",
+                "path": "com/mvsistemas/startweb/modules/analise-simpro/analise-simpro-view-stack",
+                "icon": "mv-basico-monitor",
+                "order": 2
+            }
+        ]
+    }
+]
