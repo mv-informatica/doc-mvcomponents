@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: ProgressBar</title>
+	<title>Documentation Class: DateTimePickerInput</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -72,19 +72,19 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ProgressBar</h1>
+	<h1 class="page-title">Class: DateTimePickerInput</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-mvcomponents_widget.html">mvcomponents/widget</a>.</span>
+            <span class="ancestors"><a href="module-mvcomponents_input.html">mvcomponents/input</a>.</span>
         
-        ProgressBar
+        DateTimePickerInput
         </h2>
         
-            <div class="class-description"><p>Componene que exibe uma barra de progresso</p>
-<p><img src="../../doc_assets/progress_bar_exemple.png"></p></div>
+            <div class="class-description"><p>Campo de formulário para exibição de data com hora.</p>
+<p><img src="../../doc_assets/date-time-picker-input_example.png"></p></div>
         
     
 </header>
@@ -96,7 +96,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ProgressBar"><span class="type-signature"></span>new ProgressBar()</h4>
+    <h4 class="name" id="DateTimePickerInput"><span class="type-signature"></span>new DateTimePickerInput()</h4>
     
     
 </dt>
@@ -166,9 +166,9 @@
     
         <h5>Example</h5>
         
-    <pre class="sunlight-highlight-javascript">let progress: ProgressBar = new ProgressBar()
-     .setProgress(10); // Atualiza a barra para 10% de progresso
-     .setColor(EBasicColorStatus.PRIMARY) // Seta a cor do progress para a cor principal</pre>
+    <pre class="sunlight-highlight-javascript">let dateTime = new DateTimePickerInput();
+let form = new Form();
+form.append(dateTime);</pre>
 
 
     
@@ -184,7 +184,7 @@
 
 
     <ul>
-        <li>AWidget</li>
+        <li>AInput</li>
     </ul>
 
 
@@ -200,364 +200,6 @@
 
     
 
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="getProgress"><span class="type-signature"></span>getProgress()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Obtém qual o progresso que está sendo atualizado</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">number</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setColor"><span class="type-signature"></span>setColor(bgc)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Informa a cor da barra de progresso</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>bgc</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">EBasicColorStatus</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="setProgress"><span class="type-signature"></span>setProgress(progress)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        <p>Atualiza o progresso da barra</p>
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>progress</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Progresso atual, na escala de 0-100;</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
-        </dl>
     
 
     
@@ -605,7 +247,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a>
 	
-		on 2018-02-20T10:17:12-03:00
+		on 2018-02-20T10:17:11-03:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
