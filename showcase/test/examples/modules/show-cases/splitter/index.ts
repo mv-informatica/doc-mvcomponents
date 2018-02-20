@@ -11,12 +11,12 @@ export class Index extends Box{
 		
 		this.append(
 			new DefaultModuleWindow("Exemplo simples","Criando abas para destribuir o conteudo.")
-				.loadExample("test/examples/modules/show-cases/splitter/vertical-splitter-showcase","VerticalSplitterShowcase")
+				.loadExample("examples/modules/show-cases/splitter/vertical-splitter-showcase","VerticalSplitterShowcase")
 		);
 
 		this.append(
 			new DefaultModuleWindow("Eventos","Eventos do Dialog.")
-				.loadExample("test/examples/modules/show-cases/splitter/events-showcase","EventsShowcase")
+				.loadExample("examples/modules/show-cases/splitter/events-showcase","EventsShowcase")
 		);
 
 	}

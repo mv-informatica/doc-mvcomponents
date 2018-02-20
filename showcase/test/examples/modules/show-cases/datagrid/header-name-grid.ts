@@ -2,7 +2,7 @@ import {IDataGridColumn} from "mvcomponents/datagrid";
 import {Render,ICustomComponent} from "mvcomponents/core";
 
 @Render({
-    templateUrl:"test/examples/modules/show-cases/datagrid/template/header-name-grid"
+    templateUrl:"examples/modules/show-cases/datagrid/template/header-name-grid"
 })
 export class HeaderNameGrid implements ICustomComponent{
 	private checked:boolean;

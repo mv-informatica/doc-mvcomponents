@@ -8,9 +8,9 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             _this.append(new default_module_window_1.DefaultModuleWindow("Janela de dialogo", "")
                 .setMarginTopExample(50));
             _this.append(new default_module_window_1.DefaultModuleWindow("Exemplo simples", "Criando abas para destribuir o conteudo.")
-                .loadExample("test/examples/modules/show-cases/splitter/vertical-splitter-showcase", "VerticalSplitterShowcase"));
+                .loadExample("examples/modules/show-cases/splitter/vertical-splitter-showcase", "VerticalSplitterShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Eventos", "Eventos do Dialog.")
-                .loadExample("test/examples/modules/show-cases/splitter/events-showcase", "EventsShowcase"));
+                .loadExample("examples/modules/show-cases/splitter/events-showcase", "EventsShowcase"));
             return _this;
         }
         return Index;

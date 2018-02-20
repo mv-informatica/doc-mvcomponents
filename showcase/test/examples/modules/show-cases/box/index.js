@@ -8,9 +8,9 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             _this.append(new default_module_window_1.DefaultModuleWindow("Box", "Conteiner usado para agrupar o layout da aplicação.")
                 .setMarginTopExample(50));
             _this.append(new default_module_window_1.DefaultModuleWindow("Exemplo simples", "organizando o layout em duas partes")
-                .loadExample("test/examples/modules/show-cases/box/box-showcase", "BoxShowcase"));
+                .loadExample("examples/modules/show-cases/box/box-showcase", "BoxShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Bloqueando box", "bloqueando um container")
-                .loadExample("test/examples/modules/show-cases/box/disable-case", "DisableCase"));
+                .loadExample("examples/modules/show-cases/box/disable-case", "DisableCase"));
             return _this;
         }
         return Index;

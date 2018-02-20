@@ -18,7 +18,7 @@ define(["require", "exports", "tslib", "mvcomponents/core", "./assets/nav-info.c
     }());
     NavInfo = tslib_1.__decorate([
         core_1.Render({
-            templateUrl: "test/examples/structure/nav-info/assets/nav-info.template"
+            templateUrl: "examples/structure/nav-info/assets/nav-info.template"
         })
     ], NavInfo);
     exports.NavInfo = NavInfo;

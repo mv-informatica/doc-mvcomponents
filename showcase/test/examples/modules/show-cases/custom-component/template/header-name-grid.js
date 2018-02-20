@@ -17,7 +17,7 @@ exports.testHeaderTemplate = (function () {
   $event.preventDefault();$this__.toogleCheck();$column.checked = !$column.checked}, "class", "glyphicon glyphicon-" + (($column.checked?'check':'unchecked')) + "")
   elementClose("span")
   text("     " + ($column.title) + "     ")
-  elementOpen("span", "825fbaec-ed33-4b61-8433-f73dd8f11cc0", hoisted1, "onclick", function ($event) {
+  elementOpen("span", "e378e059-c896-4a17-9883-74baa3197bc8", hoisted1, "onclick", function ($event) {
     var $element = this;
   $event.preventDefault();$this__.testeGid()})
   elementClose("span")

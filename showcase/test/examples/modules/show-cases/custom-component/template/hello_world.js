@@ -14,7 +14,7 @@ var __target
 
 exports.HelloWorld = (function () {
   return function HelloWorld ($this) {
-  elementOpen("div", "ceb2b523-6f3c-450d-a88c-3f256c10ed97", hoisted1)
+  elementOpen("div", "05387816-f38c-423b-8f1e-64aabf12b09a", hoisted1)
   elementClose("div")
   elementOpen("h1", null, null, "onmouseover", function ($event) {
     var $element = this;
@@ -27,7 +27,7 @@ exports.HelloWorld = (function () {
   if (__target) {
     ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
       var todo = $value
-      var $key = "4468d9e4-0783-42a4-8720-e6b051eb1bf7_" + $item
+      var $key = "34663b9f-ab98-4284-a448-53fb59ae4e46_" + $item
       elementOpen("h4", $key)
         text("         " + ($this.microRender(todo)) + "     ")
       elementClose("h4")
@@ -42,7 +42,7 @@ exports.HelloWorld = (function () {
   if (__target) {
     ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
       var item = $value
-      var $key = "571bb10f-50fd-47a9-ae26-267b6e5621f5_" + $item
+      var $key = "2ef0404e-3779-4c88-bd90-ab501cf6d5ef_" + $item
       elementOpen("input", $key, null, "value", $item+':'+item)
       elementClose("input")
     }, this)
@@ -52,21 +52,21 @@ exports.HelloWorld = (function () {
     if (__target) {
       ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
         var msg = $value
-        var $key = "c58bcfe9-d9a5-4189-b057-41c5f772ca7d_" + $item
+        var $key = "e457f0fb-a1a6-45dc-9d00-9a6f67e5e67d_" + $item
         elementOpen("li", $key)
           text("            " + (msg) + "       ")
         elementClose("li")
       }, this)
     }
   elementClose("ul")
-  elementOpen("div", "284f3f0c-874b-4045-9019-d2ac818e65b4", hoisted2, "ondragstart", function ($event) {
+  elementOpen("div", "ea4c2895-7cb8-4cac-8c9d-51f698fd9c1b", hoisted2, "ondragstart", function ($event) {
     var $element = this;
   $event.dataTransfer.setData('text', $event.target.id);})
     elementOpen("h4")
       text("DRAG TEST")
     elementClose("h4")
   elementClose("div")
-  elementOpen("div", "77e92366-a90c-448b-b77d-02c79a8f1c24", hoisted3, "ondrop", function ($event) {
+  elementOpen("div", "3cceeb61-3ba1-4e4e-9c49-bccb81682130", hoisted3, "ondrop", function ($event) {
     var $element = this;
   $event.preventDefault();var data = $event.dataTransfer.getData('text');$this.addTodo(data);}, "ondragover", function ($event) {
     var $element = this;
@@ -75,7 +75,7 @@ exports.HelloWorld = (function () {
       text("DROP TEST")
     elementClose("h4")
   elementClose("div")
-  elementOpen("input", "80c0a330-f5db-4f50-a2d5-53d60116dc81", hoisted4, "value", $this.mytext?$this.mytext:'nothing changed')
+  elementOpen("input", "b46514cf-720c-430e-8570-592fe562287c", hoisted4, "value", $this.mytext?$this.mytext:'nothing changed')
   elementClose("input")
   elementOpen("button", null, null, "onclick", function ($event) {
     var $element = this;

@@ -27,31 +27,31 @@ export class Index extends Box{
 
 		this.append(
 			new DefaultModuleWindow("Autocomplete","exemplo simples")
-				.loadExample("test/examples/modules/show-cases/select/select-simple-case","SelectSimpleCase")
+				.loadExample("examples/modules/show-cases/select/select-simple-case","SelectSimpleCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Chave única","Com uma lista de objetos com apenas uma chave")
-				.loadExample("test/examples/modules/show-cases/select/select-one-key-case","SelectOneKeyCase")
+				.loadExample("examples/modules/show-cases/select/select-one-key-case","SelectOneKeyCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Desabilitado","Autocomplete desabilitado")
-				.loadExample("test/examples/modules/show-cases/select/select-disabled-case","SelectDisabledCase")
+				.loadExample("examples/modules/show-cases/select/select-disabled-case","SelectDisabledCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Valor customizado","Valor customizado")
-				.loadExample("test/examples/modules/show-cases/select/select-custom-value-case","SelectCustomValueCase")
+				.loadExample("examples/modules/show-cases/select/select-custom-value-case","SelectCustomValueCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Lista customizada","Lista customizada")
-				.loadExample("test/examples/modules/show-cases/select/select-custom-list-case","SelectCustomListCase")
+				.loadExample("examples/modules/show-cases/select/select-custom-list-case","SelectCustomListCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Lista multipla","Lista multipla")
-				.loadExample("test/examples/modules/show-cases/select/select-multiple-case","SelectMultipleCase")
+				.loadExample("examples/modules/show-cases/select/select-multiple-case","SelectMultipleCase")
 		);		
 		this.append(
 			new DefaultModuleWindow("Eventos","Eventos da lista")
-				.loadExample("test/examples/modules/show-cases/select/select-events-case","SelectEventsCase")
+				.loadExample("examples/modules/show-cases/select/select-events-case","SelectEventsCase")
 		);
 	}
 }

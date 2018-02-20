@@ -53,7 +53,7 @@ export class DefaultModuleWindow extends Box{
 			.find("pre:first")
 			.addClass("sunlight-highlight-actionscript");
 
-		jquery.get("/"+path+".ts").then(dta => {
+		jquery.get(path+".ts").then(dta => {
 			codBlock.setCodeText(dta);
 			window.setTimeout(() => {
 				Sunlight.highlightAll({lineNumbers: false});

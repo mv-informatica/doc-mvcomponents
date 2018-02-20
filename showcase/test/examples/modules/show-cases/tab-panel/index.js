@@ -8,15 +8,15 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             _this.append(new default_module_window_1.DefaultModuleWindow("Painel de abas", "abas.")
                 .setMarginTopExample(50));
             _this.append(new default_module_window_1.DefaultModuleWindow("Exemplo simples", "Criando abas para destribuir o conteudo.")
-                .loadExample("test/examples/modules/show-cases/tab-panel/tab-panel-showcase", "TabPanelShowcase"));
+                .loadExample("examples/modules/show-cases/tab-panel/tab-panel-showcase", "TabPanelShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Adicionando icone", "Criando abas para destribuir o conteudo.")
-                .loadExample("test/examples/modules/show-cases/tab-panel/icon-showcase", "IconShowcase"));
+                .loadExample("examples/modules/show-cases/tab-panel/icon-showcase", "IconShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Fechavel", "Criando abas que podem ser fechadas o conteudo.")
-                .loadExample("test/examples/modules/show-cases/tab-panel/notclosable-showcase", "NotClosableShowcase"));
+                .loadExample("examples/modules/show-cases/tab-panel/notclosable-showcase", "NotClosableShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Desabilitando uma aba", "Criando abas para destribuir o conteudo.")
-                .loadExample("test/examples/modules/show-cases/tab-panel/disable-showcase", "DisableShowcase"));
+                .loadExample("examples/modules/show-cases/tab-panel/disable-showcase", "DisableShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Eventos", "Criando abas para destribuir o conteudo.")
-                .loadExample("test/examples/modules/show-cases/tab-panel/events-showcase", "EventsShowcase"));
+                .loadExample("examples/modules/show-cases/tab-panel/events-showcase", "EventsShowcase"));
             return _this;
         }
         return Index;

@@ -8,11 +8,11 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             _this.append(new default_module_window_1.DefaultModuleWindow("ViewStack", "")
                 .setMarginTopExample(50));
             _this.append(new default_module_window_1.DefaultModuleWindow("Exemplo simples", "Criando viewstack e mudando o índice.")
-                .loadExample("test/examples/modules/show-cases/view-stack/view-stack-showcase", "ViewStackShowcase"));
+                .loadExample("examples/modules/show-cases/view-stack/view-stack-showcase", "ViewStackShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Usando 'state'", "Criando viewstack e mudando o 'state'.")
-                .loadExample("test/examples/modules/show-cases/view-stack/state-showcase", "StateShowcase"));
+                .loadExample("examples/modules/show-cases/view-stack/state-showcase", "StateShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Eventos", "Eventos do ViewStack.")
-                .loadExample("test/examples/modules/show-cases/view-stack/events-showcase", "EventsShowcase"));
+                .loadExample("examples/modules/show-cases/view-stack/events-showcase", "EventsShowcase"));
             return _this;
         }
         return Index;

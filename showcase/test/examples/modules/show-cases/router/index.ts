@@ -10,7 +10,7 @@ export class Index extends Box{
 		);
 		this.append(
 			new DefaultModuleWindow("Exemplo simples","Exemplo de uso simples.")
-				.loadExample("test/examples/modules/show-cases/router/basic-case","BasicCase")
+				.loadExample("examples/modules/show-cases/router/basic-case","BasicCase")
 		);
 	}
 }

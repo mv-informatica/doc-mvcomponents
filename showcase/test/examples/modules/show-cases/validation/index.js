@@ -16,19 +16,19 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             tutorialVideo.videoUrl = "https://player.vimeo.com/video/218850558?color=158e84&title=0&byline=0&portrait=0";
             _this.append(tutorialVideo);
             _this.append(new default_module_window_1.DefaultModuleWindow("Validação de campo", "exemplo de validação individual de campo")
-                .loadExample("test/examples/modules/show-cases/validation/validation-simple-case", "ValidationSimpleCase"));
+                .loadExample("examples/modules/show-cases/validation/validation-simple-case", "ValidationSimpleCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Validação de formulário com inscrição", "Se inscrevendo na validação de um formulário. Para que essa validação funcione corretamente é necessário que os campos possuam um nome estabelecido com o método 'setName'.")
-                .loadExample("test/examples/modules/show-cases/validation/validation-form-event-emitter-case", "ValidationFormEventEmitterCase"));
+                .loadExample("examples/modules/show-cases/validation/validation-form-event-emitter-case", "ValidationFormEventEmitterCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Validação de formulário com promise", "Validando um formulário e recebendo o retorno em uma promise. Para que essa validação funcione corretamente é necessário que os campos possuam um nome estabelecido com o método 'setName'.")
-                .loadExample("test/examples/modules/show-cases/validation/validation-form-promise-case", "ValidationFormPromiseCase"));
+                .loadExample("examples/modules/show-cases/validation/validation-form-promise-case", "ValidationFormPromiseCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Campo requerido", "Obigando o preenchimento de um campo de formulário")
-                .loadExample("test/examples/modules/show-cases/validation/validation-field-required-case", "ValidationFieldRequiredCase"));
+                .loadExample("examples/modules/show-cases/validation/validation-field-required-case", "ValidationFieldRequiredCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Validações pré-definidas", "Utilizando uma validação pré-definida")
-                .loadExample("test/examples/modules/show-cases/validation/validation-field-predefined-case", "ValidationFieldPredefinedCase"));
+                .loadExample("examples/modules/show-cases/validation/validation-field-predefined-case", "ValidationFieldPredefinedCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Validação customizada", "Criando uma validação de campo custumizada")
-                .loadExample("test/examples/modules/show-cases/validation/validation-custom-case", "ValidationCustomCase"));
+                .loadExample("examples/modules/show-cases/validation/validation-custom-case", "ValidationCustomCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Removendo validação customizada", "Removendo uma validação de campo custumizada")
-                .loadExample("test/examples/modules/show-cases/validation/validation-remove-custom-case", "ValidationRemoveCustomCase"));
+                .loadExample("examples/modules/show-cases/validation/validation-remove-custom-case", "ValidationRemoveCustomCase"));
             return _this;
         }
         return Index;

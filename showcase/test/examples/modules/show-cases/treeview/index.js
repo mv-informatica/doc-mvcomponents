@@ -8,9 +8,9 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             _this.append(new default_module_window_1.DefaultModuleWindow("Treeview", "Componente usado para mostrar itens em formato de arvore.")
                 .setMarginTopExample(50));
             _this.append(new default_module_window_1.DefaultModuleWindow("Exemplo simples", "Exemplo de componentes simples.")
-                .loadExample("test/examples/modules/show-cases/treeview/basic-case", "BasicCase"));
+                .loadExample("examples/modules/show-cases/treeview/basic-case", "BasicCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Customizando", "Com icones customizados.")
-                .loadExample("test/examples/modules/show-cases/treeview/custom-case", "CustomCase"));
+                .loadExample("examples/modules/show-cases/treeview/custom-case", "CustomCase"));
             return _this;
         }
         return Index;

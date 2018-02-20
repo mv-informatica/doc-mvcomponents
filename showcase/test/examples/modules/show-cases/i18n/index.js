@@ -11,7 +11,7 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             tutorialVideo.videoUrl = "https://player.vimeo.com/video/218838412?color=158e84&title=0&byline=0&portrait=0";
             _this.append(tutorialVideo);
             _this.append(new default_module_window_1.DefaultModuleWindow("Exemplo simples", "Configurando e carregando arquivo de idioma.")
-                .loadExample("test/examples/modules/show-cases/i18n/i18n-showcase", "I18nShowcase"));
+                .loadExample("examples/modules/show-cases/i18n/i18n-showcase", "I18nShowcase"));
             return _this;
         }
         return Index;

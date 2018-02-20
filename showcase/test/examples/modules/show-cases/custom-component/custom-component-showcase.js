@@ -12,7 +12,7 @@ define(["require", "exports", "tslib", "mvcomponents/core", "../custom_element/m
     }());
     MyCustomComponent = tslib_1.__decorate([
         core_1.Render({
-            templateUrl: "test/js/teste/custom_element/hello_world"
+            templateUrl: "js/teste/custom_element/hello_world"
         })
     ], MyCustomComponent);
     var HelloWorldComp = (function () {
@@ -65,7 +65,7 @@ define(["require", "exports", "tslib", "mvcomponents/core", "../custom_element/m
     }());
     HelloWorldComp = tslib_1.__decorate([
         core_1.Render({
-            templateUrl: "test/js/teste/custom_element/hello_world"
+            templateUrl: "js/teste/custom_element/hello_world"
         })
     ], HelloWorldComp);
     exports.HelloWorldComp = HelloWorldComp;

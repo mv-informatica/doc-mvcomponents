@@ -29,7 +29,7 @@ define(["require", "exports", "tslib", "mvcomponents/core", "moment", "./assets/
     }());
     SystemInfo = tslib_1.__decorate([
         core_1.Render({
-            templateUrl: "test/examples/structure/system-info/assets/system-info.template"
+            templateUrl: "examples/structure/system-info/assets/system-info.template"
         })
     ], SystemInfo);
     exports.SystemInfo = SystemInfo;

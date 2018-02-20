@@ -10,11 +10,11 @@ export class Index extends Box{
 		);
 		this.append(
 			new DefaultModuleWindow("Exemplo simples","Exemplo de componentes simples.")
-				.loadExample("test/examples/modules/show-cases/treeview/basic-case","BasicCase")
+				.loadExample("examples/modules/show-cases/treeview/basic-case","BasicCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Customizando","Com icones customizados.")
-				.loadExample("test/examples/modules/show-cases/treeview/custom-case","CustomCase")
+				.loadExample("examples/modules/show-cases/treeview/custom-case","CustomCase")
 		);
 	}
 }

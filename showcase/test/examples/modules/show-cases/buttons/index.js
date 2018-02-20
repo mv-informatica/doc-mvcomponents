@@ -6,15 +6,15 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
         function Index() {
             var _this = _super.call(this) || this;
             _this.append(new default_module_window_1.DefaultModuleWindow("Simples", "Botão de ação simples")
-                .loadExample("test/examples/modules/show-cases/buttons/case-1", "ButtonCase"));
+                .loadExample("examples/modules/show-cases/buttons/case-1", "ButtonCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Com ícones", "Adicionando ícone ao botão")
-                .loadExample("test/examples/modules/show-cases/buttons/button-with-icon", "ButtonWithIcon"));
+                .loadExample("examples/modules/show-cases/buttons/button-with-icon", "ButtonWithIcon"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Cores", "Aplicando cor ao botão")
-                .loadExample("test/examples/modules/show-cases/buttons/button-with-color", "ButtonWithColor"));
+                .loadExample("examples/modules/show-cases/buttons/button-with-color", "ButtonWithColor"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Eventos", "Adicionando evento ao botão")
-                .loadExample("test/examples/modules/show-cases/buttons/button-with-event", "ButtonWithEvent"));
+                .loadExample("examples/modules/show-cases/buttons/button-with-event", "ButtonWithEvent"));
             _this.append(new default_module_window_1.DefaultModuleWindow("IconButton", "Butão icone")
-                .loadExample("test/examples/modules/show-cases/buttons/icon-button-case", "IconButtonCase"));
+                .loadExample("examples/modules/show-cases/buttons/icon-button-case", "IconButtonCase"));
             return _this;
         }
         return Index;

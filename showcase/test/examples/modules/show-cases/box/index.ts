@@ -10,11 +10,11 @@ export class Index extends Box{
 		);
 		this.append(
 			new DefaultModuleWindow("Exemplo simples","organizando o layout em duas partes")
-				.loadExample("test/examples/modules/show-cases/box/box-showcase","BoxShowcase")
+				.loadExample("examples/modules/show-cases/box/box-showcase","BoxShowcase")
 		);
 		this.append(
 			new DefaultModuleWindow("Bloqueando box","bloqueando um container")
-				.loadExample("test/examples/modules/show-cases/box/disable-case","DisableCase")
+				.loadExample("examples/modules/show-cases/box/disable-case","DisableCase")
 		);
 	}
 }

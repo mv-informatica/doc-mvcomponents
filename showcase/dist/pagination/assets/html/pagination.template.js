@@ -21,21 +21,21 @@ var __target
 
 exports.pagination = (function () {
   return function pagination (pagination) {
-  elementOpen("div", "189daf45-3181-4f0b-a137-fac179b77882", hoisted1)
-    elementOpen("div", "be3eab3a-401b-4dcb-ac17-a05f37d0a7c7", hoisted2)
-      elementOpen("label", "9c424527-065e-421c-af3a-d16a2ff40540", hoisted3)
+  elementOpen("div", "052fb10d-7e4e-4b0d-9099-7efc766a7ca7", hoisted1)
+    elementOpen("div", "68deeddf-afac-4e0e-ac40-0142ea5b4487", hoisted2)
+      elementOpen("label", "c5865cdd-9fee-4afe-99d1-2bc8c2a8c1fe", hoisted3)
         text("                 " + (pagination.getPaginationInfo()) + "             ")
       elementClose("label")
     elementClose("div")
-    elementOpen("div", "32f7902c-2e0f-47ac-929a-9b4f72f346a1", hoisted4)
+    elementOpen("div", "77687528-2fb6-4d99-97f0-33b14c543e24", hoisted4)
       if (pagination.visiblePageNumbers.length > 0) {
-        elementOpen("nav", "7a8413d4-61d0-47a0-91f4-2dd73ec68dd8", hoisted5)
-          elementOpen("ul", "916d23ba-8a01-4b24-af0f-66297955b3b7", hoisted6)
+        elementOpen("nav", "001e4516-30ab-4084-b9e0-a14ff06ff436", hoisted5)
+          elementOpen("ul", "3c6bf17c-9264-4896-8c74-ba7bfd5a72b5", hoisted6)
             elementOpen("li", null, null, "class", pagination.getNavigationButtonClass('prev'))
-              elementOpen("a", "2cc6656b-152b-44a6-a910-b295ca182de6", hoisted7, "onclick", function ($event) {
+              elementOpen("a", "f5322030-5f40-443c-a9a8-60121d74d4a1", hoisted7, "onclick", function ($event) {
                 var $element = this;
               $event.preventDefault();pagination.previousVisiblePageNumbers()})
-                elementOpen("span", "2becc833-e3d0-415d-aafe-4e77ffc228ca", hoisted8)
+                elementOpen("span", "473ea47f-6db1-4a61-b438-05c00bfd0ce1", hoisted8)
                 elementClose("span")
               elementClose("a")
             elementClose("li")
@@ -43,9 +43,9 @@ exports.pagination = (function () {
             if (__target) {
               ;(__target.forEach ? __target : Object.keys(__target)).forEach(function($value, $item, $target) {
                 var pageNumber = $value
-                var $key = "c9fed349-6fe3-4023-8b33-b41cae684468_" + $item
+                var $key = "62903370-8c3d-4215-8c9b-4ff5a9908117_" + $item
                 elementOpen("li", $key, null, "class", (pagination.paginationResult.number == (pageNumber-1) ? 'active': ''))
-                  elementOpen("a", "c5ab2de3-0f0f-4b44-a676-fe9c5dec06b9_" + $key, hoisted9, "onclick", function ($event) {
+                  elementOpen("a", "0189a3b7-f134-4489-bd18-984003b0ca85_" + $key, hoisted9, "onclick", function ($event) {
                     var $element = this;
                   $event.preventDefault();pagination.requestPage(pageNumber - 1)})
                     text("                             " + (pageNumber) + "                         ")
@@ -54,10 +54,10 @@ exports.pagination = (function () {
               }, this)
             }
             elementOpen("li", null, null, "class", pagination.getNavigationButtonClass('next'))
-              elementOpen("a", "2511842e-5ce2-4c8c-bc6d-1713c71b83d7", hoisted10, "onclick", function ($event) {
+              elementOpen("a", "7a219190-a159-4a3a-a7ac-d3ba0ca6741a", hoisted10, "onclick", function ($event) {
                 var $element = this;
               $event.preventDefault();pagination.nextVisiblePageNumbers()})
-                elementOpen("span", "498b5138-5f61-4470-ab31-f3640e1aee4a", hoisted11)
+                elementOpen("span", "605f118b-47e6-491c-ba41-a0dd6ba4feec", hoisted11)
                 elementClose("span")
               elementClose("a")
             elementClose("li")

@@ -8,7 +8,7 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             _this.append(new default_module_window_1.DefaultModuleWindow("Router", "Componente usado para carregamento de componentes por URLs pré-configuradas.")
                 .setMarginTopExample(50));
             _this.append(new default_module_window_1.DefaultModuleWindow("Exemplo simples", "Exemplo de uso simples.")
-                .loadExample("test/examples/modules/show-cases/router/basic-case", "BasicCase"));
+                .loadExample("examples/modules/show-cases/router/basic-case", "BasicCase"));
             return _this;
         }
         return Index;

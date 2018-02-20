@@ -6,15 +6,15 @@ export class Index extends Box{
 		super();	
 		this.append(
 			new DefaultModuleWindow("Notificação","exemplo simples")
-				.loadExample("test/examples/modules/show-cases/notification/notification-simple-case","NotificationSimpleCase")
+				.loadExample("examples/modules/show-cases/notification/notification-simple-case","NotificationSimpleCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Alterando o tipo","alterando o tipo de nofificação")
-				.loadExample("test/examples/modules/show-cases/notification/notification-types-case","NotificationTypesCase")
+				.loadExample("examples/modules/show-cases/notification/notification-types-case","NotificationTypesCase")
 		);
 		this.append(
 			new DefaultModuleWindow("Alterando o posicionamento","alterando a posição da nofificação")
-				.loadExample("test/examples/modules/show-cases/notification/notification-position-case","NotificationPositionCase")
+				.loadExample("examples/modules/show-cases/notification/notification-position-case","NotificationPositionCase")
 		);
 	}
 }

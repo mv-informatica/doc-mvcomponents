@@ -6,11 +6,11 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
         function Index() {
             var _this = _super.call(this) || this;
             _this.append(new default_module_window_1.DefaultModuleWindow("Notificação", "exemplo simples")
-                .loadExample("test/examples/modules/show-cases/notification/notification-simple-case", "NotificationSimpleCase"));
+                .loadExample("examples/modules/show-cases/notification/notification-simple-case", "NotificationSimpleCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Alterando o tipo", "alterando o tipo de nofificação")
-                .loadExample("test/examples/modules/show-cases/notification/notification-types-case", "NotificationTypesCase"));
+                .loadExample("examples/modules/show-cases/notification/notification-types-case", "NotificationTypesCase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Alterando o posicionamento", "alterando a posição da nofificação")
-                .loadExample("test/examples/modules/show-cases/notification/notification-position-case", "NotificationPositionCase"));
+                .loadExample("examples/modules/show-cases/notification/notification-position-case", "NotificationPositionCase"));
             return _this;
         }
         return Index;

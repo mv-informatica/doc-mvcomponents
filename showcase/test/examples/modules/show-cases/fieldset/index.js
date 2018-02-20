@@ -8,9 +8,9 @@ define(["require", "exports", "tslib", "mvcomponents/container", "../../default-
             _this.append(new default_module_window_1.DefaultModuleWindow("FieldSet", "Conteiner usado para agrupar o layout de campos de um formulário.")
                 .setMarginTopExample(50));
             _this.append(new default_module_window_1.DefaultModuleWindow("Exemplo simples", "organizando o layout do formulário.")
-                .loadExample("test/examples/modules/show-cases/fieldset/fieldset-showcase", "FieldsetShowcase"));
+                .loadExample("examples/modules/show-cases/fieldset/fieldset-showcase", "FieldsetShowcase"));
             _this.append(new default_module_window_1.DefaultModuleWindow("Bloqueando o fieldset", "bloqueando um fieldset com o método 'setEnable(false)'.")
-                .loadExample("test/examples/modules/show-cases/fieldset/disabled-showcase", "DisabledShowcase"));
+                .loadExample("examples/modules/show-cases/fieldset/disabled-showcase", "DisabledShowcase"));
             return _this;
         }
         return Index;

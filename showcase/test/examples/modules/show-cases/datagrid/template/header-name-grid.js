@@ -16,7 +16,7 @@ exports.testHeaderTemplate = (function () {
   $event.preventDefault();$this.toogleCheck()}, "class", "glyphicon glyphicon-" + (($this.checked?'check':'unchecked')) + "")
   elementClose("span")
   text("     " + ($this.title) + "     ")
-  elementOpen("span", "32895106-b14c-458b-bc79-d7659eb4f00a", hoisted1, "onclick", function ($event) {
+  elementOpen("span", "e324b6ec-0703-49e9-8803-81a18ffae74d", hoisted1, "onclick", function ($event) {
     var $element = this;
   $event.preventDefault();$this.testeGid()})
   elementClose("span")

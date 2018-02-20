@@ -1,7 +1,7 @@
 import {Render,ICustomComponent} from "mvcomponents/core";
 
 @Render({
-    templateUrl:"test/js/teste/custom_element/hello_world"
+    templateUrl:"js/teste/custom_element/hello_world"
 })
 class MyCustomComponent implements ICustomComponent{
     private name:string;
@@ -23,7 +23,7 @@ import {MicroComp} from "./micro-comp";
 import jquery = require("jquery");
 
 @Render({
-    templateUrl:"test/js/teste/custom_element/hello_world"
+    templateUrl:"js/teste/custom_element/hello_world"
 })
 export class HelloWorldComp implements ICustomComponent{
     public element: HTMLElement;
